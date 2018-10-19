@@ -1,0 +1,127 @@
+<<<?state/^C_/
+eof>>>
+;------------------------------
+;    [[state]]
+;    [[state-cmt]]
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+*[[state]]
+[iscript]
+    f.curstate = '[[state]]';
+    f.nextstate ='';
+    f.yesno=0;
+[endscript]
+<<<?init
+[[init]]
+ >>>
+<<<?initscript
+[iscript]
+    [[initscript]]
+[endscript]
+>>>
+
+<<<?bg
+@bg storage="[[bg]]"
+>>>
+
+<<<?bgx
+[[bgx]]
+>>>
+
+<<<?chara_face
+[[chara_face]]
+>>>
+
+<<<?bg_after
+[[bg_after]]
+>>>
+
+<<<?button
+[iscript]
+    f.butval='';
+[endscript]
+[[button->@makebutton]]
+>>>
+
+<<<?role_button
+[[role_button]]
+>>>
+
+<<<?glink
+[iscript]
+    f.glkval='';
+[endscript]
+[[glink->@makeglink]]
+>>>
+
+<<<?link
+[iscript]
+    f.lnkval='';
+[endscript]
+[[link->@makelink]]
+>>>
+
+<<<?clickable
+[iscript]
+    f.clkval='';
+[endscript]
+[[clickable->@makeclickable]]
+>>>
+
+<<<?wait
+[[wait]]
+>>>
+
+*[[state]]___branch
+;
+; BRANCH
+;
+<<<?branch
+[iscript]
+    [[branch]]
+[endscript]
+>>>
+
+<<<?nextstate
+[iscript]
+    if (f.nextstate == '') {
+        f.nextstate = '[[nextstate]]';
+    }
+[endscript]
+>>>
+
+[jump target=&f.nextstate]
+
+<<<?button
+;
+; BUTTON LABEL
+;
+[[button->@makebuttonlabel]]
+>>>
+
+<<<?glink
+;
+; GLINK LABEL
+;
+[[glink->@makeglinklabel]]
+>>>
+
+<<<?link
+;
+; LINK LABEL
+;
+[[link->@makelinklabel]]
+>>>
+
+
+<<<?clickable
+;
+; CLICK LABEL
+;
+[[clickable->@makeclickablelabel]]
+>>>
+;
+; END OF [[state]]
+;

@@ -1,0 +1,46 @@
+<<<?state/^C_/
+eof>>>
+
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+<<<?state/^E_/
+[[embed]]
+eof>>>
+[[members]]
+function [[state]]($bFirst) {
+
+    [[vars]]
+
+    <<<?init
+    if ($bFirst)
+    {
+        [[init]]
+    }
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if ([[wait]]) return;
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate        
+    if ($this->HasNextState()==FALSE)
+    {
+        $this->GotoState('[[nextstate]]');
+    }
+    >>>
+
+    <<<?nowait
+    if ($this->HasNextState())
+    {
+        $this->NoWait();
+    }
+    >>>
+}

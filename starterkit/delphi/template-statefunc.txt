@@ -1,0 +1,43 @@
+<<<?state/^C_/
+eof>>>
+{
+    [[state]]
+    [[state-cmt]]
+}
+<<<?state/^E_/
+// [[embdec]]
+[[embed]]
+eof>>>
+
+procedure __PREFIX__Control.[[state]](const bFirst : boolean);
+[[vars]]
+begin
+    <<<?init
+    if bFirst=true then begin
+        [[init]]
+    end;
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if [[wait]] = false then exit;
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate        
+    if HasNextState() = false then begin
+        SetNextState('[[nextstate]]');
+    end;
+    >>>
+
+    if HasNextState() = true then begin
+        <<<?nowait
+        NoWait();
+        >>>
+        GoNextState();
+    end;
+end;

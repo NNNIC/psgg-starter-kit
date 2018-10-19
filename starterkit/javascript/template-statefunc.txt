@@ -1,0 +1,46 @@
+<<<?state/^C_/
+eof>>>
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+<<<?state/^E_/
+
+[[embed]]
+
+eof>>>
+__PREFIX__Control.prototype.[[state]] = function(first) {
+    
+    [[vars]]
+
+    <<<?init
+    if (first)
+    {
+        [[init]]
+    }
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if ([[wait]]) { return; }
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate
+    if (!this.hasnext()) {
+        this.setnext(this.[[nextstate]]);
+    }
+    >>>
+    
+    <<<?nowait
+    this.nowait();
+    >>>
+
+    if (this.hasnext()) {
+        this.gonext();
+    }
+};

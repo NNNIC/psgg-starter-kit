@@ -1,0 +1,17 @@
+<<<?state/^E_/
+[[embed]]
+eof>>>
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+
+    g_cur = ""    
+
+    '[[work-cmt]]
+    [[work]]
+
+    [[branch]]
+
+    <<<?nextstate
+    If g_cur = "" Then
+        g_cur = "[[nextstate]]"
+    EndIf
+    >>>

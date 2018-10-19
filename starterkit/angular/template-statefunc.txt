@@ -1,0 +1,46 @@
+<<<?state/^C_/
+eof>>>
+<<<?state/^E_/
+[[embed]]
+eof>>>
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+[[members]]
+[[state]](bFirst: boolean) {
+
+    [[vars]]
+
+    if (bFirst) {
+        
+        this.curstatename = '[[state]]';
+        // this.curstatecmt  = '[[state-cmt]]';
+
+        [[init]]
+    }
+
+    [[update]]
+
+    <<<?wait
+    if ([[wait]]) { return; }
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate
+    if (!this.HasNextState()) {
+        this.SetNext(this.[[nextstate]]);
+    }
+    >>>
+    
+    <<<?nowait
+    this.NoWait();
+    >>>
+
+    if (this.HasNextState()) {
+        this.GoNext();
+    }
+}

@@ -1,0 +1,46 @@
+<<<?state/^C_/
+>>>
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+<<<?state/^E_/
+[[embed]]
+>>>
+[[members]]
+Consumer<Boolean> [[state]]=(bFirst)->{
+
+    [[vars]]
+
+    <<<?init
+    if (bFirst) {
+        [[init]]
+    }
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if ([[wait]]) return;
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate        
+    if (!this.HasNextState())
+    {
+        this.SetNextState(this.[[nextstate]]);
+    }
+    >>>
+
+    if (this.HasNextState())
+    {
+        <<<?nowait
+        this.NoWait();
+        >>>
+
+        this.GoNextState();
+    }
+};

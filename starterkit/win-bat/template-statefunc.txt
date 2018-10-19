@@ -1,0 +1,14 @@
+::
+:[[state]]
+:: 
+:: [[state-cmt]]
+::
+    [[command]]
+    
+    [[branch]]
+
+    <<<?nextstate
+    goto :[[nextstate]]
+    >>>
+
+    goto :[[state]]

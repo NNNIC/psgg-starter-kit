@@ -1,0 +1,36 @@
+<<<?state/^C_/
+eof>>>
+#   [[state]]  [[state-cmt]]
+<<<?state/^E_/
+[[embed]]
+eof>>>
+[[state]]()
+{
+    <<<?init
+    if [ $1 -eq 1 ]; then
+        [[init]]
+    fi
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if [[wait]]; then
+        return 0
+    fi
+    >>>
+
+    [[post_wait]]
+
+    <<<?branch
+    # branch
+    [[branch]]
+    >>>
+
+    <<<?nextstate        
+    $macro:SetNextStateIf([[nextstate]])$
+    >>>
+    
+    $macro:GoNextState$
+   
+}

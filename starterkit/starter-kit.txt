@@ -1,0 +1,6 @@
+https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+
+* The above information will be used when SYN-G-GEN creates a new document with setteing.ini.
+* It will be a record which revision starter-kit you use.
+* If you want to use same proccess with your starter-kit, please set your information.
+* Internaly the above information will be overwitten when SYN-G-GEN creates the installation file. 

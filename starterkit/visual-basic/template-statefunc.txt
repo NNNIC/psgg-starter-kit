@@ -1,0 +1,50 @@
+<<<?state/^C_/
+eof>>>
+'    [[state]]
+'    [[state-cmt]]
+
+<<<?state/^E_/
+
+[[embed]]
+
+eof>>>
+
+[[members]]
+
+Sub [[state]](bFirst As Boolean)
+
+    [[vars]]
+
+    <<<?init
+    if bFirst = True Then
+        [[init]]
+    End If
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    If [[wait]] Then 
+        return
+    End If
+    >>>
+
+    [[post_wait]]
+
+    <<<?branch
+    ' branch
+    [[branch]]
+    >>>
+
+    <<<?nextstate        
+    If HasNextState() = False Then
+        GotoState("[[nextstate]]")
+    End If
+    >>>
+
+    <<<?nowait
+    If HasNextState() Then
+        NoWait()
+    End If
+    >>>
+End Sub
