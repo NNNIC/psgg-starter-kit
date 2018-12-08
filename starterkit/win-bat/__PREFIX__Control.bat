@@ -52,9 +52,9 @@ set YESNO=
 
 goto :S_START
 
-:: [SYN-G-GEN OUTPUT START] $/./$
+:: [PSGG OUTPUT START] $/./$
 :S_START
 
-:: [SYN-G-GEN OUTPUT END]
+:: [PSGG OUTPUT END]
 echo : == END OF BATCH ==
 :_end

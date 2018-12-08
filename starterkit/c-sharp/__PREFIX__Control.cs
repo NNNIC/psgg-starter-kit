@@ -1,10 +1,9 @@
 using System;
 public partial class __PREFIX__Control  {
-
+   
     #region manger
     Action<bool> m_curfunc;
     Action<bool> m_nextfunc;
-    Action<bool> m_tempfunc;
 
     bool         m_noWait;
     
@@ -35,19 +34,9 @@ public partial class __PREFIX__Control  {
     {
         return m_curfunc == func;
     }
-    // for tempfunc
-    void SetNextState(Action<bool> func)
-    {
-        m_tempfunc = func;
-    }
-    void GoNextState()
-    {
-        m_nextfunc = m_tempfunc;
-        m_tempfunc = null;
-    }
     bool HasNextState()
     {
-        return m_tempfunc != null;
+        return m_nextfunc != null;
     }
     void NoWait()
     {
@@ -77,10 +66,10 @@ public partial class __PREFIX__Control  {
 		}
 	}
 
-	#region    // [SYN-G-GEN OUTPUT START] indent(8) $/./$
+	#region    // [PSGG OUTPUT START] indent(8) $/./$
     void S_START(bool bFirst) { }
     void S_END(bool bFirst) { }
-	#endregion // [SYN-G-GEN OUTPUT END]
+	#endregion // [PSGG OUTPUT END]
 
 	// write your code below
 
@@ -92,7 +81,7 @@ public partial class __PREFIX__Control  {
 		{
 			if (m_bYesNo)
 			{
-				SetNextState(st);
+				Goto(st);
 			}
 		}
 	}
@@ -103,9 +92,32 @@ public partial class __PREFIX__Control  {
 		{
 			if (!m_bYesNo)
 			{
-				SetNextState(st);
+				Goto(st);
 			}
 		}
 	}
-
 }
+
+/*  :::: PSGG MACRO ::::
+:psgg-macro-start
+
+commentline=// {%0}
+
+@branch=@@@
+<<<?"{%0}"/^brifc{0,1}$/
+if ([[brcond:{%N}]]) { Goto( {%1} ); }
+>>>
+<<<?"{%0}"/^brelseifc{0,1}$/
+else if ([[brcond:{%N}]]) { Goto( {%1} ); }
+>>>
+<<<?"{%0}"/^brelse$/
+else { Goto( {%1} ); }
+>>>
+<<<?"{%0}"/^br_/
+{%0}({%1});
+>>>
+@@@
+
+:psgg-macro-end
+*/
+
