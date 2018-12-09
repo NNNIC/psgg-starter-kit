@@ -39,17 +39,15 @@ void [[state]](bool bFirst)
     //
     if (!HasNextState())
     {
-        SetNextState([[nextstate]]);
+        Goto([[nextstate]]);
     }
     >>>
 
+    <<<?nowait
     //
     if (HasNextState())
     {
-        <<<?nowait
         NoWait();
-        >>>
-
-        GoNextState();
     }
+    >>>
 }
