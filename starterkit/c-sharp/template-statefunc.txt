@@ -9,10 +9,10 @@ eof>>>
 [[embed]]
 
 eof>>>
+
 [[members]]
 void [[state]](bool bFirst)
 {
-
     [[vars]]
 
     <<<?init
@@ -30,6 +30,19 @@ void [[state]](bool bFirst)
     >>>
 
     [[post_wait]]
+
+<<<?gosubstate
+    GoSubState([[gosubstate]],[[nextstate]]);
+    NoWait();
+}
+eof>>>
+
+<<<?return
+    ReturnState();
+    NoWait();
+}
+eof>>>
+
 
     <<<?branch
     // branch
