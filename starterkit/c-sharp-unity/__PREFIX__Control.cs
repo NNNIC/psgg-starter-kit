@@ -47,6 +47,20 @@ public partial class __PREFIX__Control : MonoBehaviour {
         m_noWait = true;
     }
     #endregion
+    #region gosub
+    List<Action<bool>> m_callstack = new List<Action<bool>>();
+    void GoSubState(Action<bool> nextstate, Action<bool> returnstate)
+    {
+        m_callstack.Insert(0,returnstate);
+        Goto(nextstate);
+    }
+    void ReturnState()
+    {
+        var nextstate = m_callstack[0];
+        m_callstack.RemoveAt(0);
+        Goto(nextstate);
+    }
+    #endregion 
 
     void _start()
     {
