@@ -5,7 +5,7 @@ using UnityEngine;
 
 public partial class __PREFIX__Control : MonoBehaviour {
  
-    #region manger
+    #region manager
     Action<bool> m_curfunc;
     Action<bool> m_nextfunc;
 

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 public partial class __PREFIX__Control  {
    
-    #region manger
+    #region manager
     Action<bool> m_curfunc;
     Action<bool> m_nextfunc;
 
