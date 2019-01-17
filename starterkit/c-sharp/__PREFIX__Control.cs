@@ -75,9 +75,8 @@ public partial class __PREFIX__Control  {
 		for(var loop = 0; loop <= LOOPMAX; loop++)
 		{
 			if (loop>=LOOPMAX) throw new SystemException("Unexpected.");
-			if (IsEnd()) break;
-			
 			Update();
+			if (IsEnd()) break;
 		}
 	}
 
