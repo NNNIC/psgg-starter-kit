@@ -32,15 +32,13 @@ __PREFIX__Control.prototype.[[state]] = function(first) {
 
     <<<?nextstate
     if (!this.hasnext()) {
-        this.setnext(this.[[nextstate]]);
+        this.goto(this.[[nextstate]]);
     }
     >>>
     
     <<<?nowait
-    this.nowait();
-    >>>
-
     if (this.hasnext()) {
-        this.gonext();
+        this.setnowait();
     }
+    >>>
 };

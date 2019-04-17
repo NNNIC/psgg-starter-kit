@@ -2,7 +2,7 @@ import java.util.function.Consumer;
 
 public class __PREFIX__Control extends StateManager {
 	
-	// [SYN-G-GEN OUTPUT START] indent[4] $/./$
+	// [SYN-G-GEN OUTPUT START] indent(4) $/./$
     Consumer<Boolean> S_START=(bFirst)->{
         this.Goto(this.S_END);
     };

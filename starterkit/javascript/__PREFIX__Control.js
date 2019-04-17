@@ -2,7 +2,6 @@
 var __PREFIX__Control = function() {
     this.curfunc   = null;
     this.nextfunc  = null;
-    this.candfunc  = null;
     this.nowait    = false;    
 };
 __PREFIX__Control.prototype.update = function() {
@@ -24,48 +23,52 @@ __PREFIX__Control.prototype.update = function() {
     }
 };
 __PREFIX__Control.prototype.checkstate = function(st) {
-    return this.candfunc === st;
+    return this.curfunc === st;
 };
 __PREFIX__Control.prototype.goto = function(st) {
     this.nextfunc = st;
 };
-__PREFIX__Control.prototype.setnext = function(st) {
-    this.candfunc = st;
-}
-__PREFIX__Control.prototype.gonext = function() {
-    this.nextfunc = this.candfunc;
-    this.candfunc = null;
-}
 __PREFIX__Control.prototype.hasnext = function() {
-    return this.candfunc!=null;
+    return this.nextfunc!=null;
 }
 __PREFIX__Control.prototype.setnowait = function() {
     this.nowait = true;
 }
 __PREFIX__Control.prototype.start = function() {
-        this.goto(this.S_START);
+    this.goto(this.S_START);
 };
 __PREFIX__Control.prototype.is_end = function() {
-        return this.checkstate(this.S_END);
+    return this.checkstate(this.S_END);
 };
+__PREFIX__Control.prototype.run = function() {
+    var LOOPMAX = 100000;
+    this.start();
+    for(var loop = 0; loop <= LOOPMAX; loop++)
+    {
+        if (loop>=LOOPMAX) alert("Unexpected!");
+        this.update();
+        if (this.is_end()) break;
+    }
+};
+
 // == yesno set ==
 __PREFIX__Control.yesno=false;
 __PREFIX__Control.prototype.br_yes = function(st) {
-        if (!this.hasnext(st)) {
-                if (this.yesno) {
-                        this.setnext(st);
-                }
+    if (!this.hasnext(st)) {
+        if (this.yesno) {
+            this.setnext(st);
         }
+    }
 };
 __PREFIX__Control.prototype.br_no = function(st) {
-        if (!this.hasnext(st)) {
-                if (!this.yesno) {
-                        this.setnext(st);
-                }
+    if (!this.hasnext(st)) {
+        if (!this.yesno) {
+            this.setnext(st);
         }
+    }
 };
 
-// [SYN-G-GEN OUTPUT START] $/./$
+// [SYN-G-GEN OUTPUT START] indent(0) $/./$
 __PREFIX__Control.prototype.S_STATE = function(first) { this.goto(S_END); }
 __PREFIX__Control.prototype.S_END   = function(first) { }
 // [SYN-G-GEN OUTPUT END]
