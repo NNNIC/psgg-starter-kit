@@ -68,10 +68,10 @@ __PREFIX__Control.prototype.br_no = function(st) {
     }
 };
 
-// [SYN-G-GEN OUTPUT START] indent(0) $/./$
+// [STATEGO OUTPUT START] indent(0) $/./$
 __PREFIX__Control.prototype.S_STATE = function(first) { this.goto(S_END); }
 __PREFIX__Control.prototype.S_END   = function(first) { }
-// [SYN-G-GEN OUTPUT END]
+// [STATEGO OUTPUT END]
 
 // == write your code ==
 
