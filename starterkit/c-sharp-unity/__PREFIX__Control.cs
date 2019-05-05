@@ -71,7 +71,7 @@ public partial class __PREFIX__Control : MonoBehaviour {
         return CheckState(S_END); 
     }
 
-	#region    // [PSGG OUTPUT START] indent(8) $/./$
+	#region    // [PSGG OUTPUT START] indent(4) $/./$
     void S_START(bool bFirst) { }
     void S_END(bool bFirst) { }
 	#endregion // [PSGG OUTPUT END]
