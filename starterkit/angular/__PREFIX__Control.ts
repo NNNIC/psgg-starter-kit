@@ -1,6 +1,67 @@
-import { StateManager } from './base/state-manager';
+export class __PREFIX__Control {
 
-export class __PREFIX__Control extends StateManager {
+    //#region start of manager part
+    public curstatename: string;
+    public curstatecmt: string;
+
+    public curstate;
+    public nextstate;
+    public candidatestate;
+    public bNoWait;
+
+    public Goto(func) {
+        this.nextstate = func;
+    }
+
+    public Update() {
+        while (true) {
+            this.bNoWait = false;
+            this._update();
+            if (this.bNoWait) {
+                continue;
+            } else {
+                break;
+            }
+        }
+    }
+    private _update() {
+        let bFirst = false;
+        if (this.nextstate != null) {
+            this.curstate  = this.nextstate;
+            this.nextstate = null;
+            bFirst = true;
+        }
+
+        if (this.curstate != null) {
+            this.curstate(bFirst);
+        }
+
+         if (bFirst) {
+            console.log(this.curstatename);
+         }
+    }
+
+    public CheckState(func): boolean {
+        return this.curstate === func;
+    }
+
+    // Candidate and go
+    public SetNext(func) {
+        this.candidatestate = func;
+    }
+    public GoNext() {
+        this.nextstate = this.candidatestate;
+        this.candidatestate = null;
+    }
+    public HasNextState(): boolean {
+        return this.candidatestate != null;
+    }
+
+    // non wait update
+    public NoWait() {
+        this.bNoWait = true;
+    }
+    //#endregion  end of manager part
 
     public start() {
         this.Goto(this.S_START);
@@ -8,34 +69,11 @@ export class __PREFIX__Control extends StateManager {
     public is_end() {
         return this.CheckState(this.S_END);
     }
-    //                             [SYN-G-GEN OUTPUT START]   $/^[SE]_/$
+    //                             [PSGG OUTPUT START]   $/^[SE]_/$
     S_START(bFirst: boolean) {
         this.Goto(this.S_END);
     }
     S_END(bFirst : boolean) {        
     }
-    //                             [SYN-G-GEN OUTPUT END]
-    b_yesno: boolean;
-
-    br_yes(st) {
-      if (!this.HasNextState()) {
-        if (this.b_yesno) {
-          this.SetNext(st);
-        }
-      }
-    }
-    
-    br_no(st) {
-      if (!this.HasNextState()) {
-        if (!this.b_yesno) {
-          this.SetNext(st);
-        }
-      }
-    }
-  
-    br_notAbove(st) {
-      if (!this.HasNextState()) {
-        this.SetNext(st);
-      }
-    }  
+    //                             [PSGG OUTPUT END]
 }
