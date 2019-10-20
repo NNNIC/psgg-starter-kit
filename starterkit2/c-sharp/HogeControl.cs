@@ -89,6 +89,43 @@ public partial class HogeControl  {
         {
         }
         /*
+            S_GOSUB
+        */
+        void S_GOSUB(bool bFirst)
+        {
+            GoSubState(S_SUBSTART1,S_LOOP);
+            NoWait();
+        }
+        /*
+            S_LOOP
+        */
+        int m_i;
+        bool m_break;
+        void S_LOOP(bool bFirst)
+        {
+            m_i = 0;
+            m_break=false;
+            Goto(S_LOOP____loopcheck);
+            NoWait();
+        }
+        void S_LOOP____loopcheck(bool bFirst)
+        {
+            if (m_i < 10) Goto(S_LOOP____loopproc);
+            else               Goto(S_END);
+            NoWait();
+        }
+        void S_LOOP____loopproc(bool bFirst)
+        {
+            GoSubState(S_SUBSTART,S_LOOP____loopnext);
+            NoWait();
+        }
+        void S_LOOP____loopnext(bool bFirst)
+        {
+            m_i++;
+            Goto(S_LOOP____loopcheck);
+            NoWait();
+        }
+        /*
             S_LOOPPROC
         */
         void S_LOOPPROC(bool bFirst)
@@ -100,38 +137,20 @@ public partial class HogeControl  {
             }
         }
         /*
-            S_LOOPTEST
+            S_LOOPPROC1
         */
-        int m_i;
-        void S_LOOPTEST(bool bFirst)
+        void S_LOOPPROC1(bool bFirst)
         {
-            m_i = 0;
-            Goto(S_LOOPTEST____loopcheck);
-            NoWait();
-        }
-        void S_LOOPTEST____loopcheck(bool bFirst)
-        {
-            if (m_i < 10;) Goto(S_LOOPTEST____loopproc);
-            else               Goto(S_END);
-            NoWait();
-        }
-        void S_LOOPTEST____loopproc(bool bFirst)
-        {
-            GoSubState(S_SUBSTART,S_LOOPTEST____loopnext);
-            NoWait();
-        }
-        void S_LOOPTEST____loopnext(bool bFirst)
-        {
-            m_i++;
-            Goto(S_LOOPTEST____loopcheck);
-            NoWait();
+            // branch
+            if (b) { Goto( S_SUBRETURN1 ); }
+            else { Goto( S_SUBRETURN2 ); }
         }
         /*
             S_START
         */
         void S_START(bool bFirst)
         {
-            Goto(S_LOOPTEST);
+            Goto(S_GOSUB);
             NoWait();
         }
         /*
@@ -143,11 +162,39 @@ public partial class HogeControl  {
             NoWait();
         }
         /*
+            S_SUBRETURN1
+        */
+        void S_SUBRETURN1(bool bFirst)
+        {
+            ReturnState();
+            NoWait();
+        }
+        /*
+            S_SUBRETURN2
+            new state
+        */
+        void S_SUBRETURN2(bool bFirst)
+        {
+            //
+            if (!HasNextState())
+            {
+                Goto(S_SUBRETURN1);
+            }
+        }
+        /*
             S_SUBSTART
         */
         void S_SUBSTART(bool bFirst)
         {
             Goto(S_LOOPPROC);
+            NoWait();
+        }
+        /*
+            S_SUBSTART1
+        */
+        void S_SUBSTART1(bool bFirst)
+        {
+            Goto(S_LOOPPROC1);
             NoWait();
         }
 

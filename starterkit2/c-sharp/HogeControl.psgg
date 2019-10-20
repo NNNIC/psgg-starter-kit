@@ -12,10 +12,10 @@ check_excel_writable=no
 ------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
 
 sheet=state-chart
-nameid_list=,n001,n002,n01c,n003,n004,n005,n006,,n007,,n008,,n009,n00a,n00b,n00c,,n00d,n00e,,n00f,n010,,n011,n012,,n013,n014,,n01d,n01e,n01f,n020,n015,n016,n017,n018,,n019,n01a,n01b,,
-stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006
-max_name_id=32
-max_state_id=6
+nameid_list=,n001,n002,n01c,n003,n004,n005,n006,,n007,,n008,,n009,n00a,n00b,n00c,,n00d,n00e,,n00f,n010,,n011,n012,,n013,n014,,,n01e,n01f,n020,n015,n016,n017,n018,,n019,n01a,n01b,,,,
+stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006,s0008,s0007,s0009,s000a,,s000b
+max_name_id=33
+max_state_id=11
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -45,51 +45,75 @@ n019=!dir
 n01a=!pos
 n01b=!uuid
 n01c=state-typ
-n01d=loop-ver
-n01e=loop-init
-n01f=loop-cond
-n020=loop-next
+n01e=loop_init
+n01f=loop_cond
+n020=loop_next
 
 
 [id_state_dic]
 s0001=S_START
 s0002=S_END
-s0003=S_LOOPTEST
+s0003=S_LOOP
 s0004=S_SUBSTART
 s0005=S_SUBRETURN
 s0006=S_LOOPPROC
+s0007=S_GOSUB
+s0008=S_LOOPPROC1
+s0009=S_SUBRETURN1
+s000a=S_SUBSTART1
+s000b=S_SUBRETURN2
 
 
 [s0001]
 n002=S_START
 n01c=start
-n006=S_LOOPTEST
-n01a=104,81
+n006=S_GOSUB
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=42,53
 n01b=100001
 
 [s0002]
 n002=S_END
 n01c=end
-n01a=864,96
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=1115,465
 n01b=100002
 
 [s0003]
-n002=S_LOOPTEST
+n002=S_LOOP
 n01c=loop
 n003=
 n006=S_END
+n008=@@@
+int m_i;
+bool m_break;
+@@@
+
 n013=S_SUBSTART
-n01d=int m_i;
-n01e=m_i = 0;
-n01f=m_i < 10;
+n01e=@@@
+m_i = 0;
+m_break=false;
+@@@
+
+n01f=m_i < 10
 n020=m_i++;
 n019=@@@
 /
 (100,100)
-
+This is the root
 @@@
 
-n01a=83,325
+n01a=97,463
 n01b=100003
 
 [s0004]
@@ -100,10 +124,10 @@ n006=S_LOOPPROC
 n019=@@@
 /
 (100,100)
-
+This is the root
 @@@
 
-n01a=272,535
+n01a=136,749
 n01b=100004
 
 [s0005]
@@ -113,10 +137,10 @@ n003=
 n019=@@@
 /
 (100,100)
-
+This is the root
 @@@
 
-n01a=732,541
+n01a=655,754
 n01b=100005
 
 [s0006]
@@ -127,11 +151,90 @@ n006=S_SUBRETURN
 n019=@@@
 /
 (100,100)
-
+This is the root
 @@@
 
-n01a=504,540
+n01a=407,759
 n01b=100006
+
+[s0007]
+n002=S_GOSUB
+n01c=gosub
+n006=S_LOOP
+n013=S_SUBSTART1
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=135,189
+n01b=100007
+
+[s0008]
+n002=S_LOOPPROC1
+n006=
+n015=@@@
+brifc(S_SUBRETURN1);
+brelse(S_SUBRETURN2);
+@@@
+
+n016=@@@
+?
+?
+@@@
+
+n017=@@@
+b
+?
+@@@
+
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=606,186
+n01b=100008
+
+[s0009]
+n002=S_SUBRETURN1
+n01c=subreturn
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=1223,58
+n01b=100009
+
+[s000a]
+n002=S_SUBSTART1
+n01c=substart
+n006=S_LOOPPROC1
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=383,215
+n01b=100010
+
+[s000b]
+n002=S_SUBRETURN2
+n003=new state
+n006=S_SUBRETURN1
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=948,267
+n01b=100011
 
 
 
@@ -140,8 +243,8 @@ n01b=100006
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/10/13 10:52:03
-; * pssgEditor version : 0.60.31532.no hash because of debug
+; The setting was created automatically. 2019/10/16 20:45:42
+; * pssgEditor version : 0.61.12407.no hash because of debug
 psggfile=@@@
 HogeControl.psgg
 @@@
@@ -167,13 +270,13 @@ state_location_list=@@@
 
 @@@
 nodegroup_comment_list=@@@
-[{"Key":"\/","Value":""}]
+[{"Key":"\/","Value":"This is the root"}]
 @@@
 nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":104,"y":81}},{"Key":"S_END","Value":{"x":864,"y":96}},{"Key":"S_LOOPTEST","Value":{"x":83,"y":325}},{"Key":"S_LOOPPROC","Value":{"x":504,"y":540}},{"Key":"S_RETURN","Value":{"x":717,"y":529}},{"Key":"S_SUBSTART","Value":{"x":272,"y":535}},{"Key":"S_SUBRETURN","Value":{"x":732,"y":541}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":42,"y":53}},{"Key":"S_END","Value":{"x":1115,"y":465}},{"Key":"S_LOOPPROC","Value":{"x":407,"y":759}},{"Key":"S_SUBSTART","Value":{"x":136,"y":749}},{"Key":"S_SUBRETURN","Value":{"x":655,"y":754}},{"Key":"S_GOSUB","Value":{"x":135,"y":189}},{"Key":"S_LOOPPROC1","Value":{"x":606,"y":186}},{"Key":"S_SUBRETURN1","Value":{"x":1223,"y":58}},{"Key":"S_SUBSTART1","Value":{"x":383,"y":215}},{"Key":"S_LOOP","Value":{"x":97,"y":463}},{"Key":"S_SUBRETURN2","Value":{"x":948,"y":267}}]},{"Key":"\/hoge\/","Value":[{"Key":"S_SUBSTART","Value":{"x":182,"y":691}},{"Key":"S_SUBRETURN","Value":{"x":611,"y":698}},{"Key":"S_LOOPPROC","Value":{"x":407,"y":694}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -205,8 +308,8 @@ font_name=@@@
 MS UI Gothic
 @@@
 font_size=11
-comment_font_size=0
-contents_font_size=0
+comment_font_size=13
+contents_font_size=10
 state_width=140
 state_height=20
 comment_block_height=20
@@ -292,16 +395,16 @@ void [[state]](bool bFirst)
 eof>>>
 
 <<<?state-typ/^loop$/
-[[loop-ver]]
+[[members]]
 void [[state]](bool bFirst)
 {
-    [[loop-init]]
+    [[loop_init]]
     Goto([[state]]____loopcheck);
     NoWait();
 }
 void [[state]]____loopcheck(bool bFirst)
 {
-    if ([[loop-cond]]) Goto([[state]]____loopproc);
+    if ([[loop_cond]]) Goto([[state]]____loopproc);
     else               Goto([[nextstate]]);
     NoWait();
 }
@@ -312,7 +415,7 @@ void [[state]]____loopproc(bool bFirst)
 }
 void [[state]]____loopnext(bool bFirst)
 {
-    [[loop-next]]
+    [[loop_next]]
     Goto([[state]]____loopcheck);
     NoWait();
 }
@@ -418,27 +521,10 @@ C# 用のステートマシンを作成します。
 - macro埋め込み
 -サブルーチン機能
 
-# ドキュメント用フォルダ
-   ステート図ファイルとエディタ起動用ショートカットを格納
+# ファイル
 
-      C:\Users\gea01\Documents\psgg\psgg-starter-kit\starterkit2\c-sharp
-
-  以下のファイルを作成します。
-
-      HogeControl.pssg   --- エディタで次のエクセルファイルを開く。
-      HogeControl.xlsx   --- ステート図格納用Excelファイル。エディタが編集。
-
-# ソース用フォルダ
-　エディタが生成ソースファイル、ユーザ実装ソースファイル、及び管理クラスファイルを格納
-
-      C:\Users\gea01\Documents\psgg\psgg-starter-kit\starterkit2\c-sharp
-
-  以下のファイルが作成されます。
-
-      HogeControl.cs  --- Excelファイルからの変換コードを本ファイルに埋め込む。
-
-注意 : 既に同名のファイルがある場合は生成されません。
-　　　 削除してから生成してください。
+      HogeControl.pssg --- StateGoデータファイル。
+      HogeControl.cs   --- 変換コードを本ファイルに埋め込む。
 
 @@@
 
@@ -453,27 +539,11 @@ This dialog will create files for a state machine.
 - Embed macro in the target source.
 - Calling subroutine feature.
 
-# Document Folder
-　This folder will contain a state chart file and the shortcut of the editor.
+# File:
 
-      C:\Users\gea01\Documents\psgg\psgg-starter-kit\starterkit2\c-sharp
-
-  File:
-
-      HogeControl.pssg  --- The editor opens the below excel file.
-      HogeControl.xlsx  --- Excel File that has a state chart. The editor edits this file.
-
-# Source Folder
-   This folder will contain a source file generated by the editor, a user implemetation source file, and a manager source file.
-
-      C:\Users\gea01\Documents\psgg\psgg-starter-kit\starterkit2\c-sharp
-
-　File:
+      HogeControl.pssg  --- StateGo Data File.
       HogeControl.cs   -- The editor will insert converted source code to this file.
 
-
-NOTE : If the same name files exists, the file will not be created.
-       Please delete the same name files ahead of the creation.
 @@@
 ###VARIOUS-CONTENTS-END###
 
@@ -483,118 +553,12 @@ NOTE : If the same name files exists, the file will not be created.
 sheet=help
 
 ###VARIOUS-CONTENTS-BEGIN###
-; -----
-; 項目説明
-; -----
+[nextstate]
 
-[embed]
-jpn=@@@
-コード埋め込み用。
-ステート名がE_時に利用可能。
-ステート機能は利用できない。
-@@@
-en=@@@
-For embedding code.
-Enable this section if state name starts with "E_".
-Disabled state features.
-@@@
-
-[members]
-jpn=@@@
-メンバ変数及び関数等を指定する。
-@@@
-en=@@@
-Specify members, variables, classes,  etc.
-@@@
-
-[state]
-jpn=@@@
-ステート名を指定する。
-英文字、数字、アンダーバーで構成される。
-先頭は英文字およびアンダーバー。
-@@@
-en=@@@
-Specify a state name.
-The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
-@@@
-
-[basestate]
-jpn=@@@
-継承元を指定する。
-@@@
-en=@@@
-Specify inheritance source.
-@@@
-
-[thumbnail]
-jpn=@@@
-説明用のイメージを指定する。
-@@@
-en=@@@
-Specify a image for explanation of this state.
-@@@
-
-[vars]
-jpn=@@@
-変数宣言を指定する。
-@@@
-en=@@@
-Specify variable definitions.
-@@@
-
-[init]
-jpn=@@@
-初期化用処理を指定する。
-@@@
-en=@@@
-Specify a initial process.
-@@@
-
-[update]
-jpn=@@@
-更新処理を指定する。
-@@@
-en=@@@
-Specify a update process.
-@@@
-
-[wait]
-jpn=@@@
-待ち条件を指定する。
-true時にループを解除する。
-@@@
-en=@@@
-Specify a waiting condition.
-Release the loop if the condition is true.
-@@@
-
-[post_wait]
-jpn=@@@
-'wait'後の処理を指定する。
-@@@
-en=@@@
-Specify the post process after 'wait'.
-@@@
-
-[gosubstate]
-jpn=@@@
-サブルーチンを呼び出す。
-サブルーチンの開始ステート名を指定する。
-@@@
-en=@@@
-Call a subroutine.
-Specify the starting state name of the subroutine.
-@@@
-
-[return]
-jpn=@@@
-サブルーチン処理を終了するときに指定する。"return"等を記述。
-@@@
-en=@@@
-Use for returning from the subroutine. Write "return" etc.
-@@@
-
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
 [branch]
+
 jpn=@@@
 分岐処理を指定する。
 １行に一つの分岐命令を書く。
@@ -604,6 +568,7 @@ br_YES(?);
 br_NO(?);
 br_UNKNOWN(?);
 @@@
+
 en=@@@
 Specify branch functions.
 Each line has a branch function.
@@ -614,39 +579,139 @@ br_NO(?);
 br_UNKNOWN(?);
 @@@
 
-[nextstate]
+[update]
+
+jpn=更新処理を指定する。
+en=Specify a update process.
+[wait]
+
 jpn=@@@
-次に実行するステートを指定する。
-@@@
-en=@@@
-Specify the next state to be executed.
+待ち条件を指定する。
+true時にループを解除する。
 @@@
 
+en=@@@
+Specify a waiting condition.
+Release the loop if the condition is true.
+@@@
+
+[gosubstate]
+
+jpn=@@@
+サブルーチンを呼び出す。
+サブルーチンの開始ステート名を指定する。
+@@@
+
+en=@@@
+Call a subroutine.
+Specify the starting state name of the subroutine.
+@@@
+
+[return]
+
+jpn=サブルーチン処理を終了するときに指定する。"return"等を記述。
+en=@@@
+Use for returning from the subroutine. Write "return" etc.
+@@@
+
+[loop_next]
+
+en=loop  iterator advence.
+jpn=ループのイテレーターを更新
+[loop_cond]
+
+en=loop condition
+jpn=ループ条件
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[members]
+
+jpn=メンバ変数及び関数等を指定する。
+en=@@@
+Specify members, variables, classes,  etc.
+@@@
+
+[post_wait]
+
+jpn='wait'後の処理を指定する。
+en=Specify the post process after 'wait'.
+[vars]
+
+jpn=変数宣言を指定する。
+en=Specify variable definitions.
 [nowait]
+
 jpn=@@@
 次のステートへ同期待ちをせず実行する時に 'nowait'等を指定する。
 同期待ち時には何も指定しない。
 @@@
+
 en=@@@
 Specify 'nowait' and so on if the next state will be execute without a sync wait.
 Do not specify any word wheh the next state will be execute with a sync wait.
 @@@
 
-[!dir]
+[embed]
+
 jpn=@@@
-システムがステートのディレクトリ指定に使用。
+コード埋め込み用。
+ステート名がE_時に利用可能。
+ステート機能は利用できない。
 @@@
+
+en=@@@
+For embedding code.
+Enable this section if state name starts with "E_".
+Disabled state features.
+@@@
+
+[basestate]
+
+jpn=継承元を指定する。
+en=Specify inheritance source.
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[init]
+
+jpn=初期化用処理を指定する。
+en=Specify a initial process.
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
 en=@@@
 System uses this for the directory path of the state.
 @@@
 
-[!uuid]
-jpn=@@@
-システムがステートのuuid指定に使用。
-@@@
+[loop_init]
+
+en=loop initialization
+jpn=ループ用初期化
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
 en=@@@
-System uses this for the uuid of the state.
+Specify a image for explanation of this state.
 @@@
+
+[loop_break]
+
+en=Condition if break
 ###VARIOUS-CONTENTS-END###
 
 
@@ -662,15 +727,15 @@ branch-cmt=
 state-ref=
 wait=
 loop-next=
-wait-cmt=
 loop-cond=
 embed=
-post_wait-cmt=
+loop_cond=
 branch=
 !dir=
 basestate=
 return=
-nextstate=
+post_wait-cmt=
+state-cmt=
 nowait=@@@
 *select
 nowait
@@ -680,7 +745,8 @@ members=
 thumbnail=
 update-cmt=
 gosubstate=
-state-cmt=
+loop_break=
+loop_ver=
 state-typ=@@@
 *select
 start
@@ -693,17 +759,22 @@ loop
 
 !pos=
 !uuid=
-state=
 S_=
-brcond=
+nextstate=
+state=
+loop_var=
+wait-cmt=
 loop-init=
 update=
 init-cmt=
 loop-ver=
+loop_next=
 vars=
 C_=
+brcond=
 E_=
 init-ref=
+loop_init=
 post_wait=
 [stateloc]
 
@@ -712,16 +783,16 @@ S_=S0
 C_=S2
 [itemcond]
 
-thumbnail=read_only,share,S.+
+state-typ=read_only,exclusion,(S0)
 gosubstate=read_only,exclusion,S0
 branch=read_only,exclusion,S0
 state=read_only,share,S.+
 nextstate=read_only,exclusion,S0
 return=read_only,exclusion,S0
+basestate=read_only,share,S.+
 brcond=read_only,exclusion,S0
 embed=read_only,exclusion,S1
-basestate=read_only,share,S.+
-state-typ=read_only,exclusion,(S0)
+thumbnail=read_only,share,S.+
 ###VARIOUS-CONTENTS-END###
 
 
