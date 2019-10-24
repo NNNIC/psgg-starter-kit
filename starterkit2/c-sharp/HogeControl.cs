@@ -100,50 +100,23 @@ public partial class HogeControl  {
             S_LOOP
         */
         int m_i;
-        bool m_break;
         void S_LOOP(bool bFirst)
         {
-            m_i = 0;
-            m_break=false;
-            Goto(S_LOOP____loopcheck);
+            m_i=0;
+            Goto(LoopCheckAndGosub____S_LOOP____);
             NoWait();
         }
-        void S_LOOP____loopcheck(bool bFirst)
+        void LoopCheckAndGosub____S_LOOP____(bool bFirst)
         {
-            if (m_i < 10) Goto(S_LOOP____loopproc);
+            if (m_i < 10) GoSubState(S_SUBSTART,LoopNext____S_LOOP____);
             else               Goto(S_END);
             NoWait();
         }
-        void S_LOOP____loopproc(bool bFirst)
-        {
-            GoSubState(S_SUBSTART,S_LOOP____loopnext);
-            NoWait();
-        }
-        void S_LOOP____loopnext(bool bFirst)
+        void LoopNext____S_LOOP____(bool bFirst)
         {
             m_i++;
-            Goto(S_LOOP____loopcheck);
+            Goto(LoopCheckAndGosub____S_LOOP____);
             NoWait();
-        }
-        /*
-            S_LOOPPROC
-        */
-        void S_LOOPPROC(bool bFirst)
-        {
-            //
-            if (!HasNextState())
-            {
-                Goto(S_SUBRETURN);
-            }
-        }
-        /*
-            S_LOOPPROC1
-        */
-        void S_LOOPPROC1(bool bFirst)
-        {
-            // branch
-            if (b) { Goto( S_SUBRETURN1 ); }
-            else { Goto( S_SUBRETURN2 ); }
         }
         /*
             S_START
@@ -170,10 +143,25 @@ public partial class HogeControl  {
             NoWait();
         }
         /*
-            S_SUBRETURN2
-            new state
+            S_SUBSTART
         */
-        void S_SUBRETURN2(bool bFirst)
+        void S_SUBSTART(bool bFirst)
+        {
+            Goto(S_WORK2);
+            NoWait();
+        }
+        /*
+            S_SUBSTART1
+        */
+        void S_SUBSTART1(bool bFirst)
+        {
+            Goto(S_WORK);
+            NoWait();
+        }
+        /*
+            S_WORK
+        */
+        void S_WORK(bool bFirst)
         {
             //
             if (!HasNextState())
@@ -182,20 +170,15 @@ public partial class HogeControl  {
             }
         }
         /*
-            S_SUBSTART
+            S_WORK2
         */
-        void S_SUBSTART(bool bFirst)
+        void S_WORK2(bool bFirst)
         {
-            Goto(S_LOOPPROC);
-            NoWait();
-        }
-        /*
-            S_SUBSTART1
-        */
-        void S_SUBSTART1(bool bFirst)
-        {
-            Goto(S_LOOPPROC1);
-            NoWait();
+            //
+            if (!HasNextState())
+            {
+                Goto(S_SUBRETURN);
+            }
         }
 
 
