@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-public partial class HogeControl  {
+public partial class TestControl  {
    
     #region manager
     Action<bool> m_curfunc;
@@ -81,12 +81,21 @@ public partial class HogeControl  {
 	}
 
 	#region    // [PSGG OUTPUT START] indent(8) $/./$
-//  psggConverterLib.dll converted from HogeControl.xlsx.    psgg-file:HogeControl.psgg
+//  psggConverterLib.dll converted from TestControl.xlsx.    psgg-file:TestControl.psgg
         /*
             S_END
         */
         void S_END(bool bFirst)
         {
+        }
+        /*
+            S_EVEN_OR_ODD
+        */
+        void S_EVEN_OR_ODD(bool bFirst)
+        {
+            // branch
+            if (m_i % 2 == 0) { Goto( S_PRINT_EVEN ); }
+            else { Goto( S_PRINT_ODD ); }
         }
         /*
             S_GOSUB
@@ -103,20 +112,52 @@ public partial class HogeControl  {
         void S_LOOP(bool bFirst)
         {
             m_i=0;
-            Goto(LoopCheckAndGosub____S_LOOP____);
+            Goto(S_LOOP_LoopCheckAndGosub____);
             NoWait();
         }
-        void LoopCheckAndGosub____S_LOOP____(bool bFirst)
+        void S_LOOP_LoopCheckAndGosub____(bool bFirst)
         {
-            if (m_i < 10) GoSubState(S_SUBSTART,LoopNext____S_LOOP____);
+            if (m_i < 10) GoSubState(S_SUBSTART,S_LOOP_LoopNext____);
             else               Goto(S_END);
             NoWait();
         }
-        void LoopNext____S_LOOP____(bool bFirst)
+        void S_LOOP_LoopNext____(bool bFirst)
         {
             m_i++;
-            Goto(LoopCheckAndGosub____S_LOOP____);
+            Goto(S_LOOP_LoopCheckAndGosub____);
             NoWait();
+        }
+        /*
+            S_PRINT_EVEN
+        */
+        void S_PRINT_EVEN(bool bFirst)
+        {
+            //
+            if (bFirst)
+            {
+                Console.WriteLine(m_i.ToString() + ".. EVEN");
+            }
+            //
+            if (!HasNextState())
+            {
+                Goto(S_SUBRETURN);
+            }
+        }
+        /*
+            S_PRINT_ODD
+        */
+        void S_PRINT_ODD(bool bFirst)
+        {
+            //
+            if (bFirst)
+            {
+                Console.WriteLine(m_i.ToString() + ".. ODD");
+            }
+            //
+            if (!HasNextState())
+            {
+                Goto(S_SUBRETURN);
+            }
         }
         /*
             S_START
@@ -147,7 +188,7 @@ public partial class HogeControl  {
         */
         void S_SUBSTART(bool bFirst)
         {
-            Goto(S_WORK2);
+            Goto(S_EVEN_OR_ODD);
             NoWait();
         }
         /*
@@ -164,20 +205,14 @@ public partial class HogeControl  {
         void S_WORK(bool bFirst)
         {
             //
-            if (!HasNextState())
+            if (bFirst)
             {
-                Goto(S_SUBRETURN1);
+                Console.WriteLine("!!!");
             }
-        }
-        /*
-            S_WORK2
-        */
-        void S_WORK2(bool bFirst)
-        {
             //
             if (!HasNextState())
             {
-                Goto(S_SUBRETURN);
+                Goto(S_SUBRETURN1);
             }
         }
 

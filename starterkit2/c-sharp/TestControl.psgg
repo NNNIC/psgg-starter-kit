@@ -1,7 +1,7 @@
 ﻿;PSGG Editor Backup File
 version=1.1
-file=HogeControl.xlsx
-guid=7326e273-7303-4f70-99fb-0d95225df80a
+file=TestControl.xlsx
+guid=592b8f3b-4af7-4514-a177-e4de3f56b960
 ;set read_from  excel or psgg
 read_from=psgg
 ;set savemode with_excel or psgg_only
@@ -13,9 +13,9 @@ check_excel_writable=no
 
 sheet=state-chart
 nameid_list=,n001,n002,n01c,n003,n004,n005,n006,,n007,,n008,,n009,n00a,n00b,n00c,,n00d,n00e,,n00f,n010,,n011,n012,,n013,n014,,,n022,n01e,n01f,n020,,n015,n016,n017,n018,,n019,n01a,n01b,,,,,,
-stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006,s0008,s0007,s0009,s000a,,
+stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006,s0008,s0007,s0009,s000a,s000d,,,s000c
 max_name_id=34
-max_state_id=11
+max_state_id=13
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -57,11 +57,13 @@ s0002=S_END
 s0003=S_LOOP
 s0004=S_SUBSTART
 s0005=S_SUBRETURN
-s0006=S_WORK2
+s0006=S_PRINT_EVEN
 s0007=S_GOSUB
 s0008=S_WORK
 s0009=S_SUBRETURN1
 s000a=S_SUBSTART1
+s000c=S_EVEN_OR_ODD
+s000d=S_PRINT_ODD
 
 
 [s0001]
@@ -74,7 +76,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=108,49
+n01a=48,50
 n01b=100001
 
 [s0002]
@@ -86,7 +88,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=1147,60
+n01a=765,23
 n01b=100002
 
 [s0003]
@@ -105,21 +107,21 @@ n019=@@@
 This is the root
 @@@
 
-n01a=383,76
+n01a=382,46
 n01b=100003
 
 [s0004]
 n002=S_SUBSTART
 n01c=substart
 n003=
-n006=S_WORK2
+n006=S_EVEN_OR_ODD
 n019=@@@
 /
 (100,100)
 This is the root
 @@@
 
-n01a=449,299
+n01a=426,260
 n01b=100004
 
 [s0005]
@@ -132,21 +134,26 @@ n019=@@@
 This is the root
 @@@
 
-n01a=880,294
+n01a=1190,321
 n01b=100005
 
 [s0006]
 n001=(bitmap)
-n002=S_WORK2
+n002=S_PRINT_EVEN
 n003=
 n006=S_SUBRETURN
+n00a=@@@
+Console.WriteLine(m_i.ToString() + ".. EVEN");
+
+@@@
+
 n019=@@@
 /
 (100,100)
 This is the root
 @@@
 
-n01a=663,301
+n01a=870,159
 n01b=100006
 
 [s0007]
@@ -160,35 +167,36 @@ n019=@@@
 This is the root
 @@@
 
-n01a=36,512
+n01a=273,480
 n01b=100007
 
 [s0008]
 n001=(bitmap)
 n002=S_WORK
 n006=S_SUBRETURN1
+n00a=Console.WriteLine("!!!");
 n015=
 n016=
 n017=
 n019=@@@
-/hoge/
-(306,808)
-
+/
+(100,100)
+This is the root
 @@@
 
-n01a=524,255
+n01a=789,656
 n01b=100011
 
 [s0009]
 n002=S_SUBRETURN1
 n01c=subreturn
 n019=@@@
-/hoge/
-(306,808)
-
+/
+(100,100)
+This is the root
 @@@
 
-n01a=733,256
+n01a=1119,700
 n01b=100009
 
 [s000a]
@@ -196,13 +204,56 @@ n002=S_SUBSTART1
 n01c=substart
 n006=S_WORK
 n019=@@@
-/hoge/
-(306,808)
+/
+(100,100)
+This is the root
+@@@
+
+n01a=532,660
+n01b=100010
+
+[s000c]
+n002=S_EVEN_OR_ODD
+n015=@@@
+brifc(S_PRINT_EVEN);
+brelse(S_PRINT_ODD);
+@@@
+
+n016=@@@
+EVEN
+ODD
+@@@
+
+n017=@@@
+m_i % 2 == 0
+?
+@@@
+
+n019=@@@
+/
+(100,100)
 
 @@@
 
-n01a=319,240
-n01b=100010
+n01a=640,261
+n01b=100012
+
+[s000d]
+n002=S_PRINT_ODD
+n006=S_SUBRETURN
+n00a=@@@
+Console.WriteLine(m_i.ToString() + ".. ODD");
+
+@@@
+
+n019=@@@
+/
+(100,100)
+This is the root
+@@@
+
+n01a=887,329
+n01b=100013
 
 
 
@@ -211,16 +262,16 @@ n01b=100010
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/10/24 22:04:15
-; * pssgEditor version : 0.61.23909.no hash because of debug
+; The setting was created automatically. 2019/10/29 21:14:39
+; * pssgEditor version : 0.61.23648.no hash because of debug
 psggfile=@@@
-HogeControl.psgg
+TestControl.psgg
 @@@
 xlsfile=@@@
-HogeControl.xlsx
+TestControl.xlsx
 @@@
 guid=@@@
-7326e273-7303-4f70-99fb-0d95225df80a
+592b8f3b-4af7-4514-a177-e4de3f56b960
 @@@
 bitmap_width=5000
 bitmap_height=2000
@@ -229,7 +280,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Moved a state
+Edited the branch of the state.
 @@@
 target_pathdir=@@@
 /
@@ -241,10 +292,10 @@ nodegroup_comment_list=@@@
 [{"Key":"\/","Value":"This is the root"}]
 @@@
 nodegroup_pos_list=@@@
-[{"Key":"\/","Value":{"x":100,"y":100}},{"Key":"\/hoge\/","Value":{"x":306,"y":808}}]
+[{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":108,"y":49}},{"Key":"S_END","Value":{"x":1147,"y":60}},{"Key":"S_LOOPPROC","Value":{"x":501,"y":684}},{"Key":"S_SUBSTART","Value":{"x":449,"y":299}},{"Key":"S_SUBRETURN","Value":{"x":880,"y":294}},{"Key":"S_GOSUB","Value":{"x":36,"y":512}},{"Key":"S_LOOPPROC1","Value":{"x":627,"y":364}},{"Key":"S_SUBRETURN1","Value":{"x":733,"y":256}},{"Key":"S_SUBSTART1","Value":{"x":319,"y":240}},{"Key":"S_LOOP","Value":{"x":383,"y":76}},{"Key":"S_SUBRETURN2","Value":{"x":916,"y":399}},{"Key":"S_SUBSTART2","Value":{"x":524,"y":306}},{"Key":"S_WORK","Value":{"x":524,"y":255}},{"Key":"S_WORK2","Value":{"x":663,"y":301}},{"Key":"____altnative_state____hoge","Value":{"x":306,"y":808}}]},{"Key":"\/hoge\/","Value":[{"Key":"S_SUBSTART","Value":{"x":182,"y":691}},{"Key":"S_SUBRETURN","Value":{"x":611,"y":698}},{"Key":"S_LOOPPROC","Value":{"x":407,"y":694}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":48,"y":50}},{"Key":"S_END","Value":{"x":765,"y":23}},{"Key":"S_SUBSTART","Value":{"x":426,"y":260}},{"Key":"S_SUBRETURN","Value":{"x":1190,"y":321}},{"Key":"S_GOSUB","Value":{"x":273,"y":480}},{"Key":"S_SUBRETURN1","Value":{"x":1119,"y":700}},{"Key":"S_SUBSTART1","Value":{"x":532,"y":660}},{"Key":"S_LOOP","Value":{"x":382,"y":46}},{"Key":"S_WORK","Value":{"x":789,"y":656}},{"Key":"S_EVEN_OR_ODD","Value":{"x":640,"y":261}},{"Key":"S_PRINT_EVEN","Value":{"x":870,"y":159}},{"Key":"S_PRINT_ODD","Value":{"x":887,"y":329}}]},{"Key":"\/hoge\/","Value":[{"Key":"S_SUBSTART","Value":{"x":182,"y":691}},{"Key":"S_SUBRETURN","Value":{"x":611,"y":698}},{"Key":"S_GOSUB","Value":{"x":50,"y":100}},{"Key":"S_SUBRETURN1","Value":{"x":733,"y":256}},{"Key":"S_SUBSTART1","Value":{"x":319,"y":240}},{"Key":"S_WORK","Value":{"x":524,"y":255}}]},{"Key":"\/hoge1\/","Value":[{"Key":"S_LOOP","Value":{"x":58.5714264,"y":304.285736}},{"Key":"S_SUBSTART","Value":{"x":306,"y":338}},{"Key":"S_SUBRETURN","Value":{"x":742.8571,"y":337.7143}}]},{"Key":"\/hoge2\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":926,"y":87}},{"Key":"S_LOOP","Value":{"x":383,"y":76}},{"Key":"S_SUBSTART","Value":{"x":744,"y":432}},{"Key":"S_GOSUB","Value":{"x":367,"y":446}},{"Key":"S_SUBSTART1","Value":{"x":698,"y":679}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -254,7 +305,7 @@ external_command=@@@
 
 @@@
 source_editor=@@@
-"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /Edit %1
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /Edit %1
 @@@
 source_editor_vs2015_support=1
 label_show=0
@@ -367,19 +418,19 @@ eof>>>
 void [[state]](bool bFirst)
 {
     [[loop_init]]
-    Goto(LoopCheckAndGosub____[[state]]____);
+    Goto([[state]]_LoopCheckAndGosub____);
     NoWait();
 }
-void LoopCheckAndGosub____[[state]]____(bool bFirst)
+void [[state]]_LoopCheckAndGosub____(bool bFirst)
 {
-    if ([[loop_cond]]) GoSubState([[gosubstate]],LoopNext____[[state]]____);
+    if ([[loop_cond]]) GoSubState([[gosubstate]],[[state]]_LoopNext____);
     else               Goto([[nextstate]]);
     NoWait();
 }
-void LoopNext____[[state]]____(bool bFirst)
+void [[state]]_LoopNext____(bool bFirst)
 {
     [[loop_next]]
-    Goto(LoopCheckAndGosub____[[state]]____);
+    Goto([[state]]_LoopCheckAndGosub____);
     NoWait();
 }
 eof>>>
@@ -436,13 +487,19 @@ sheet=setting.ini
 ###VARIOUS-CONTENTS-BEGIN###
 [setting]
 
-starterkit=https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+@@@
 
 
-psgg=HogeControl.psgg
-xls=HogeControl.xlsx
+
+
+
+
+psgg=TestControl.psgg
+xls=TestControl.xlsx
 sub_src=
-gen_src=HogeControl.cs
+gen_src=TestControl.cs
 
 manager_src=
 manager_dir=
@@ -451,61 +508,88 @@ template_src=
 template_func=template-statefunc.txt
 
 help=help.ini
-helpweb=starterkit\c-sharp\helpweb.html
+helpweb=starterkit2\c-sharp\helpweb.html
 
 src_enc=utf-8
 
+
+
+
+
 [setupinfo]
 
-starterkit=https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+@@@
+
+
+
+
 
 
 lang=c#
 framework=Unity
 
-statemachine=HogeControl
+statemachine=TestControl
 prefix=__PREFIX__
-xlsdir=C:\Users\gea01\Documents\psgg\psgg-starter-kit\starterkit2\c-sharp
-gendir=C:\Users\gea01\Documents\psgg\psgg-starter-kit\starterkit2\c-sharp
+xlsdir=@@@
+C:\Users\gea01\Documents\psgg\samples\psgg-csharp-sample\sample\sample
+@@@
+
+
+
+gendir=@@@
+C:\Users\gea01\Documents\psgg\samples\psgg-csharp-sample\sample\sample
+@@@
+
+
+
 genrdir=.
 incrdir=.
 
 code_output_start=[PSGG OUTPUT START]
 code_output_end=[PSGG OUTPUT END]
 
+
+
+
 [jpn]
-title=C# スタートキット  2018/12/12a
+
+title=C# スタートキット  2010/10/31
 
 detail=@@@
-
 C# 用のステートマシンを作成します。
 
 # 新機能
-- macro埋め込み
--サブルーチン機能
+
+- ループ機能
+- サブルーチン機能
+- サンプル付き
 
 # ファイル
 
-      HogeControl.pssg --- StateGoデータファイル。
-      HogeControl.cs   --- 変換コードを本ファイルに埋め込む。
+      TestControl.pssg --- StateGoデータファイル。
+      TestControl.cs   --- 変換コードを本ファイルに埋め込む。
 
 @@@
 
-
 [en]
+
 title=C# STARTER KIT 2018/12/12a
 
 detail=@@@
-This dialog will create files for a state machine.
+To create c# Stata machine.
 
 # New Feature
-- Embed macro in the target source.
-- Calling subroutine feature.
+
+- Subroutine.
+- Loop
+- With sample.
 
 # File:
 
-      HogeControl.pssg  --- StateGo Data File.
-      HogeControl.cs   -- The editor will insert converted source code to this file.
+      TestControl.pssg  --- StateGo Data File.
+      TestControl.cs   -- The editor will insert converted source code to this file.
 
 @@@
 ###VARIOUS-CONTENTS-END###
