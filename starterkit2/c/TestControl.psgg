@@ -1,7 +1,7 @@
 ﻿;PSGG Editor Backup File
 version=1.1
 file=TestControl.xlsx
-guid=592b8f3b-4af7-4514-a177-e4de3f56b960
+guid=cd4c1ae8-4eeb-4b54-887b-8e73b9e4fe91
 ;set read_from  excel or psgg
 read_from=psgg
 ;set savemode with_excel or psgg_only
@@ -12,248 +12,212 @@ check_excel_writable=no
 ------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
 
 sheet=state-chart
-nameid_list=,n001,n002,n01c,n003,n004,n005,n006,,n007,,n008,,n009,n00a,n00b,n00c,,n00d,n00e,,n00f,n010,,n011,n012,,n013,n014,,,n022,n01e,n01f,n020,,n015,n016,n017,n018,,n019,n01a,n01b,,,,,,
-stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006,s0008,s0007,s0009,s000a,s000d,,,s000c
-max_name_id=34
-max_state_id=13
+nameid_list=,n001,n002,n003,n004,n019,n005,,n01e,n006,,n007,,n008,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n012,n013,n014,n015,,n01a,,n01b,n01c,n01d,n016,n017,n018,,,,,
+stateid_list=,,,,s0001,s0002,s0004,s0003,s0006,s0007,s0005,s0009,s0008,s000a,s000c,s000b
+max_name_id=30
+max_state_id=12
 [id_name_dic]
 n001=thumbnail
 n002=state
 n003=state-cmt
 n004=state-ref
-n005=basestate
-n006=nextstate
-n007=embed
-n008=members
-n009=vars
-n00a=init
-n00b=init-cmt
-n00c=init-ref
-n00d=update
-n00e=update-cmt
-n00f=wait
-n010=wait-cmt
-n011=post_wait
-n012=post_wait-cmt
-n013=gosubstate
-n014=return
-n015=branch
-n016=branch-cmt
-n017=brcond
-n018=nowait
-n019=!dir
-n01a=!pos
-n01b=!uuid
-n01c=state-typ
-n01e=loop_init
-n01f=loop_cond
-n020=loop_next
-n022=loop
+n005=nextstate
+n006=embed
+n007=members
+n008=vars
+n009=init
+n00a=init-cmt
+n00b=init-ref
+n00c=update
+n00d=update-cmt
+n00e=wait
+n00f=wait-cmt
+n010=post_wait
+n011=post_wait-cmt
+n012=branch
+n013=branch-cmt
+n014=brcond
+n015=nowait
+n016=!dir
+n017=!pos
+n018=!uuid
+n019=state-typ
+n01a=gosubstate
+n01b=loop_init
+n01c=loop_cond
+n01d=loop_next
+n01e=basestate
 
 
 [id_state_dic]
 s0001=S_START
 s0002=S_END
-s0003=S_LOOP
-s0004=S_SUBSTART
-s0005=S_SUBRETURN
-s0006=S_PRINT_EVEN
-s0007=S_GOSUB
-s0008=S_WORK
-s0009=S_SUBRETURN1
-s000a=S_SUBSTART1
-s000c=S_EVEN_OR_ODD
-s000d=S_PRINT_ODD
+s0003=S_0001
+s0004=S_GOSUB1
+s0005=S_SUBSTART1
+s0006=S_0002
+s0007=S_RETURN1
+s0008=S_LOOP1
+s0009=S_SUBSTART2
+s000a=S_RETURN2
+s000b=S_0003
+s000c=E_0001
 
 
 [s0001]
 n002=S_START
-n01c=start
-n006=S_GOSUB
-n019=@@@
-/
-(100,100)
-This is the root
-@@@
-
-n01a=166,50
-n01b=100001
+n019=start
+n005=S_0001
+n017=50,100
+n018=100001
 
 [s0002]
 n002=S_END
-n01c=end
-n019=@@@
-/
-(100,100)
-This is the root
-@@@
-
-n01a=952,37
-n01b=100002
+n019=end
+n017=700,87
+n018=100002
 
 [s0003]
-n002=S_LOOP
-n01c=loop
-n003=
-n006=S_END
-n008=int m_i;
-n013=S_SUBSTART
-n01e=m_i=0;
-n01f=m_i < 10
-n020=m_i++;
-n019=@@@
+n002=S_0001
+n005=S_GOSUB1
+n009=printf("StateGo is running\n");
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=582,213
-n01b=100003
+n017=51,237
+n018=100003
 
 [s0004]
-n002=S_SUBSTART
-n01c=substart
-n003=
-n006=S_EVEN_OR_ODD
-n019=@@@
+n002=S_GOSUB1
+n003=Go A Souroutine
+n019=gosub
+n005=S_LOOP1
+n01a=S_SUBSTART1
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=784,313
-n01b=100004
+n017=49,437
+n018=100004
 
 [s0005]
-n002=S_SUBRETURN
-n01c=subreturn
-n003=
-n019=@@@
+n002=S_SUBSTART1
+n003=A Subroutine Start
+n019=substart
+n005=S_0002
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=1463,315
-n01b=100005
+n017=302,594
+n018=100005
 
 [s0006]
-n001=(bitmap)
-n002=S_PRINT_EVEN
+n002=S_0002
 n003=
-n006=S_SUBRETURN
-n00a=@@@
-Console.WriteLine(m_i.ToString() + ".. EVEN");
-
-@@@
-
-n019=@@@
+n005=S_RETURN1
+n009=printf("A Subroutine is running\n");
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=1222,191
-n01b=100006
+n017=518,603
+n018=100006
 
 [s0007]
-n002=S_GOSUB
-n01c=gosub
-n006=S_LOOP
-n013=S_SUBSTART1
-n019=@@@
+n002=S_RETURN1
+n003=A Subroutine Return
+n019=subreturn
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=237,358
-n01b=100007
+n017=727,592
+n018=100007
 
 [s0008]
-n001=(bitmap)
-n002=S_WORK
-n006=S_SUBRETURN1
-n00a=Console.WriteLine("!!!");
-n015=
-n016=
-n017=
-n019=@@@
+n002=S_LOOP1
+n003=Loop 0 to 9
+n019=loop
+n005=S_END
+n007=
+n01a=S_SUBSTART2
+n01b=m_I = 0;
+n01c=m_I < 10
+n01d=m_I ++;
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=687,620
-n01b=100011
+n017=374,306
+n018=100008
 
 [s0009]
-n002=S_SUBRETURN1
-n01c=subreturn
-n019=@@@
+n002=S_SUBSTART2
+n003=Loop Subroutine Start
+n019=substart
+n005=S_0003
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=895,618
-n01b=100009
+n017=630,370
+n018=100009
 
 [s000a]
-n002=S_SUBSTART1
-n01c=substart
-n006=S_WORK
-n019=@@@
+n002=S_RETURN2
+n003=Loop Subroutine Return
+n019=subreturn
+n016=@@@
 /
 (100,100)
-This is the root
+
 @@@
 
-n01a=488,630
-n01b=100010
+n017=1037,375
+n018=100010
+
+[s000b]
+n002=S_0003
+n003=
+n005=S_RETURN2
+n009=printf("Loop Cointer : %d\n", m_I );
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=836,377
+n018=100011
 
 [s000c]
-n002=S_EVEN_OR_ODD
-n015=@@@
-brifc(S_PRINT_EVEN);
-brelse(S_PRINT_ODD);
-@@@
-
+n002=E_0001
+n003=new embed code
+n006=static int m_I;
 n016=@@@
-EVEN
-ODD
-@@@
-
-n017=@@@
-m_i % 2 == 0
-?
-@@@
-
-n019=@@@
 /
 (100,100)
 
 @@@
 
-n01a=988,298
-n01b=100012
-
-[s000d]
-n002=S_PRINT_ODD
-n006=S_SUBRETURN
-n00a=@@@
-Console.WriteLine(m_i.ToString() + ".. ODD");
-
-@@@
-
-n019=@@@
-/
-(100,100)
-This is the root
-@@@
-
-n01a=1213,414
-n01b=100013
+n017=375,208
+n018=100012
 
 
 
@@ -262,7 +226,7 @@ n01b=100013
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/02 21:59:56
+; The setting was created automatically. 2019/11/02 23:11:27
 ; * pssgEditor version : 0.61.40194.406000c7f0969b5f3ebbf772ac13e8f77f150a2b
 psggfile=@@@
 TestControl.psgg
@@ -271,7 +235,7 @@ xlsfile=@@@
 TestControl.xlsx
 @@@
 guid=@@@
-592b8f3b-4af7-4514-a177-e4de3f56b960
+cd4c1ae8-4eeb-4b54-887b-8e73b9e4fe91
 @@@
 bitmap_width=5000
 bitmap_height=2000
@@ -280,7 +244,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Moved a state
+Edited a state.
 @@@
 target_pathdir=@@@
 /
@@ -289,13 +253,13 @@ state_location_list=@@@
 
 @@@
 nodegroup_comment_list=@@@
-[{"Key":"\/","Value":"This is the root"}]
+[{"Key":"\/","Value":""}]
 @@@
 nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":166,"y":50}},{"Key":"S_END","Value":{"x":952,"y":37}},{"Key":"S_SUBSTART","Value":{"x":784,"y":313}},{"Key":"S_SUBRETURN","Value":{"x":1463,"y":315}},{"Key":"S_GOSUB","Value":{"x":237,"y":358}},{"Key":"S_SUBRETURN1","Value":{"x":895,"y":618}},{"Key":"S_SUBSTART1","Value":{"x":488,"y":630}},{"Key":"S_LOOP","Value":{"x":582,"y":213}},{"Key":"S_WORK","Value":{"x":687,"y":620}},{"Key":"S_EVEN_OR_ODD","Value":{"x":988,"y":298}},{"Key":"S_PRINT_EVEN","Value":{"x":1222,"y":191}},{"Key":"S_PRINT_ODD","Value":{"x":1213,"y":414}}]},{"Key":"\/hoge\/","Value":[{"Key":"S_SUBSTART","Value":{"x":182,"y":691}},{"Key":"S_SUBRETURN","Value":{"x":611,"y":698}},{"Key":"S_GOSUB","Value":{"x":50,"y":100}},{"Key":"S_SUBRETURN1","Value":{"x":733,"y":256}},{"Key":"S_SUBSTART1","Value":{"x":319,"y":240}},{"Key":"S_WORK","Value":{"x":524,"y":255}}]},{"Key":"\/hoge1\/","Value":[{"Key":"S_LOOP","Value":{"x":58.5714264,"y":304.285736}},{"Key":"S_SUBSTART","Value":{"x":306,"y":338}},{"Key":"S_SUBRETURN","Value":{"x":742.8571,"y":337.7143}}]},{"Key":"\/hoge2\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":926,"y":87}},{"Key":"S_LOOP","Value":{"x":383,"y":76}},{"Key":"S_SUBSTART","Value":{"x":744,"y":432}},{"Key":"S_GOSUB","Value":{"x":367,"y":446}},{"Key":"S_SUBSTART1","Value":{"x":698,"y":679}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":700,"y":87}},{"Key":"S_0001","Value":{"x":51,"y":237}},{"Key":"S_GOSUB1","Value":{"x":49,"y":437}},{"Key":"S_SUBSTART1","Value":{"x":302,"y":594}},{"Key":"S_0002","Value":{"x":518,"y":603}},{"Key":"S_RETURN1","Value":{"x":727,"y":592}},{"Key":"S_LOOP1","Value":{"x":374,"y":306}},{"Key":"S_SUBSTART2","Value":{"x":630,"y":370}},{"Key":"S_RETURN2","Value":{"x":1037,"y":375}},{"Key":"S_0003","Value":{"x":836,"y":377}},{"Key":"E_0001","Value":{"x":375,"y":208}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -305,7 +269,7 @@ external_command=@@@
 
 @@@
 source_editor=@@@
-"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /Edit %1
+"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\Code.exe" -g %1:%2
 @@@
 source_editor_vs2015_support=1
 label_show=0
@@ -327,8 +291,8 @@ font_name=@@@
 MS UI Gothic
 @@@
 font_size=11
-comment_font_size=13
-contents_font_size=10
+comment_font_size=0
+contents_font_size=0
 state_width=140
 state_height=20
 comment_block_height=20
@@ -343,7 +307,7 @@ userbutton_command=@@@
 @@@
 userbutton_callafterconvert=0
 itemeditform_size_list=@@@
-[{"Key":"state-typ","Value":{"height":398,"width":330}}]
+
 @@@
 
 ###VARIOUS-CONTENTS-END###
@@ -397,14 +361,6 @@ void [[state]](bool bFirst)
 }
 eof>>>
 
-<<<?state-typ/^substart$/
-void [[state]](bool bFirst)
-{
-    Goto([[nextstate]]);
-    NoWait();
-}
-eof>>>
-
 <<<?state-typ/^subreturn$/
 void [[state]](bool bFirst)
 {
@@ -436,12 +392,12 @@ void [[state]]_LoopNext____(bool bFirst)
 eof>>>
 
 [[members]]
+
 void [[state]](bool bFirst)
 {
     [[vars]]
 
     <<<?init
-    //
     if (bFirst)
     {
         [[init]]
@@ -456,13 +412,9 @@ void [[state]](bool bFirst)
 
     [[post_wait]]
 
-    <<<?branch
-    // branch
     [[branch]]
-    >>>
 
     <<<?nextstate
-    //
     if (!HasNextState())
     {
         Goto([[nextstate]]);
@@ -470,7 +422,6 @@ void [[state]](bool bFirst)
     >>>
 
     <<<?nowait
-    //
     if (HasNextState())
     {
         NoWait();
@@ -487,19 +438,10 @@ sheet=setting.ini
 ###VARIOUS-CONTENTS-BEGIN###
 [setting]
 
-starterkit=@@@
-https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
-@@@
-
-
-
-
-
-
 psgg=TestControl.psgg
 xls=TestControl.xlsx
 sub_src=
-gen_src=TestControl.cs
+gen_src=TestControl.c
 
 manager_src=
 manager_dir=
@@ -508,88 +450,89 @@ template_src=
 template_func=template-statefunc.txt
 
 help=help.ini
-helpweb=starterkit2\c-sharp\helpweb.html
-
-src_enc=utf-8
-
-
-
-
+helpweb=starterkit\c\helpweb.html
 
 [setupinfo]
 
-starterkit=@@@
-https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
-@@@
+starterkit=https://github.com/NNNIC/psgg-starter-kit.git b8deda1cf808e4b9b62e5697e1958776f605d049
 
 
-
-
-
-
-lang=c#
-framework=Unity
+lang=c
+framework=
 
 statemachine=TestControl
+
 prefix=__PREFIX__
-xlsdir=@@@
-C:\Users\gea01\Documents\psgg\samples\psgg-csharp-sample\sample\sample
-@@@
-
-
-
-gendir=@@@
-C:\Users\gea01\Documents\psgg\samples\psgg-csharp-sample\sample\sample
-@@@
-
-
-
+xlsdir=C:\Users\gea01\Documents\psgg\samples\psgg-c-sample\reference
+gendir=C:\Users\gea01\Documents\psgg\samples\psgg-c-sample\reference
 genrdir=.
 incrdir=.
 
-code_output_start=[PSGG OUTPUT START]
-code_output_end=[PSGG OUTPUT END]
+code_output_start=[STATEGO OUTPUT START]
+code_output_end=[STATEGO OUTPUT END]
 
+[macro]
+; This section has macro defines for converting.
 
+; commentline format  {%0} will be replaced to a comment.
+commentline=// {%0}
+
+@branch=@@@
+<<<?"{%0}"/^brifc{0,1}$/
+if ([[brcond:{%N}]]) { SetNextState( {%1} ); }
+>>>
+<<<?"{%0}"/^brelseifc{0,1}$/
+else if ([[brcond:{%N}]]) { SetNextState( {%1} ); }
+>>>
+<<<?"{%0}"/^brelse$/
+else { SetNextState( {%1} ); }
+>>>
+<<<?"{%0}"/^br_/
+{%0}({%1});
+>>>
+@@@
+
+#static=@@@
+static void [[state]](bool bFirst);
+<<<?state-typ/^loop$/
+static void [[state]]_LoopCheckAndGosub____(bool bFirst);
+static void [[state]]_LoopCheckAndGosub____(bool bFirst);
+static void [[state]]_LoopNext____(bool bFirst);
+>>>
+@@@
 
 
 [jpn]
-
-title=C# スタートキット  2010/10/31
+title=C スタートキット 2019/11/2
 
 detail=@@@
-C# 用のステートマシンを作成します。
 
-# 新機能
+C 用のステートマシンを作成します。
 
-- ループ機能
-- サブルーチン機能
-- サンプル付き
+※サンプルプロジェクトを次のＵＲＬより入手可能。
+https://github.com/NNNIC/psgg-c-sample
 
-# ファイル
 
-      TestControl.pssg --- StateGoデータファイル。
-      TestControl.cs   --- 変換コードを本ファイルに埋め込む。
+#  以下のファイルを作成します。
 
+      TestControl.pssg   --- StateGoデータファイル
+      TestControl.c      --- 実行ソース。変換コードが挿入される。
 @@@
 
 [en]
-
-title=C# STARTER KIT 2018/12/12a
+title=C STARTER KIT 2019/11/2
 
 detail=@@@
-To create c# Stata machine.
 
-# New Feature
+This is for creating a state machine using C language.
 
-- Subroutine.
-- Loop
-- With sample.
+* You may get the sample project from the below url.
+https://github.com/NNNIC/psgg-c-sample
 
 # File:
 
-      TestControl.pssg  --- StateGo Data File.
-      TestControl.cs   -- The editor will insert converted source code to this file.
+      TestControl.pssg  --- StateGo Data File
+      TestControl.c      -- StateGo will convert data to this file.
 
 @@@
 ###VARIOUS-CONTENTS-END###
@@ -644,31 +587,11 @@ Release the loop if the condition is true.
 
 [gosubstate]
 
-jpn=@@@
-サブルーチンを呼び出す。
-サブルーチンの開始ステート名を指定する。
-@@@
-
-en=@@@
-Call a subroutine.
-Specify the starting state name of the subroutine.
-@@@
-
-[return]
-
-jpn=サブルーチン処理を終了するときに指定する。"return"等を記述。
-en=@@@
-Use for returning from the subroutine. Write "return" etc.
-@@@
-
+en=Call Subroutine
+jpn=サブルーチン呼出し
 [loop_next]
 
-en=loop  iterator advence.
-jpn=ループのイテレーターを更新
-[loop_cond]
-
-en=loop condition
-jpn=ループ条件
+en=ループ用インクリメント
 [state]
 
 jpn=@@@
@@ -713,20 +636,20 @@ Do not specify any word wheh the next state will be execute with a sync wait.
 
 jpn=@@@
 コード埋め込み用。
-ステート名がE_時に利用可能。
+ステート名がI_時に利用可能。
 ステート機能は利用できない。
 @@@
 
 en=@@@
 For embedding code.
-Enable this section if state name starts with "E_".
+Enable this section if state name starts with "I_".
 Disabled state features.
 @@@
 
 [basestate]
 
-jpn=継承元を指定する。
-en=Specify inheritance source.
+en=Set base state
+jpn=ベースステートのセット
 [!uuid]
 
 jpn=システムがステートのuuid指定に使用。
@@ -734,6 +657,9 @@ en=@@@
 System uses this for the uuid of the state.
 @@@
 
+[state-typ]
+
+en=ステートタイプを指定
 [init]
 
 jpn=初期化用処理を指定する。
@@ -747,8 +673,7 @@ System uses this for the directory path of the state.
 
 [loop_init]
 
-en=loop initialization
-jpn=ループ用初期化
+en=ループ初期化
 [thumbnail]
 
 jpn=説明用のイメージを指定する。
@@ -756,9 +681,12 @@ en=@@@
 Specify a image for explanation of this state.
 @@@
 
-[loop_break]
+[loop_cond]
 
-en=Condition if break
+en=@@@
+ループ条件
+true時にループする。
+@@@
 ###VARIOUS-CONTENTS-END###
 
 
@@ -773,16 +701,13 @@ init=
 branch-cmt=
 state-ref=
 wait=
-loop-next=
-loop-cond=
+wait-cmt=
 embed=
+gosubstate=
 loop_cond=
 branch=
 !dir=
-basestate=
-return=
 post_wait-cmt=
-state-cmt=
 nowait=@@@
 *select
 nowait
@@ -791,39 +716,24 @@ nowait
 members=
 thumbnail=
 update-cmt=
-gosubstate=
-loop_break=
-loop_ver=
-state-typ=@@@
-*select
-start
-end
-gosub
-substart
-subreturn
-loop
-@@@
-
+post_wait=
+state-cmt=
+state-typ=
 !pos=
 !uuid=
-S_=
 nextstate=
 state=
-loop_var=
-wait-cmt=
-loop-init=
+S_=
+brcond=
 update=
 init-cmt=
-loop-ver=
+basestate=
 loop_next=
 vars=
-loop=
 C_=
-brcond=
 E_=
 init-ref=
 loop_init=
-post_wait=
 [stateloc]
 
 E_=S1
@@ -831,16 +741,16 @@ S_=S0
 C_=S2
 [itemcond]
 
-thumbnail=read_only,share,S.+
-gosubstate=read_only,exclusion,S0
+state-typ=read_only,exclusion,(S0)
+gosubstate=read_only,exclusion,(S0)
 branch=read_only,exclusion,S0
 state=read_only,share,S.+
 nextstate=read_only,exclusion,S0
 return=read_only,exclusion,S0
 brcond=read_only,exclusion,S0
 embed=read_only,exclusion,S1
-basestate=read_only,share,S.+
-state-typ=read_only,exclusion,(S0)
+basestate=read_only,exclusion,(S0)
+thumbnail=read_only,share,S.+
 ###VARIOUS-CONTENTS-END###
 
 
