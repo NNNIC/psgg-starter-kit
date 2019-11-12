@@ -109,7 +109,7 @@ TestControl.prototype.S_LOOP1 = function(first) {
 };
 TestControl.prototype.S_LOOP1_LoopCheckAndGosub____ = function(first) {
     if (this.count < 10) this.gosubstate(this.S_SUBSTART2,this.S_LOOP1_LoopNext____);
-    else               this.goto(this.S_0001);
+    else               this.goto(this.S_END);
     this.setnowait();
 };
 TestControl.prototype.S_LOOP1_LoopNext____ = function(first) {
@@ -126,7 +126,7 @@ TestControl.prototype.S_RETURN1 = function(first) {
 };
 /*
     S_RETURN2
-    New Subroutine Return
+    A Subroutine Return
 */
 TestControl.prototype.S_RETURN2 = function(first) {
     this.returnstate();
@@ -148,7 +148,7 @@ TestControl.prototype.S_SUBSTART1 = function(first) {
 };
 /*
     S_SUBSTART2
-    New Subroutine Start
+    A Subroutine Start
 */
 TestControl.prototype.S_SUBSTART2 = function(first) {
     this.goto(this.S_0009);
