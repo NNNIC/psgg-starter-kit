@@ -1,0 +1,740 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=TestControl.xlsx
+guid=d90ae5a9-ad00-4e6c-8eaf-e11ae54de063
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n003,n018,n004,n005,n019,,n006,,n007,n008,n009,n00a,,n00b,n00c,,n00d,n00e,,n00f,n010,n01a,n01b,n01c,n01d,n01e,,n011,n012,n013,n014,n01f,,n015,n016,n017,
+stateid_list=,,,,s0001,s0002,,,,,,,s000a,,s000c,s000b,s000d,s000e,s000f,s0010,s0011
+max_name_id=31
+max_state_id=17
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=nextstate
+n006=embed
+n007=vars
+n008=init
+n009=init-cmt
+n00a=init-ref
+n00b=update
+n00c=update-cmt
+n00d=wait
+n00e=wait-cmt
+n00f=post_wait
+n010=post_wait-cmt
+n011=branch
+n012=branch-cmt
+n013=brcond
+n014=nowait
+n015=!dir
+n016=!pos
+n017=!uuid
+n018=state-typ
+n019=basestate
+n01a=return
+n01b=loop
+n01c=loop_init
+n01d=loop_cond
+n01e=loop_next
+n01f=gosubstate
+
+
+[id_state_dic]
+s0001=S_START
+s0002=S_END
+s000a=S_GOSUB1
+s000b=S_SUBSTART1
+s000c=S_RETURN1
+s000d=S_0007
+s000e=S_SUBSTART2
+s000f=S_LOOP1
+s0010=S_RETURN2
+s0011=S_0009
+
+
+[s0001]
+n002=S_START
+n018=start
+n005=S_GOSUB1
+n016=50,100
+n017=100001
+
+[s0002]
+n002=S_END
+n018=end
+n016=1227,92
+n017=100002
+
+[s000a]
+n002=S_GOSUB1
+n003=New Go Souroutine
+n018=gosub
+n005=S_LOOP1
+n01f=S_SUBSTART1
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=329,52
+n017=100011
+
+[s000b]
+n002=S_SUBSTART1
+n003=
+n018=substart
+n005=S_0007
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=571,67
+n017=100012
+
+[s000c]
+n002=S_RETURN1
+n003=
+n018=subreturn
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=979,71
+n017=100013
+
+[s000d]
+n002=S_0007
+n005=S_RETURN1
+n008=alert("Running in A Subroutine.");
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=771,73
+n017=100014
+
+[s000e]
+n002=S_SUBSTART2
+n003=New Subroutine Start
+n018=substart
+n005=S_0009
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=598,308
+n017=100016
+
+[s000f]
+n002=S_LOOP1
+n018=loop
+n005=S_0001
+n01c=this.count = 0;
+n01d=this.count < 10
+n01e=this.count ++;
+n01f=S_SUBSTART2
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=342,244
+n017=100015
+
+[s0010]
+n002=S_RETURN2
+n003=New Subroutine Return
+n018=subreturn
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=997,317
+n017=100017
+
+[s0011]
+n002=S_0009
+n005=S_RETURN2
+n008=alert("Count = ." + this.count );
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=786,322
+n017=100018
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2019/11/11 22:13:12
+; * pssgEditor version : 0.61.51784.5a3cca9b56a8f8de2503c27d945dd783d8203177
+psggfile=@@@
+TestControl.psgg
+@@@
+xlsfile=@@@
+TestControl.xlsx
+@@@
+guid=@@@
+d90ae5a9-ad00-4e6c-8eaf-e11ae54de063
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+Moved a state
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":""}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":1227,"y":92}},{"Key":"S_0002","Value":{"x":50,"y":439}},{"Key":"S_0003","Value":{"x":48,"y":571}},{"Key":"S_0004","Value":{"x":298,"y":488}},{"Key":"S_0005","Value":{"x":532,"y":530}},{"Key":"S_0006","Value":{"x":759,"y":505}},{"Key":"S_0001","Value":{"x":56,"y":252}},{"Key":"S_0008","Value":{"x":1147,"y":476}},{"Key":"S_GOSUB1","Value":{"x":329,"y":52}},{"Key":"S_SUBSTART1","Value":{"x":571,"y":67}},{"Key":"S_RETURN1","Value":{"x":979,"y":71}},{"Key":"S_0007","Value":{"x":771,"y":73}},{"Key":"S_0009","Value":{"x":786,"y":322}},{"Key":"S_LOOP1","Value":{"x":342,"y":244}},{"Key":"S_SUBSTART2","Value":{"x":598,"y":308}},{"Key":"S_RETURN2","Value":{"x":997,"y":317}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor=@@@
+"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\Code.exe" -g %1:%2
+@@@
+source_editor_vs2015_support=0
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=0
+option_omit_basestate_string=0
+option_hide_basestate_contents=1
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+comment_block_height=45
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+<<<?state-typ/^start$/
+TestControl.prototype.[[state]] = function(first) {
+    this.goto(this.[[nextstate]]);
+    this.setnowait();
+};
+eof>>>
+
+<<<?state-typ/^end$/
+TestControl.prototype.[[state]] = function(first) {
+};
+eof>>>
+
+<<<?state-typ/^gosub$/
+TestControl.prototype.[[state]] = function(first) {
+    this.gosubstate(this.[[gosubstate]],this.[[nextstate]]);
+    this.setnowait();
+};
+eof>>>
+
+<<<?state-typ/^substart$/
+TestControl.prototype.[[state]] = function(first) {
+    this.goto(this.[[nextstate]]);
+    this.setnowait();
+};
+eof>>>
+
+<<<?state-typ/^subreturn$/
+TestControl.prototype.[[state]] = function(first) {
+    this.returnstate();
+    this.setnowait();
+};
+eof>>>
+
+<<<?state-typ/^loop$/
+TestControl.prototype.[[state]] = function(first) {
+    [[loop_init]]
+    this.goto(this.[[state]]_LoopCheckAndGosub____);
+    this.setnowait();
+};
+TestControl.prototype.[[state]]_LoopCheckAndGosub____ = function(first) {
+    if ([[loop_cond]]) this.gosubstate(this.[[gosubstate]],this.[[state]]_LoopNext____);
+    else               this.goto(this.[[nextstate]]);
+    this.setnowait();
+};
+TestControl.prototype.[[state]]_LoopNext____ = function(first) {
+    [[loop_next]]
+    this.goto(this.[[state]]_LoopCheckAndGosub____);
+    this.setnowait();
+};
+eof>>>
+
+TestControl.prototype.[[state]] = function(first) {
+
+    [[vars]]
+
+    <<<?init
+    if (first)
+    {
+        [[init]]
+    }
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if ([[wait]]) { return; }
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate
+    if (!this.hasnext()) {
+        this.goto(this.[[nextstate]]);
+    }
+    >>>
+
+    <<<?nowait
+    if (this.hasnext()) {
+        this.setnowait();
+    }
+    >>>
+};
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=TestControl.psgg
+xls=TestControl.xlsx
+sub_src=
+gen_src=TestControl.js
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=help.ini
+helpweb=helpweb.html
+
+[setupinfo]
+
+starterkit=https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+
+
+lang=javascript
+framework=html5
+
+statemachie=TestControl
+
+prefix=__PREFIX__
+xlsdir=C:\Users\gea01\Documents\psgg\samples\psgg-javascript-sample\playground\public\js
+gendir=C:\Users\gea01\Documents\psgg\samples\psgg-javascript-sample\playground\public\js
+genrdir=.
+incrdir=.
+
+code_output_start=[STATEGO OUTPUT START]
+code_output_end=[STATEGO OUTPUT END]
+
+[macro]
+; This section has macro defines for converting.
+
+; commentline format  {%0} will be replaced to a comment.
+commentline=// {%0}
+
+@branch=@@@
+<<<?"{%0}"/^brifc{0,1}$/
+if ([[brcond:{%N}]]) { this.goto( this.{%1} ); }
+>>>
+<<<?"{%0}"/^brelseifc{0,1}$/
+else if ([[brcond:{%N}]]) { this.goto( this.{%1} ); }
+>>>
+<<<?"{%0}"/^brelse$/
+else { this.goto( this.{%1} ); }
+>>>
+<<<?"{%0}"/^br_/
+this.{%0}( this.{%1} );
+>>>
+@@@
+
+[jpn]
+title=Javascript スタートキット 2019/4/17
+
+detail=@@@
+
+※サンプルプロジェクトを次のＵＲＬより入手可能。
+https://github.com/NNNIC/psgg-javascript-sample
+
+Javascript用のステートマシンを作成します。
+
+# ドキュメント用フォルダ
+   ステート図ファイルとエディタ起動用ショートカットを格納
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-javascript-sample\playground\doc
+
+  以下のファイルを作成します。
+
+      TestControl.pssg     --- エディタで次のエクセルファイルを開く。
+      TestControl.xlsx     ---  ステート図格納用Excelファイル。エディタが編集。
+
+# ソース用フォルダ
+　エディタが生成ソースファイル、ユーザ実装ソースファイル、及び管理クラスファイルを格納
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-javascript-sample\playground\public\js
+
+　以下のファイルを作成します。
+
+      TestControl.js       --- Excelファイルからの変換ソースコードを挿入。
+
+注意 : 既に同名のファイルがある場合は生成されません。
+　　　 削除してから生成してください。
+
+
+@@@
+
+[en]
+title=Javascript STARTER KIT 2019/4/17
+
+detail=@@@
+This dialog will create files for a state machine.
+
+* You may get the sample project from the below url.
+https://github.com/NNNIC/psgg-javascript-sample
+
+# Document Folder
+      This folder will contain a state chart file and the shortcut of the editor.
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-javascript-sample\playground\doc
+
+  File:
+
+      TestControl.pssg  --- The editor opens the below excel file.
+      TestControl.xlsx  --- Excel File. the editor edits this file
+
+# Source Folder
+       This folder will contain a source file generated by the editor, a user implemetation source file, and a manager source file.
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-javascript-sample\playground\public\js
+
+　File:
+
+      TestControl.js       -- The editor will convert from the excel file into this file.
+
+NOTE : If the same name files exists, the file will not be created.
+       Please delete the same name files ahead of the creation.
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[nextstate]
+
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
+[branch]
+
+jpn=@@@
+分岐処理を指定する。
+１行に一つの分岐命令を書く。
+GUIにより上書きされるため引数は適当に指定する。
+例）
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+en=@@@
+Specify branch functions.
+Each line has a branch function.
+Specify a tentavie parameter for each branch function because GUI overwrites the parameter.
+i.e)
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+[update]
+
+jpn=更新処理を指定する。
+en=Specify a update process.
+[wait]
+
+jpn=@@@
+待ち条件を指定する。
+true時にループを解除する。
+@@@
+
+en=@@@
+Specify a waiting condition.
+Release the loop if the condition is true.
+@@@
+
+[gosubstate]
+
+en=Specify a state of starting subroutine.
+jpn=サブルーチンの開始ステートを指定
+[return]
+
+en=@@@
+Use for returning from the subroutine. Write "return" etc.
+@@@
+
+jpn=サブルーチン処理を終了するときに指定する。"return"等を記述。
+[loop_next]
+
+en=loop  iterator advence.
+jpn=ループのイテレーターを更新
+[init]
+
+jpn=初期化用処理を指定する。
+en=Specify a initial process.
+[post_wait]
+
+jpn='wait'後の処理を指定する。
+en=Specify the post process after 'wait'.
+[vars]
+
+en=Specify variable definitions.
+jpn=変数宣言を指定する。
+[nowait]
+
+jpn=@@@
+次のステートへ同期待ちをせず実行する時に 'nowait'等を指定する。
+同期待ち時には何も指定しない。
+@@@
+
+en=@@@
+Specify 'nowait' and so on if the next state will be execute without a sync wait.
+Do not specify any word wheh the next state will be execute with a sync wait.
+@@@
+
+[embed]
+
+en=@@@
+For embedding code.
+Enable this section if state name starts with "E_".
+Disabled state features.
+@@@
+
+jpn=@@@
+コード埋め込み用。
+ステート名がE_時に利用可能。
+ステート機能は利用できない。
+@@@
+
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
+en=@@@
+System uses this for the directory path of the state.
+@@@
+
+[loop_init]
+
+en=loop initialization
+jpn=ループ用初期化
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+[loop_cond]
+
+en=loop condition
+jpn=ループ条件
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+init=
+branch-cmt=
+state-ref=
+wait=
+wait-cmt=
+embed=
+gosubstate=
+loop_cond=
+branch=
+!dir=
+return=
+post_wait-cmt=
+nowait=@@@
+*select
+nowait
+@@@
+
+loop_init=
+thumbnail=
+update-cmt=
+post_wait=
+state-cmt=
+state-typ=
+!pos=
+!uuid=
+nextstate=
+state=
+S_=
+brcond=
+update=
+init-cmt=
+basestate=
+loop_next=
+vars=
+loop=
+C_=
+E_=
+init-ref=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+state-typ=read_only,exclusion,(S0)
+gosubstate=read_only,exclusion,(S0)
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,(S0)
+basestate=read_only,exclusion,(S0)
+brcond=read_only,exclusion,S0
+embed=read_only,exclusion,S1
+thumbnail=read_only,share,S.+
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+
