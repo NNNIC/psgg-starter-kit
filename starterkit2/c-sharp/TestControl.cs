@@ -221,29 +221,6 @@ public partial class TestControl  {
 
 	// write your code below
 
-	bool m_bYesNo;
-	
-	void br_YES(Action<bool> st)
-	{
-		if (!HasNextState())
-		{
-			if (m_bYesNo)
-			{
-				Goto(st);
-			}
-		}
-	}
-
-	void br_NO(Action<bool> st)
-	{
-		if (!HasNextState())
-		{
-			if (!m_bYesNo)
-			{
-				Goto(st);
-			}
-		}
-	}
 }
 
 /*  :::: PSGG MACRO ::::
