@@ -1,0 +1,598 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=MainControl.xlsx
+guid=5665595d-4754-43ae-a5a8-cbb402c74a93
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n007,n008,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,
+stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006,s0007,s0008,s0009,s000a,s000b,s000c
+max_name_id=19
+max_state_id=12
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=basestate
+n006=nextstate
+n007=command
+n008=command-cmt
+n009=branch
+n00a=branch-cmt
+n00b=brcond
+n00c=!dir
+n00d=!pos
+n00e=!uuid
+n00f=state-typ
+n010=gosubstate
+n011=loop_init
+n012=loop_cond
+n013=loop_next
+
+
+[id_state_dic]
+s0001=S_START
+s0002=S_END
+s0003=S_GOSUB1
+s0004=S_SUBSTART1
+s0005=S_RETURN1
+s0006=S_0001
+s0007=S_SUBSTART2
+s0008=S_LOOP1
+s0009=S_RETURN2
+s000a=S_0002
+s000b=S_ODD_OR_EVEN
+s000c=S_0003
+
+
+[s0001]
+n002=S_START
+n003=START
+n00f=start
+n006=S_GOSUB1
+n00d=50,100
+n00e=100001
+
+[s0002]
+n002=S_END
+n003=END
+n00f=end
+n007=@@@
+echo : end
+pause
+exit
+@@@
+
+n00d=897,107
+n00e=100002
+
+[s0003]
+n001=(bitmap)
+n002=S_GOSUB1
+n003=Call A Souroutine
+n00f=gosub
+n006=S_LOOP1
+n010=S_SUBSTART1
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=40,341
+n00e=100003
+
+[s0004]
+n002=S_SUBSTART1
+n003=A Subroutine Start
+n00f=substart
+n006=S_0001
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=107,744
+n00e=100004
+
+[s0005]
+n002=S_RETURN1
+n003=A Subroutine Return
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=482,750
+n00e=100005
+
+[s0006]
+n002=S_0001
+n006=S_RETURN1
+n007=echo : we are in A subroutine
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=300,751
+n00e=100006
+
+[s0007]
+n002=S_SUBSTART2
+n003=LOOP Subroutine
+n00f=substart
+n006=S_ODD_OR_EVEN
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=513,406
+n00e=100008
+
+[s0008]
+n002=S_LOOP1
+n003=Loop 10 times
+n00f=loop
+n006=S_END
+n010=S_SUBSTART2
+n011=set LOOP=0
+n012=%LOOP% LSS 10
+n013=set /a LOOP=%LOOP%+1
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=281,319
+n00e=100007
+
+[s0009]
+n001=(bitmap)
+n002=S_RETURN2
+n003=LOOP Subroutine Return
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=1321,392
+n00e=100009
+
+[s000a]
+n002=S_0002
+n006=S_RETURN2
+n007=echo : EVEN NUMBER = %LOOP%
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=989,343
+n00e=100010
+
+[s000b]
+n002=S_ODD_OR_EVEN
+n007=set /a b=%LOOP% %% 2
+n009=@@@
+brifc(S_0002);
+brelse(S_0003);
+@@@
+
+n00a=@@@
+EVEN
+?
+@@@
+
+n00b=@@@
+%b%==0
+?
+@@@
+
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=760,374
+n00e=100011
+
+[s000c]
+n002=S_0003
+n006=S_RETURN2
+n007=echo : ODD NUMBER = %LOOP%
+n00c=@@@
+/
+(0,0)
+
+@@@
+
+n00d=988,464
+n00e=100012
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2019/11/17 10:55:58
+; * pssgEditor version : 0.61.61022.21962ef9b003e5fd3d068011d67d4df98c6b41e0
+psggfile=@@@
+MainControl.psgg
+@@@
+xlsfile=@@@
+MainControl.xlsx
+@@@
+guid=@@@
+5665595d-4754-43ae-a5a8-cbb402c74a93
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+Edited a state.
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":""}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":0,"y":0}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":897,"y":107}},{"Key":"S_GOSUB1","Value":{"x":40,"y":341}},{"Key":"S_SUBSTART1","Value":{"x":107,"y":744}},{"Key":"S_RETURN1","Value":{"x":482,"y":750}},{"Key":"S_0001","Value":{"x":300,"y":751}},{"Key":"S_0002","Value":{"x":989,"y":343}},{"Key":"S_LOOP1","Value":{"x":281,"y":319}},{"Key":"S_SUBSTART2","Value":{"x":513,"y":406}},{"Key":"S_RETURN2","Value":{"x":1321,"y":392}},{"Key":"S_0003","Value":{"x":988,"y":464}},{"Key":"S_ODD_OR_EVEN","Value":{"x":760,"y":374}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor=@@@
+
+@@@
+source_editor_vs2015_support=0
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=1
+option_omit_basestate_string=0
+option_hide_basestate_contents=1
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+comment_block_height=20
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+
+::
+:[[state]]
+::
+:: [[state-cmt]]
+::
+
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+<<<?state-typ/^start$/
+    goto :[[nextstate]]
+eof>>>
+
+<<<?state-typ/^end$/
+    [[command]]
+eof>>>
+
+<<<?state-typ/^gosub$/
+    set CALLSTACK_%STACKNUM%=[[nextstate]]
+    set /a STACKNUM=%STACKNUM%+1
+    goto :[[gosubstate]]
+eof>>>
+
+<<<?state-typ/^subreturn$/
+    set /a STACKNUM=%STACKNUM%-1
+    set CALLSTACK_%STACKNUM% >~tmp.txt
+    set _tmp=
+    for /f "tokens=1,2 delims==" %%i in (~tmp.txt) do set _tmp=%%j
+    set CALLSTACK_%STACKNUM%=
+    del ~tmp.txt 2>nul
+    goto :%_tmp%
+eof>>>
+
+<<<?state-typ/^loop$/
+    [[loop_init]]
+    goto :[[state]]_LoopCheckAndGosub____
+
+:[[state]]_LoopCheckAndGosub____
+    if [[loop_cond]] (
+        set CALLSTACK_%STACKNUM%=[[state]]_LoopNext____
+        set /a STACKNUM=%STACKNUM%+1
+        goto :[[gosubstate]]
+    ) ELSE (
+        goto :[[nextstate]]
+    )
+
+:[[state]]_LoopNext____
+    [[loop_next]]
+    goto :[[state]]_LoopCheckAndGosub____
+eof>>>
+
+    [[command]]
+
+    [[branch]]
+
+    <<<?nextstate
+    goto :[[nextstate]]
+    >>>
+
+    goto :[[state]]
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=MainControl.psgg
+xls=MainControl.xlsx
+
+sub_src=
+gen_src=MainControl.bat
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=
+helpweb=starterkit\win-bat\helpweb.html
+
+src_enc=sjis
+
+[setupinfo]
+
+starterkit=https://github.com/NNNIC/psgg-starter-kit.git 8e411ee9d8a7b0d44485bf03546b59220da6cd14
+
+
+lang=bat
+framework=window
+
+statemachine=MainControl
+
+prefix=__PREFIX__
+xlsdir=C:\Temp\1117
+gendir=C:\Temp\1117
+genrdir=.
+incrdir=.
+
+code_output_start=[PSGG OUTPUT START]
+code_output_end=[PSGG OUTPUT END]
+
+[jpn]
+title=Windows バッチ スタートキット 2019/11/17
+
+detail=@@@
+
+Windows バッチ用のステートマシンを作成します。
+
+※サンプルプロジェクトを次のＵＲＬより入手可能。
+https://github.com/NNNIC/psgg-win-batch
+
+# 以下のファイルを作成します。
+
+      MainControl.pssg     --- StateGo データ ファイル
+      MainControl.bat      --- 変換ソースコード
+
+@@@
+
+[en]
+title=Windows Batch STARTER KIT 2019/11/17
+
+detail=@@@
+This dialog will create files for a state machine.
+
+* You may get the sample project from the below url.
+https://github.com/NNNIC/psgg-win-batch
+
+# File:
+
+      MainControl.pssg  --- StateGo Data File.
+      MainControl.bat   --- Converted Souece File.
+
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[thumbnail]
+
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+jpn=説明用のイメージを指定
+[state-ref]
+
+en=Reference link
+jpn=参照リンク
+[state-cmt]
+
+en=Comment
+jpn=コメント
+[state]
+
+en=Specify a state name.
+jpn=ステート名を指定
+[loop_init]
+
+en=Loop initialization
+jpn=ループ初期化
+[loop_next]
+
+en=Loop incriment
+jpn=ループインクリメント
+[state-typ]
+
+en=State type
+jpn=ステートタイプ
+[basestate]
+
+en=Base state.
+jpn=ベースステート
+[gosubstate]
+
+en=Call subroutine
+jpn=サブルーチン呼出し
+[loop_cond]
+
+en=Loop Condition
+jpn=ループ条件
+[command]
+
+en=Command
+jpn=命令
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+nextstate=
+!pos=
+command=
+state=
+gosubstate=
+C_=
+E_=
+command-cmt=
+branch=
+branch-cmt=
+state-ref=
+brcond=
+nowait=@@@
+*select
+nowait
+@@@
+
+basestate=
+!uuid=
+state-typ=
+S_=
+!dir=
+loop_next=
+loop_init=
+thumbnail=
+loop_cond=
+state-cmt=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+state-typ=read_only,exclusion,(S0)
+gosubstate=read_only,exclusion,(S0)
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,S0
+basestate=read_only,share,S.+
+brcond=read_only,exclusion,S0
+embed=read_only,exclusion,S1
+thumbnail=read_only,share,S.+
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+

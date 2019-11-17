@@ -226,8 +226,8 @@ n018=100012
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/02 23:11:27
-; * pssgEditor version : 0.61.40194.406000c7f0969b5f3ebbf772ac13e8f77f150a2b
+; The setting was created automatically. 2019/11/17 9:16:49
+; * pssgEditor version : 0.61.61022.21962ef9b003e5fd3d068011d67d4df98c6b41e0
 psggfile=@@@
 TestControl.psgg
 @@@
@@ -244,7 +244,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Edited a state.
+Initilized
 @@@
 target_pathdir=@@@
 /
@@ -271,7 +271,7 @@ external_command=@@@
 source_editor=@@@
 "%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\Code.exe" -g %1:%2
 @@@
-source_editor_vs2015_support=1
+source_editor_vs2015_support=0
 label_show=0
 label_text=@@@
 test
@@ -591,7 +591,8 @@ en=Call Subroutine
 jpn=サブルーチン呼出し
 [loop_next]
 
-en=ループ用インクリメント
+en=Loop increment.
+jpn=ループ用インクリメント
 [state]
 
 jpn=@@@
@@ -673,7 +674,8 @@ System uses this for the directory path of the state.
 
 [loop_init]
 
-en=ループ初期化
+en=Loop Initialization
+jpn=ループ初期化
 [thumbnail]
 
 jpn=説明用のイメージを指定する。
@@ -683,7 +685,8 @@ Specify a image for explanation of this state.
 
 [loop_cond]
 
-en=@@@
+en=Loop if the condition is true
+jpn=@@@
 ループ条件
 true時にループする。
 @@@
