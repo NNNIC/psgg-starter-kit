@@ -1,0 +1,737 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=TestContro.xlsx
+guid=83a53e2b-a067-40a7-a618-fd2ec18d3300
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n003,n004,n00f,n005,,n006,,,n007,n008,,n011,n012,n013,,n010,,n009,n00a,n00b,,n00c,n00d,n00e,,,,
+stateid_list=,,,,s0001,s0002,,,s0005,s0007,s0006,s0008,s0009,s000a,s000b,,s000e,s000d,s000f,s0010,s0011,s0012,s0013,s0014
+max_name_id=19
+max_state_id=21
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=nextstate
+n006=embed
+n007=work
+n008=work-cmt
+n009=branch
+n00a=branch-cmt
+n00b=brcond
+n00c=!dir
+n00d=!pos
+n00e=!uuid
+n00f=state-typ
+n010=gosubstate
+n011=loop_init
+n012=loop_cond
+n013=loop_next
+
+
+[id_state_dic]
+s0001=S_START
+s0002=S_END
+s0005=S_0003
+s0006=S_GOSUB1
+s0007=S_A_SUBSTART
+s0008=S_RETURN1
+s0009=S_0004
+s000a=S_0005
+s000b=S_0006
+s000d=E_0004
+s000e=S_LOOP_SUBSTART
+s000f=S_LOOP_SUBRETURN
+s0010=S_0007
+s0011=S_GOSUB3
+s0012=S_B_SUBSTART
+s0013=S_0009
+s0014=S_RETURN3
+
+
+[s0001]
+n002=S_START
+n003=START
+n00f=start
+n005=S_0005
+n00c=@@@
+/
+(0,0)
+This is the root
+@@@
+
+n00d=19,48
+n00e=100001
+
+[s0002]
+n002=S_END
+n003=END
+n00f=end
+n00c=@@@
+/
+(0,0)
+This is the root
+@@@
+
+n00d=969,50
+n00e=100002
+
+[s0005]
+n002=S_0003
+n003=
+n00f=loop
+n005=S_GOSUB1
+n007=ActivePresentation.Close
+n011=i = 0
+n012=i < 10
+n013=i = i + 1
+n010=S_LOOP_SUBSTART
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=61,636
+n00e=100005
+
+[s0006]
+n002=S_GOSUB1
+n003=Go A Souroutine
+n00f=gosub
+n005=S_0006
+n010=S_A_SUBSTART
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=308,336
+n00e=100006
+
+[s0007]
+n002=S_A_SUBSTART
+n003=
+n00f=substart
+n005=S_0004
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=307,538
+n00e=100007
+
+[s0008]
+n002=S_RETURN1
+n003=
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=934,517
+n00e=100008
+
+[s0009]
+n001=(bitmap)
+n002=S_0004
+n003=
+n005=S_GOSUB3
+n007=Debug.Print "I'm in A Subroutine"
+n00c=@@@
+/
+(0,0)
+
+@@@
+
+n00d=518,677
+n00e=100009
+
+[s000a]
+n002=S_0005
+n003=
+n005=S_0003
+n007=Debug.Print "Start"
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=255,54
+n00e=100010
+
+[s000b]
+n002=S_0006
+n003=
+n005=S_END
+n007=Debug.Print "End"
+n00c=@@@
+/
+(0,0)
+
+@@@
+
+n00d=772,57
+n00e=100011
+
+[s000d]
+n002=E_0004
+n003=Loop Variable
+n006=Dim i As Integer
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=68,526
+n00e=100013
+
+[s000e]
+n002=S_LOOP_SUBSTART
+n003=
+n00f=substart
+n005=S_0007
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=87,838
+n00e=100014
+
+[s000f]
+n002=S_LOOP_SUBRETURN
+n003=
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=511,842
+n00e=100015
+
+[s0010]
+n002=S_0007
+n003=
+n005=S_LOOP_SUBRETURN
+n007=Debug.Print "i = "; i
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=285,838
+n00e=100016
+
+[s0011]
+n002=S_GOSUB3
+n003=Go B Souroutine
+n00f=gosub
+n005=S_RETURN1
+n010=S_B_SUBSTART
+n00c=@@@
+/
+(0,0)
+
+@@@
+
+n00d=710,681
+n00e=100017
+
+[s0012]
+n002=S_B_SUBSTART
+n003=
+n00f=substart
+n005=S_0009
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=959,909
+n00e=100020
+
+[s0013]
+n002=S_0009
+n003=
+n005=S_RETURN3
+n007=Debug.Print "I'm in B Subroutine"
+n00c=@@@
+/
+(0,0)
+
+@@@
+
+n00d=1178,909
+n00e=100019
+
+[s0014]
+n002=S_RETURN3
+n003=
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=1402,906
+n00e=100021
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2019/11/22 9:03:57
+; * pssgEditor version : 0.62.1210.d0f176d8440d617881dcf6a9d45b558b5742dafb
+psggfile=@@@
+TestContro.psgg
+@@@
+xlsfile=@@@
+TestContro.xlsx
+@@@
+guid=@@@
+83a53e2b-a067-40a7-a618-fd2ec18d3300
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+Moved a state
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"This is the root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":0,"y":0}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":19,"y":48}},{"Key":"S_END","Value":{"x":969,"y":50}},{"Key":"S_0003","Value":{"x":61,"y":636}},{"Key":"S_GOSUB1","Value":{"x":308,"y":336}},{"Key":"S_SUBSTART1","Value":{"x":307,"y":538}},{"Key":"S_RETURN1","Value":{"x":934,"y":517}},{"Key":"S_0004","Value":{"x":518,"y":677}},{"Key":"S_0005","Value":{"x":255,"y":54}},{"Key":"S_0006","Value":{"x":772,"y":57}},{"Key":"E_0004","Value":{"x":68,"y":526}},{"Key":"S_SUBSTART2","Value":{"x":87,"y":838}},{"Key":"S_RETURN2","Value":{"x":511,"y":842}},{"Key":"S_0007","Value":{"x":285,"y":838}},{"Key":"S_GOSUB3","Value":{"x":710,"y":681}},{"Key":"S_0009","Value":{"x":1178,"y":909}},{"Key":"S_SUBSTART3","Value":{"x":959,"y":909}},{"Key":"S_RETURN3","Value":{"x":1402,"y":906}},{"Key":"S_A_SUBSTART","Value":{"x":307,"y":538}},{"Key":"S_B_SUBSTART","Value":{"x":959,"y":909}},{"Key":"S_LOOP_SUBSTART","Value":{"x":87,"y":838}},{"Key":"S_LOOP_SUBRETURN","Value":{"x":511,"y":842}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor=@@@
+
+@@@
+source_editor_vs2015_support=1
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=1
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=1
+option_omit_basestate_string=0
+option_hide_basestate_contents=1
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+comment_block_height=20
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+<<<?state-typ/^start$/
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+    g_cur = "[[nextstate]]"
+eof>>>
+
+<<<?state-typ/^end$/
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+    g_cur = ""
+eof>>>
+
+<<<?state-typ/^gosub$/
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+    g_css = g_css + 1
+    ReDim Preserve g_cs(g_css)
+    g_cs(g_css) = "[[nextstate]]"
+    g_cur = "[[gosubstate]]"
+eof>>>
+
+<<<?state-typ/^substart$/
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+    g_cur = "[[nextstate]]"
+eof>>>
+
+<<<?state-typ/^subreturn$/
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+    g_cur = g_cs(g_css)
+    g_css = g_css - 1
+    ReDim Preserve g_cs(g_css)
+eof>>>
+
+<<<?state-typ/^loop$/
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+    [[loop_init]]
+    g_cur = "[[state]]_LoopCheckAndGosub____"
+
+ElseIf g_cur = "[[state]]_LoopCheckAndGosub____" Then
+    if [[loop_cond]] Then
+        g_css = g_css + 1
+        ReDim Preserve g_cs(g_css)
+        g_cs(g_css) = "[[state]]_LoopNext____"
+        g_cur = "[[gosubstate]]"
+    Else
+        g_cur = "[[nextstate]]"
+    EndIf
+ElseIf g_cur = "[[state]]_LoopNext____" Then
+    [[loop_next]]
+    g_cur = "[[state]]_LoopCheckAndGosub____"
+eof>>>
+
+ElseIf g_cur = "[[state]]" Then '[[state]] : [[state-cmt]]
+
+    g_cur = ""
+
+    '[[work-cmt]]
+    [[work]]
+
+    [[branch]]
+
+    <<<?nextstate
+    If g_cur = "" Then
+        g_cur = "[[nextstate]]"
+    EndIf
+    >>>
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=TestContro.psgg
+xls=TestContro.xlsx
+sub_src=
+gen_src=TestContro.bas
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=help.ini
+helpweb=starterkit\excel-vba\helpweb.html
+
+src_enc=sjis
+
+[setupinfo]
+
+starterkit=https://github.com/NNNIC/psgg-starter-kit.git fb49dd424e62ef8f0dac7c7f49a7a8926df905da
+
+
+lang=vba
+framework=excel
+
+statemachine=TestContro
+
+prefix=__PREFIX__
+xlsdir=C:\psgg\temp\1121
+gendir=C:\psgg\temp\1121
+genrdir=.
+incrdir=.
+
+code_output_start=[SYN-G-GEN OUTPUT START]
+code_output_end=[SYN-G-GEN OUTPUT END]
+
+[macro]
+
+; This section has macro defines for converting.
+
+
+
+; commentline format  {%0} will be replaced to a comment.
+
+commentline=' {%0}
+
+
+
+@branch=@@@
+<<<?"{%0}"/^brif$/
+If [[brcond:{%N}]] Then
+    g_cur = "{%1}"
+End If
+>>>
+<<<?"{%0}"/^brifc$/
+If [[brcond:{%N}]] Then
+    g_cur = "{%1}"
+>>>
+<<<?"{%0}"/^brelseif$/
+ElseIf [[brcond:{%N}]] Then
+    g_cur = "{%1}"
+End If
+>>>
+<<<?"{%0}"/^brelseifc$/
+ElseIf [[brcond:{%N}]] Then
+    g_cur = "{%1}"
+>>>
+<<<?"{%0}"/^brelse$/
+Else
+    g_cur = "{%1}"
+End If
+>>>
+<<<?"{%0}"/^br_/
+{%0}({%1})
+>>>
+@@@
+
+
+
+[jpn]
+title=Excel VBA スタートキット 2019/11/22
+
+detail=@@@
+
+Excel VBA用のステートマシンを作成します。
+
+# 以下のファイルを作成
+
+      TestContro.pssg     --- StateGoデータファイル
+      TestContro.vba      --- 変換結果を挿入するファイル
+
+
+@@@
+
+[en]
+title=Excel VBA STARTER KIT 2019/11/22
+
+detail=@@@
+
+This dialog will create files for a state machine.
+
+# File:
+
+      TestContro.pssg  --- StateGo Data File
+      TestContro.vba   --- Converted data is inserted,
+
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+[branch]
+
+jpn=@@@
+分岐処理を指定する。
+１行に一つの分岐命令を書く。
+GUIにより上書きされるため引数は適当に指定する。
+例）
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+en=@@@
+Specify branch functions.
+Each line has a branch function.
+Specify a tentavie parameter for each branch function because GUI overwrites the parameter.
+i.e)
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+[work]
+
+jpn=コードを書く
+en=write code.
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[nextstate]
+
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[loop_cond]
+jpn=ループ条件
+en=Loop condition
+[loop_next]
+en=Loop increment
+jpn=ループインクリメント
+[loop_init]
+en=Loop Initialization
+jpn=ループ初期化
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
+en=@@@
+System uses this for the directory path of the state.
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+nextstate=
+!pos=
+embed=
+state=
+gosubstate=
+C_=
+loop_next=
+E_=
+branch=
+branch-cmt=
+loop_xond=
+brcond=
+nowait=@@@
+*select
+nowait
+@@@
+
+work-cmt=
+state-ref=
+!uuid=
+state-typ=
+S_=
+!dir=
+work=
+state-cmt=
+loop_init=
+thumbnail=
+loop_cond=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+state-typ=read_only,exclusion,(S0)
+gosubstate=read_only,exclusion,(S0)
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,S0
+basestate=read_only,share,S.+
+brcond=read_only,exclusion,S0
+embed=read_only,exclusion,S1
+thumbnail=read_only,share,S.+
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+
