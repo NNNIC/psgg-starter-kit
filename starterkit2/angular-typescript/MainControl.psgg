@@ -126,7 +126,7 @@ n016=@@@
 
 @@@
 
-n017=343,432
+n017=358,411
 n018=100014
 
 [s000f]
@@ -189,7 +189,7 @@ n016=@@@
 
 @@@
 
-n017=662,343
+n017=681,355
 n018=100018
 
 
@@ -199,7 +199,7 @@ n018=100018
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/24 11:15:00
+; The setting was created automatically. 2019/11/24 11:42:14
 ; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 MainControl.psgg
@@ -232,7 +232,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":21,"y":72}},{"Key":"S_END","Value":{"x":710,"y":95}},{"Key":"S_TEST0011","Value":{"x":40,"y":175}},{"Key":"S_SUBSTART1","Value":{"x":59,"y":418}},{"Key":"S_RETURN1","Value":{"x":343,"y":432}},{"Key":"S_LOOP1","Value":{"x":379,"y":179}},{"Key":"S_SUBSTART2","Value":{"x":522,"y":355}},{"Key":"S_RETURN2","Value":{"x":955,"y":358}},{"Key":"S_ALERT","Value":{"x":159,"y":404}},{"Key":"S_ALERT1","Value":{"x":662,"y":343}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":21,"y":72}},{"Key":"S_END","Value":{"x":710,"y":95}},{"Key":"S_TEST0011","Value":{"x":40,"y":175}},{"Key":"S_SUBSTART1","Value":{"x":59,"y":418}},{"Key":"S_RETURN1","Value":{"x":358,"y":411}},{"Key":"S_LOOP1","Value":{"x":379,"y":179}},{"Key":"S_SUBSTART2","Value":{"x":522,"y":355}},{"Key":"S_RETURN2","Value":{"x":955,"y":358}},{"Key":"S_ALERT","Value":{"x":159,"y":404}},{"Key":"S_ALERT1","Value":{"x":681,"y":355}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
