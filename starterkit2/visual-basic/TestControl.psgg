@@ -1,0 +1,921 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=TestControl.xlsx
+guid=34b6739f-b366-41a7-ad76-4eb20369898f
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n003,n004,n018,n005,,n006,,n007,,n008,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n01a,n01b,n01c,,n019,,n012,n01d,n013,n014,,n015,n016,n017,,,,
+stateid_list=,,,,s0001,s0002,s0003,s0009,s000a,s000b,s0007,s000c,s0008,s000d,s0010,s000e,s000f,s0012,s0011,s0013,s0015,s0014
+max_name_id=29
+max_state_id=21
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=nextstate
+n006=embed
+n007=members
+n008=vars
+n009=init
+n00a=init-cmt
+n00b=init-ref
+n00c=update
+n00d=update-cmt
+n00e=wait
+n00f=wait-cmt
+n010=post_wait
+n011=post_wait-cmt
+n012=branch
+n013=brcond
+n014=nowait
+n015=!dir
+n016=!pos
+n017=!uuid
+n018=state-typ
+n019=gosubstate
+n01a=loop_init
+n01b=loop_cond
+n01c=loop_next
+n01d=branch-cmt
+
+
+[id_state_dic]
+s0001=S_START
+s0002=S_END
+s0003=S_GOSUB1
+s0007=E_0005
+s0008=S_0005
+s0009=S_RETURN3
+s000a=S_GOSUB3
+s000b=S_0004
+s000c=S_0009
+s000d=S_B_SUBSTART
+s000e=S_A_SUBSTART
+s000f=S_RETURN1
+s0010=S_LOOP1
+s0011=S_B_SUBSTART1
+s0012=S_RETURN4
+s0013=S_EVEN
+s0014=S_CHECK_EVEN_OR_ODD
+s0015=S_ODD
+
+
+[s0001]
+n002=S_START
+n018=start
+n005=S_0005
+n016=47,64
+n017=100001
+
+[s0002]
+n002=S_END
+n018=end
+n016=916,117
+n017=100002
+
+[s0003]
+n001=
+n002=S_GOSUB1
+n003=
+n018=gosub
+n005=S_LOOP1
+n008=
+n009=
+n019=S_A_SUBSTART
+n012=
+n013=
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=106,348
+n017=100009
+
+[s0007]
+n001=(bitmap)
+n002=E_0005
+n006=Dim i As Integer
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=458,56
+n017=100007
+
+[s0008]
+n002=S_0005
+n005=S_GOSUB1
+n009=Console.WriteLine("START")
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=82,180
+n017=100008
+
+[s0009]
+n002=S_RETURN3
+n018=subreturn
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=750,611
+n017=100010
+
+[s000a]
+n002=S_GOSUB3
+n018=gosub
+n005=S_RETURN1
+n019=S_B_SUBSTART
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=383,506
+n017=100011
+
+[s000b]
+n002=S_0004
+n005=S_GOSUB3
+n009=Console.WriteLine("I am in A routine.")
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=193,509
+n017=100012
+
+[s000c]
+n002=S_0009
+n005=S_RETURN3
+n009=Console.WriteLine("I am in B routine.")
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=533,604
+n017=100013
+
+[s000d]
+n002=S_B_SUBSTART
+n018=substart
+n005=S_0009
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=418,605
+n017=100015
+
+[s000e]
+n002=S_A_SUBSTART
+n018=substart
+n005=S_0004
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=95,510
+n017=100016
+
+[s000f]
+n002=S_RETURN1
+n018=subreturn
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=583,507
+n017=100017
+
+[s0010]
+n002=S_LOOP1
+n018=loop
+n005=S_END
+n01a=i = 0
+n01b=i < 10
+n01c=i = i + 1
+n019=S_B_SUBSTART1
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=485,140
+n017=100018
+
+[s0011]
+n002=S_B_SUBSTART1
+n018=substart
+n005=S_CHECK_EVEN_OR_ODD
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=601,235
+n017=100019
+
+[s0012]
+n002=S_RETURN4
+n018=subreturn
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=1240,327
+n017=100020
+
+[s0013]
+n001=(bitmap)
+n002=S_EVEN
+n005=S_RETURN4
+n009=@@@
+Console.WriteLine("count = " + i .ToString() + "(EVEN)")
+@@@
+
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=994,206
+n017=100021
+
+[s0014]
+n002=S_CHECK_EVEN_OR_ODD
+n00c=Dim n As Integer = i Mod 2
+n012=@@@
+brifc(S_EVEN);
+brelse(S_ODD);
+@@@
+
+n01d=@@@
+EVEN
+ODD
+@@@
+
+n013=@@@
+n = 0
+?
+@@@
+
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=726,278
+n017=100022
+
+[s0015]
+n002=S_ODD
+n005=S_RETURN4
+n009=@@@
+Console.WriteLine("count = " + i .ToString() + "(ODD)")
+@@@
+
+n015=@@@
+/
+(0,0)
+
+@@@
+
+n016=993,418
+n017=100023
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2019/11/24 22:13:15
+; * pssgEditor version : 0.62.9538.9236837ef961847da7e96ba1a0a77595c9f5e718
+psggfile=@@@
+TestControl.psgg
+@@@
+xlsfile=@@@
+TestControl.xlsx
+@@@
+guid=@@@
+34b6739f-b366-41a7-ad76-4eb20369898f
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+Moved a state
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":""}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":0,"y":0}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":47,"y":64}},{"Key":"S_END","Value":{"x":916,"y":117}},{"Key":"E_0005","Value":{"x":458,"y":56}},{"Key":"S_0005","Value":{"x":82,"y":180}},{"Key":"S_GOSUB1","Value":{"x":106,"y":348}},{"Key":"S_RETURN3","Value":{"x":750,"y":611}},{"Key":"S_GOSUB3","Value":{"x":383,"y":506}},{"Key":"S_0004","Value":{"x":193,"y":509}},{"Key":"S_0009","Value":{"x":533,"y":604}},{"Key":"S_B_SUBSTART","Value":{"x":418,"y":605}},{"Key":"S_A_SUBSTART","Value":{"x":95,"y":510}},{"Key":"S_RETURN1","Value":{"x":583,"y":507}},{"Key":"S_LOOP1","Value":{"x":485,"y":140}},{"Key":"S_B_SUBSTART1","Value":{"x":601,"y":235}},{"Key":"S_RETURN4","Value":{"x":1240,"y":327}},{"Key":"S_CHECK_EVEN_OR_ODD","Value":{"x":726,"y":278}},{"Key":"S_EVEN","Value":{"x":994,"y":206}},{"Key":"S_ODD","Value":{"x":993,"y":418}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BTN_BY.\\("}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor=@@@
+"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /Edit %1
+@@@
+source_editor_vs2015_support=1
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=0
+option_omit_basestate_string=0
+option_hide_basestate_contents=0
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+state_short_width=50
+state_short_height=20
+comment_block_height=4
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+'    [[state]]
+'    [[state-cmt]]
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+<<<?state-typ/^start$/
+Sub [[state]](bFirst As Boolean)
+    GotoState("[[nextstate]]")
+    NoWait()
+End Sub
+eof>>>
+
+<<<?state-typ/^end$/
+Sub [[state]](bFirst As Boolean)
+    ' nothing
+End Sub
+eof>>>
+
+<<<?state-typ/^gosub$/
+Sub [[state]](bFirst As Boolean)
+    g_css = g_css + 1
+    ReDim Preserve g_cs(g_css)
+    g_cs(g_css) = "[[nextstate]]"
+    GotoState("[[gosubstate]]")
+    NoWait()
+End Sub
+eof>>>
+
+<<<?state-typ/^substart$/
+Sub [[state]](bFirst As Boolean)
+    GotoState("[[nextstate]]")
+    NoWait()
+End Sub
+eof>>>
+
+<<<?state-typ/^subreturn$/
+Sub [[state]](bFirst As Boolean)
+    GotoState(g_cs(g_css))
+    g_css = g_css - 1
+    ReDim Preserve g_cs(g_css)
+    NoWait()
+End Sub
+eof>>>
+
+<<<?state-typ/^loop$/
+Sub [[state]](bFirst As Boolean)
+    [[loop_init]]
+    GotoState("[[state]]_LoopCheckAndGosub____")
+    NoWait()
+End Sub
+
+Sub [[state]]_LoopCheckAndGosub____(bFirst As Boolean)
+    if [[loop_cond]] Then
+        g_css = g_css + 1
+        ReDim Preserve g_cs(g_css)
+        g_cs(g_css) = "[[state]]_LoopNext____"
+        GotoState("[[gosubstate]]")
+    Else
+        GotoState("[[nextstate]]")
+    End If
+    NoWait()
+End Sub
+
+Sub [[state]]_LoopNext____(bFirst As Boolean)
+    [[loop_next]]
+    GotoState("[[state]]_LoopCheckAndGosub____")
+    NoWait()
+End Sub
+eof>>>
+
+[[members]]
+
+Sub [[state]](bFirst As Boolean)
+
+    [[vars]]
+
+    <<<?init
+    if bFirst = True Then
+        [[init]]
+    End If
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    If [[wait]] Then
+        return
+    End If
+    >>>
+
+    [[post_wait]]
+
+    <<<?branch
+    ' branch
+    [[branch]]
+    >>>
+
+    <<<?nextstate
+    If HasNextState() = False Then
+        GotoState("[[nextstate]]")
+    End If
+    >>>
+
+    <<<?nowait
+    If HasNextState() Then
+        NoWait()
+    End If
+    >>>
+End Sub
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=TestControl.psgg
+xls=TestControl.xlsx
+sub_src=
+gen_src=TestControl.vb
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=help.ini
+helpweb=starterkit2\visual-basic\helpweb.html
+
+src_enc=utf-8
+
+[setupinfo]
+
+lang=visual-basic
+framework=
+
+statemachie=TestControl
+prefix=__PREFIX__
+xlsdir=C:\Users\gea01\Documents\psgg\samples\psgg-visual-basic-sample\playground\Test\doc
+gendir=C:\Users\gea01\Documents\psgg\samples\psgg-visual-basic-sample\playground\Test
+genrdir=.
+incrdir=.
+
+code_output_start=[SYN-G-GEN OUTPUT START]
+code_output_end=[SYN-G-GEN OUTPUT END]
+
+[macro]
+; This section has macro defines for converting.
+
+; commentline format  {%0} will be replaced to a comment.
+commentline=' {%0}
+
+@branch=@@@
+<<<?"{%0}"/^brif$/
+If [[brcond:{%N}]] Then
+    m_nextstate = "{%1}"
+End If
+>>>
+<<<?"{%0}"/^brifc$/
+If [[brcond:{%N}]] Then
+    m_nextstate = "{%1}"
+>>>
+<<<?"{%0}"/^brelseif$/
+ElseIf [[brcond:{%N}]] Then
+    m_nextstate = "{%1}"
+End If
+>>>
+<<<?"{%0}"/^brelseifc$/
+ElseIf [[brcond:{%N}]] Then
+    m_nextstate = "{%1}"
+>>>
+<<<?"{%0}"/^brelse$/
+Else
+    m_nextstate = "{%1}"
+End If
+>>>
+<<<?"{%0}"/^br_/
+{%0}({%1})
+>>>
+@@@
+
+#select=@@@
+
+If m_curstate = "[[state]]" Then
+    [[state]](bFirst)
+    Goto ExitUpdate
+End If
+
+<<<?state-typ/^loop$/
+If m_curstate = "[[state]]_LoopCheckAndGosub____" Then
+    [[state]]_LoopCheckAndGosub____(bFirst)
+    Goto ExitUpdate
+End If
+If m_curstate = "[[state]]_LoopNext____" Then
+    [[state]]_LoopNext____(bFirst)
+    Goto ExitUpdate
+End If
+>>>
+@@@
+
+[jpn]
+title=Visual Basic スタートキット  2018/10/10
+
+detail=@@@
+
+Visual Basic用のステートマシンを作成します。
+
+# 新機能
+- IF ブランチ機能
+- マネージャファイルなし
+- 変換ソース埋め込み
+
+# ドキュメント用フォルダ
+   ステート図ファイルとエディタ起動用ショートカットを格納
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-visual-basic-sample\playground\Test\doc
+
+  以下のファイルを作成します。
+
+      TestControl.pssg   --- エディタで次のエクセルファイルを開く。
+      TestControl.xlsx   --- ステート図格納用Excelファイル。エディタが編集。
+
+# ソース用フォルダ
+　エディタが生成ソースファイル、ユーザ実装ソースファイル、及び管理クラスファイルを格納
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-visual-basic-sample\playground\Test
+
+  以下のファイルが作成されます。
+
+      TestControl.vb  --- Excelファイルからの変換コードを本ファイルに埋め込む。
+
+注意 : 既に同名のファイルがある場合は生成されません。
+　　　 削除してから生成してください。
+
+@@@
+
+
+[en]
+title=Visual Basic STARTER KIT 2018/10/10
+
+detail=@@@
+This dialog will create files for a state machine.
+
+# New Feature
+- Enabled If branches
+- No Manager file
+- Insert converted code
+
+# Document Folder
+　This folder will contain a state chart file and the shortcut of the editor.
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-visual-basic-sample\playground\Test\doc
+
+  File:
+
+      TestControl.pssg  --- The editor opens the below excel file.
+      TestControl.xlsx  --- Excel File that has a state chart. The editor edits this file.
+
+# Source Folder
+   This folder will contain a source file generated by the editor, a user implemetation source file, and a manager source file.
+
+      C:\Users\gea01\Documents\psgg\samples\psgg-visual-basic-sample\playground\Test
+
+　File:
+      TestControl.vb   -- The editor will insert converted source code to this file.
+
+
+NOTE : If the same name files exists, the file will not be created.
+       Please delete the same name files ahead of the creation.
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[nextstate]
+
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
+[branch]
+
+jpn=@@@
+分岐処理を指定する。
+１行に一つの分岐命令を書く。
+GUIにより上書きされるため引数は適当に指定する。
+例）
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+en=@@@
+Specify branch functions.
+Each line has a branch function.
+Specify a tentavie parameter for each branch function because GUI overwrites the parameter.
+i.e)
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+[update]
+
+jpn=更新処理を指定する。
+en=Specify a update process.
+[wait]
+
+jpn=@@@
+待ち条件を指定する。
+true時にループを解除する。
+@@@
+
+en=@@@
+Specify a waiting condition.
+Release the loop if the condition is true.
+@@@
+
+[loop_next]
+
+en=Loop increment
+jpn=ループインクリメント
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[members]
+
+jpn=メンバ変数及び関数等を指定する。
+en=@@@
+Specify members, variables, classes,  etc.
+@@@
+
+[post_wait]
+
+jpn='wait'後の処理を指定する。
+en=Specify the post process after 'wait'.
+[vars]
+
+jpn=変数宣言を指定する。
+en=Specify variable definitions.
+[nowait]
+
+jpn=@@@
+次のステートへ同期待ちをせず実行する時に 'yes'を指定する。
+同期待ち時には何も指定しない。
+@@@
+
+en=@@@
+Specify 'yes' if the next state will be execute without a sync wait.
+Do not specify any word wheh the next state will be execute with a sync wait.
+@@@
+
+[embed]
+
+jpn=@@@
+コード埋め込み用。
+ステート名がE_時に利用可能。
+ステート機能は利用できない。
+@@@
+
+en=@@@
+For embedding code.
+Enable this section if state name starts with "E_".
+Disabled state features.
+@@@
+
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[init]
+
+jpn=初期化用処理を指定する。
+en=Specify a initial process.
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
+en=@@@
+System uses this for the directory path of the state.
+@@@
+
+[loop_init]
+
+en=Loop Initialization
+jpn=ループ初期化
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+[loop_cond]
+
+en=Loop condition
+jpn=ループ条件
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+init=
+branch-cmt=
+state-ref=
+wait=
+wait-cmt=
+embed=
+gosubstate=
+loop_cond=
+branch=
+!dir=
+post_wait-cmt=
+nowait=@@@
+*select
+nowait
+@@@
+
+members=
+thumbnail=
+update-cmt=
+post_wait=
+state-cmt=
+state-typ=
+!pos=
+!uuid=
+nextstate=
+state=
+S_=
+brcond=
+update=
+init-cmt=
+loop_next=
+vars=
+C_=
+E_=
+init-ref=
+loop_init=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+thumbnail=read_only,share,S.+
+gosubstate=read_only,exclusion,(S0)
+branch=read_only,exclusion,S0
+nextstate=read_only,exclusion,S0
+state=read_only,share,S.+
+brcond=read_only,exclusion,S0
+return=read_only,exclusion,S0
+branch-cmt=read_only,exclusion,(S0)
+embed=read_only,exclusion,S1
+basestate=read_only,share,S.+
+state-typ=read_only,exclusion,(S0)
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+
