@@ -425,7 +425,7 @@ starterkit=https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
 lang=javascript
 framework=html5
 
-statemachie=TestControl
+statemachine=TestControl
 
 prefix=__PREFIX__
 xlsdir=C:\Users\gea01\Documents\psgg\samples\psgg-javascript-sample\playground\public\js
