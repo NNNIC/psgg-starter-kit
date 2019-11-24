@@ -196,8 +196,8 @@ n017=100018
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/24 11:29:35
-; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
+; The setting was created automatically. 2019/11/24 12:57:56
+; * pssgEditor version : 0.62.9350.4627dbbadd21f6ff387e8563edc199dcc31f3560
 psggfile=@@@
 TestControl.psgg
 @@@
@@ -214,7 +214,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Moved a state
+Initilized
 @@@
 target_pathdir=@@@
 /
@@ -267,7 +267,7 @@ state_width=140
 state_height=20
 state_short_width=50
 state_short_height=20
-comment_block_height=45
+comment_block_height=1
 content_max_height=200
 comment_block_fixed=0
 line_space=-1
