@@ -137,7 +137,6 @@ export class MainControl implements StateManager{
     }
     /*
         S_RETURN1
-        A Subroutine Return
     */
     S_RETURN1(bFirst: boolean) : void
     {
@@ -146,7 +145,6 @@ export class MainControl implements StateManager{
     }
     /*
         S_RETURN2
-        A Subroutine Return
     */
     S_RETURN2(bFirst: boolean) : void
     {
@@ -162,7 +160,6 @@ export class MainControl implements StateManager{
     }
     /*
         S_SUBSTART1
-        A Subroutine Start
     */
     S_SUBSTART1(bFirst: boolean) : void {
         this.Goto(this.S_ALERT);
@@ -170,7 +167,6 @@ export class MainControl implements StateManager{
     }
     /*
         S_SUBSTART2
-        A Subroutine Start
     */
     S_SUBSTART2(bFirst: boolean) : void {
         this.Goto(this.S_ALERT1);

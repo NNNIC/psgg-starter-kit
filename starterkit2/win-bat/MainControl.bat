@@ -80,7 +80,7 @@ goto :S_START
     ::
     :S_END
     ::
-    :: END
+    ::
     ::
         echo : end
         pause
@@ -88,7 +88,7 @@ goto :S_START
     ::
     :S_GOSUB1
     ::
-    :: Call A Souroutine
+    ::
     ::
         set CALLSTACK_%STACKNUM%=S_LOOP1
         set /a STACKNUM=%STACKNUM%+1
@@ -124,7 +124,7 @@ goto :S_START
     ::
     :S_RETURN1
     ::
-    :: A Subroutine Return
+    ::
     ::
         set /a STACKNUM=%STACKNUM%-1
         set CALLSTACK_%STACKNUM% >~tmp.txt
@@ -136,7 +136,7 @@ goto :S_START
     ::
     :S_RETURN2
     ::
-    :: LOOP Subroutine Return
+    ::
     ::
         set /a STACKNUM=%STACKNUM%-1
         set CALLSTACK_%STACKNUM% >~tmp.txt
@@ -148,20 +148,20 @@ goto :S_START
     ::
     :S_START
     ::
-    :: START
+    ::
     ::
         goto :S_GOSUB1
     ::
     :S_SUBSTART1
     ::
-    :: A Subroutine Start
+    ::
     ::
         goto :S_0001
         goto :S_SUBSTART1
     ::
     :S_SUBSTART2
     ::
-    :: LOOP Subroutine
+    ::
     ::
         goto :S_ODD_OR_EVEN
         goto :S_SUBSTART2

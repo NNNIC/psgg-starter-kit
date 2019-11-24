@@ -107,6 +107,7 @@ public partial class TestControl  {
         }
         /*
             S_LOOP
+            Loop 10 times
         */
         int m_i;
         void S_LOOP(bool bFirst)

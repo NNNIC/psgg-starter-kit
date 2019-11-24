@@ -93,7 +93,6 @@ TestControl.prototype.S_END = function(first) {
 };
 /*
     S_GOSUB1
-    New Go Souroutine
 */
 TestControl.prototype.S_GOSUB1 = function(first) {
     this.gosubstate(this.S_SUBSTART1,this.S_LOOP1);
@@ -101,6 +100,7 @@ TestControl.prototype.S_GOSUB1 = function(first) {
 };
 /*
     S_LOOP1
+    Loop 10 times
 */
 TestControl.prototype.S_LOOP1 = function(first) {
     this.count = 0;
@@ -126,7 +126,6 @@ TestControl.prototype.S_RETURN1 = function(first) {
 };
 /*
     S_RETURN2
-    A Subroutine Return
 */
 TestControl.prototype.S_RETURN2 = function(first) {
     this.returnstate();
@@ -148,7 +147,6 @@ TestControl.prototype.S_SUBSTART1 = function(first) {
 };
 /*
     S_SUBSTART2
-    A Subroutine Start
 */
 TestControl.prototype.S_SUBSTART2 = function(first) {
     this.goto(this.S_0009);

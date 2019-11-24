@@ -103,6 +103,7 @@ private:
     }
     /*
         S_LOOP
+        Loop 10 times
     */
     int m_i;
     void S_LOOP(bool bFirst)
@@ -156,10 +157,8 @@ private:
     */
     void S_START(bool bFirst)
     {
-        if (!HasNextState())
-        {
-            Goto("S_0001");
-        }
+        Goto("S_0001");
+        NoWait();
     }
     /*
         S_SUBRETURN

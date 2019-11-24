@@ -182,7 +182,7 @@
 ;
 ;------------------------------
 ;    S_GOSUB1
-;    New Go Souroutine
+;
 *S_GOSUB1
 [iscript]
     f.curstate = 'S_GOSUB1';
@@ -289,7 +289,7 @@
 ;
 ;------------------------------
 ;    S_RETURN1
-;    A Subroutine Return
+;
 *S_RETURN1
 [iscript]
     f.curstate = 'S_RETURN1';
@@ -305,7 +305,7 @@
 [jump target=&f.nextstate]
 ;------------------------------
 ;    S_RETURN2
-;    A Subroutine Return
+;
 *S_RETURN2
 [iscript]
     f.curstate = 'S_RETURN2';
@@ -722,7 +722,7 @@ StateGoの新機能、サブルーチンを試してみるか。[p]
 [jump target=&f.nextstate]
 ;------------------------------
 ;    S_SUBSTART1
-;    A Subroutine Start
+;
 *S_SUBSTART1
 [iscript]
     f.curstate = 'S_SUBSTART1';
@@ -738,7 +738,7 @@ StateGoの新機能、サブルーチンを試してみるか。[p]
 [jump target=&f.nextstate]
 ;------------------------------
 ;    S_SUBSTART2
-;    A Subroutine Start
+;
 *S_SUBSTART2
 [iscript]
     f.curstate = 'S_SUBSTART2';

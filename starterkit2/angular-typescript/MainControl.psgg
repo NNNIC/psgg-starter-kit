@@ -71,7 +71,7 @@ n018=100001
 [s0002]
 n002=S_END
 n019=end
-n017=1278,145
+n017=710,95
 n018=100002
 
 [s000b]
@@ -86,12 +86,12 @@ n016=@@@
 
 @@@
 
-n017=99,275
+n017=40,175
 n018=100011
 
 [s000c]
 n002=S_SUBSTART1
-n003=A Subroutine Start
+n003=
 n019=substart
 n005=S_ALERT
 n016=@@@
@@ -100,7 +100,7 @@ n016=@@@
 
 @@@
 
-n017=310,261
+n017=59,418
 n018=100012
 
 [s000d]
@@ -113,12 +113,12 @@ n016=@@@
 
 @@@
 
-n017=499,276
+n017=159,404
 n018=100013
 
 [s000e]
 n002=S_RETURN1
-n003=A Subroutine Return
+n003=
 n019=subreturn
 n016=@@@
 /
@@ -126,7 +126,7 @@ n016=@@@
 
 @@@
 
-n017=709,315
+n017=343,432
 n018=100014
 
 [s000f]
@@ -145,13 +145,13 @@ n016=@@@
 
 @@@
 
-n017=141,460
+n017=379,179
 n018=100015
 
 [s0010]
 n001=(bitmap)
 n002=S_SUBSTART2
-n003=A Subroutine Start
+n003=
 n019=substart
 n005=S_ALERT1
 n016=@@@
@@ -160,12 +160,12 @@ n016=@@@
 
 @@@
 
-n017=138,696
+n017=522,355
 n018=100016
 
 [s0011]
 n002=S_RETURN2
-n003=A Subroutine Return
+n003=
 n019=subreturn
 n016=@@@
 /
@@ -173,7 +173,7 @@ n016=@@@
 
 @@@
 
-n017=583,704
+n017=955,358
 n018=100017
 
 [s0012]
@@ -189,7 +189,7 @@ n016=@@@
 
 @@@
 
-n017=350,699
+n017=662,343
 n018=100018
 
 
@@ -199,8 +199,8 @@ n018=100018
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/06 21:46:53
-; * pssgEditor version : 0.61.41640.84b9998d3ecb2076fe5ce5f3a9a5018d44637bf4
+; The setting was created automatically. 2019/11/24 11:15:00
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 MainControl.psgg
 @@@
@@ -226,13 +226,13 @@ state_location_list=@@@
 
 @@@
 nodegroup_comment_list=@@@
-[{"Key":"\/","Value":"This is the root"}]
+[{"Key":"\/","Value":""}]
 @@@
 nodegroup_pos_list=@@@
-[{"Key":"\/","Value":{"x":0,"y":0}}]
+[{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":21,"y":72}},{"Key":"S_END","Value":{"x":1278,"y":145}},{"Key":"S_BUTTONS","Value":{"x":138,"y":636}},{"Key":"S_TEST0001","Value":{"x":610,"y":61}},{"Key":"S_TEST0002","Value":{"x":613,"y":176}},{"Key":"S_TEST0003","Value":{"x":615,"y":301}},{"Key":"S_TEST0004","Value":{"x":615,"y":421}},{"Key":"S_TEST0005","Value":{"x":624,"y":535}},{"Key":"S_TEST0006","Value":{"x":623,"y":644}},{"Key":"S_TEST0011","Value":{"x":99,"y":275}},{"Key":"S_SUBSTART1","Value":{"x":310,"y":261}},{"Key":"S_TEST0007","Value":{"x":631,"y":748}},{"Key":"S_RETURN1","Value":{"x":709,"y":315}},{"Key":"S_LOOP1","Value":{"x":141,"y":460}},{"Key":"S_SUBSTART2","Value":{"x":138,"y":696}},{"Key":"S_RETURN2","Value":{"x":583,"y":704}},{"Key":"S_TEST0008","Value":{"x":635,"y":854}},{"Key":"S_ALERT","Value":{"x":499,"y":276}},{"Key":"S_ALERT1","Value":{"x":350,"y":699}},{"Key":"S_BACKTO_BUTTON","Value":{"x":135,"y":572}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":21,"y":72}},{"Key":"S_END","Value":{"x":710,"y":95}},{"Key":"S_TEST0011","Value":{"x":40,"y":175}},{"Key":"S_SUBSTART1","Value":{"x":59,"y":418}},{"Key":"S_RETURN1","Value":{"x":343,"y":432}},{"Key":"S_LOOP1","Value":{"x":379,"y":179}},{"Key":"S_SUBSTART2","Value":{"x":522,"y":355}},{"Key":"S_RETURN2","Value":{"x":955,"y":358}},{"Key":"S_ALERT","Value":{"x":159,"y":404}},{"Key":"S_ALERT1","Value":{"x":662,"y":343}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -268,6 +268,8 @@ comment_font_size=0
 contents_font_size=0
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=20
 content_max_height=50
 comment_block_fixed=0

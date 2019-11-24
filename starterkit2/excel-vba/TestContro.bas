@@ -21,7 +21,7 @@ Sub TestContro()
         
         ' [SYN-G-GEN OUTPUT START] indent(12) $/^S_/$
 '  psggConverterLib.dll converted from TestContro.xlsx.    psgg-file:TestContro.psgg
-            ElseIf g_cur = "S_0003" Then 'S_0003 :
+            ElseIf g_cur = "S_0003" Then 'S_0003 : Loop 10 times
                 i = 0
                 g_cur = "S_0003_LoopCheckAndGosub____"
             ElseIf g_cur = "S_0003_LoopCheckAndGosub____" Then
@@ -82,7 +82,7 @@ Sub TestContro()
                 ReDim Preserve g_cs(g_css)
                 g_cs(g_css) = "S_0006"
                 g_cur = "S_A_SUBSTART"
-            ElseIf g_cur = "S_GOSUB3" Then 'S_GOSUB3 : Go B Souroutine
+            ElseIf g_cur = "S_GOSUB3" Then 'S_GOSUB3 :
                 g_css = g_css + 1
                 ReDim Preserve g_cs(g_css)
                 g_cs(g_css) = "S_RETURN1"
@@ -101,7 +101,7 @@ Sub TestContro()
                 g_cur = g_cs(g_css)
                 g_css = g_css - 1
                 ReDim Preserve g_cs(g_css)
-            ElseIf g_cur = "S_START" Then 'S_START : START
+            ElseIf g_cur = "S_START" Then 'S_START :
                 g_cur = "S_0005"
 
 

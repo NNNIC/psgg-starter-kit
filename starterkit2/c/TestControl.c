@@ -158,7 +158,6 @@ static void ReturnState()
     }
     /*
         S_GOSUB1
-        Go A Souroutine
     */
     void S_GOSUB1(bool bFirst)
     {
@@ -189,7 +188,6 @@ static void ReturnState()
     }
     /*
         S_RETURN1
-        A Subroutine Return
     */
     void S_RETURN1(bool bFirst)
     {
@@ -198,7 +196,6 @@ static void ReturnState()
     }
     /*
         S_RETURN2
-        Loop Subroutine Return
     */
     void S_RETURN2(bool bFirst)
     {
@@ -215,7 +212,6 @@ static void ReturnState()
     }
     /*
         S_SUBSTART1
-        A Subroutine Start
     */
     void S_SUBSTART1(bool bFirst)
     {
@@ -226,7 +222,6 @@ static void ReturnState()
     }
     /*
         S_SUBSTART2
-        Loop Subroutine Start
     */
     void S_SUBSTART2(bool bFirst)
     {

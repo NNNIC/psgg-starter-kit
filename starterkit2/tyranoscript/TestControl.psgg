@@ -359,7 +359,7 @@ n01d=100018
 
 [s0014]
 n002=S_GOSUB1
-n003=New Go Souroutine
+n003=
 n01e=gosub
 n005=S_OK_GOSUB
 n01f=S_SUBSTART1
@@ -369,12 +369,12 @@ n01b=@@@
 This is the root
 @@@
 
-n01c=427,920
+n01c=481,932
 n01d=100026
 
 [s0015]
 n002=S_SUBSTART1
-n003=A Subroutine Start
+n003=
 n01e=substart
 n005=S_SHOW_AKANE1
 n01b=@@@
@@ -411,7 +411,7 @@ n006=お、成功したようだね。[p]
 n01b=@@@
 /
 (100,-1)
-ゲーム準備
+This is the root
 @@@
 
 n01c=659,849
@@ -420,12 +420,12 @@ n01d=100032
 [s0018]
 n001=(bitmap)
 n002=S_RETURN1
-n003=A Subroutine Return
+n003=
 n01e=subreturn
 n01b=@@@
 /
-(100,100)
-
+(100,-1)
+This is the root
 @@@
 
 n01c=1183,1177
@@ -455,8 +455,8 @@ n021=f.count < 10
 n022=f.count = f.count + 1;
 n01b=@@@
 /
-(100,100)
-
+(100,-1)
+This is the root
 @@@
 
 n01c=1105,884
@@ -478,7 +478,7 @@ n006=@@@
 n01b=@@@
 /
 (100,-1)
-ゲーム準備
+This is the root
 @@@
 
 n01c=868,853
@@ -486,7 +486,7 @@ n01d=100040
 
 [s001c]
 n002=S_SUBSTART2
-n003=A Subroutine Start
+n003=
 n01e=substart
 n005=S_CHECK_COUNT
 n01b=@@@
@@ -531,12 +531,12 @@ n01d=100044
 
 [s001f]
 n002=S_RETURN2
-n003=A Subroutine Return
+n003=
 n01e=subreturn
 n01b=@@@
 /
 (100,-1)
-
+This is the root
 @@@
 
 n01c=2086,997
@@ -570,8 +570,8 @@ f.count < 9
 
 n01b=@@@
 /
-(100,100)
-
+(100,-1)
+This is the root
 @@@
 
 n01c=1428,1073
@@ -636,7 +636,7 @@ n006=サンプルの終わりだよ。[p]
 n01b=@@@
 /
 (100,-1)
-ゲーム準備
+This is the root
 @@@
 
 n01c=1618,516
@@ -666,8 +666,8 @@ n01d=100057
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/03 21:25:35
-; * pssgEditor version : 0.61.41008.b83e59111b3a935fbe1b89e29e11088a78e1ef52
+; The setting was created automatically. 2019/11/24 11:32:39
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 TestControl.psgg
 @@@
@@ -684,7 +684,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Edited a state.
+Left a path
 @@@
 target_pathdir=@@@
 /
@@ -699,7 +699,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":-1}},{"Key":"\/PREPARE\/","Value":{"x":80,"y":858}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":1835,"y":219}},{"Key":"S_TITLE","Value":{"x":85,"y":522}},{"Key":"S_FIRSTSTEP","Value":{"x":81,"y":300}},{"Key":"S_QUESTION","Value":{"x":1061,"y":229}},{"Key":"S_QUESTION1","Value":{"x":1317,"y":216}},{"Key":"S_SERIF01","Value":{"x":221,"y":969}},{"Key":"S_SHOW_AKANE","Value":{"x":1774,"y":606}},{"Key":"S_SERIF03","Value":{"x":1561,"y":611}},{"Key":"S_SERIF02","Value":{"x":1351,"y":524}},{"Key":"S_GOSUB1","Value":{"x":427,"y":920}},{"Key":"S_SUBSTART1","Value":{"x":572,"y":1178}},{"Key":"____altnative_state____PREPARE","Value":{"x":80,"y":858}},{"Key":"S_SHOW_AKANE1","Value":{"x":776,"y":1174}},{"Key":"S_SETUP_YAMATO1","Value":{"x":659,"y":849}},{"Key":"S_RETURN1","Value":{"x":1183,"y":1177}},{"Key":"S_SHOW_AKANE2","Value":{"x":975,"y":1174}},{"Key":"S_OK_GOSUB","Value":{"x":659,"y":849}},{"Key":"S_LOOP1","Value":{"x":1105,"y":884}},{"Key":"S_OK_GOSUB1","Value":{"x":1618,"y":516}},{"Key":"S_ABOUT_LOOP","Value":{"x":868,"y":853}},{"Key":"S_SUBSTART2","Value":{"x":1290,"y":965}},{"Key":"S_SHOW_AKANE3","Value":{"x":1952,"y":743}},{"Key":"S_SHOW_AKANE4","Value":{"x":1704,"y":864}},{"Key":"S_RETURN2","Value":{"x":2086,"y":997}},{"Key":"S_SHOW_AKANE5","Value":{"x":1696,"y":1039}},{"Key":"S_CHECK_COUNT","Value":{"x":1428,"y":1073}},{"Key":"S_SHOW_AKANE6","Value":{"x":1695,"y":1166}},{"Key":"S_SHOW_AKANE7","Value":{"x":1697,"y":1382}},{"Key":"S_OWARI","Value":{"x":1618,"y":516}},{"Key":"S_SHOW_AKANE8","Value":{"x":1694,"y":1270}}]},{"Key":"\/PREPARE\/","Value":[{"Key":"S_TITLE","Value":{"x":50,"y":100}},{"Key":"S_SCENE_1","Value":{"x":219,"y":16}},{"Key":"S_SHOW_MSGWINDOW","Value":{"x":1002,"y":22}},{"Key":"S_SETUP_YAMATO","Value":{"x":442,"y":288}},{"Key":"S_SETUP_MESSAGEWINDOW","Value":{"x":616,"y":13}},{"Key":"S_DISP_MENU","Value":{"x":417,"y":16}},{"Key":"S_SET_CHARNAMEAREA","Value":{"x":1201,"y":23}},{"Key":"S_AKANE_EMOTION","Value":{"x":211,"y":287}},{"Key":"S_SETUP_AKANE","Value":{"x":30,"y":273}},{"Key":"S_ADJUST_CHARAREGION","Value":{"x":810,"y":21}},{"Key":"S_SERIF01","Value":{"x":1131,"y":406}}]},{"Key":"\/Intoroduction\/","Value":[{"Key":"S_SETUP_YAMATO","Value":{"x":50,"y":100}},{"Key":"S_SERIF01","Value":{"x":305,"y":58}},{"Key":"S_SHOW_AKANE","Value":{"x":920,"y":66}},{"Key":"S_SERIF03","Value":{"x":709,"y":71}},{"Key":"S_SERIF02","Value":{"x":514,"y":61}},{"Key":"S_QUESTION","Value":{"x":1212.15381,"y":188.6923}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":1835,"y":219}},{"Key":"S_TITLE","Value":{"x":85,"y":522}},{"Key":"S_FIRSTSTEP","Value":{"x":81,"y":300}},{"Key":"S_SERIF01","Value":{"x":221,"y":969}},{"Key":"S_SERIF02","Value":{"x":1351,"y":524}},{"Key":"S_GOSUB1","Value":{"x":481,"y":932}},{"Key":"S_SUBSTART1","Value":{"x":572,"y":1178}},{"Key":"S_SHOW_AKANE1","Value":{"x":776,"y":1174}},{"Key":"S_RETURN1","Value":{"x":1183,"y":1177}},{"Key":"S_SHOW_AKANE2","Value":{"x":975,"y":1174}},{"Key":"S_OK_GOSUB","Value":{"x":659,"y":849}},{"Key":"S_LOOP1","Value":{"x":1105,"y":884}},{"Key":"S_ABOUT_LOOP","Value":{"x":868,"y":853}},{"Key":"S_SUBSTART2","Value":{"x":1290,"y":965}},{"Key":"S_SHOW_AKANE3","Value":{"x":1952,"y":743}},{"Key":"S_SHOW_AKANE4","Value":{"x":1704,"y":864}},{"Key":"S_RETURN2","Value":{"x":2086,"y":997}},{"Key":"S_SHOW_AKANE5","Value":{"x":1696,"y":1039}},{"Key":"S_CHECK_COUNT","Value":{"x":1428,"y":1073}},{"Key":"S_SHOW_AKANE6","Value":{"x":1695,"y":1166}},{"Key":"S_SHOW_AKANE7","Value":{"x":1697,"y":1382}},{"Key":"S_OWARI","Value":{"x":1618,"y":516}},{"Key":"S_SHOW_AKANE8","Value":{"x":1694,"y":1270}},{"Key":"____altnative_state____PREPARE","Value":{"x":80,"y":858}}]},{"Key":"\/PREPARE\/","Value":[{"Key":"S_TITLE","Value":{"x":50,"y":100}},{"Key":"S_SCENE_1","Value":{"x":219,"y":16}},{"Key":"S_SHOW_MSGWINDOW","Value":{"x":1002,"y":22}},{"Key":"S_SETUP_YAMATO","Value":{"x":442,"y":288}},{"Key":"S_SETUP_MESSAGEWINDOW","Value":{"x":616,"y":13}},{"Key":"S_DISP_MENU","Value":{"x":417,"y":16}},{"Key":"S_SET_CHARNAMEAREA","Value":{"x":1201,"y":23}},{"Key":"S_AKANE_EMOTION","Value":{"x":211,"y":287}},{"Key":"S_SETUP_AKANE","Value":{"x":30,"y":273}},{"Key":"S_ADJUST_CHARAREGION","Value":{"x":810,"y":21}},{"Key":"S_SERIF01","Value":{"x":1131,"y":406}}]},{"Key":"\/Intoroduction\/","Value":[{"Key":"S_SETUP_YAMATO","Value":{"x":50,"y":100}},{"Key":"S_SERIF01","Value":{"x":305,"y":58}},{"Key":"S_SERIF02","Value":{"x":514,"y":61}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -735,6 +735,8 @@ comment_font_size=0
 contents_font_size=0
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=20
 content_max_height=200
 comment_block_fixed=0

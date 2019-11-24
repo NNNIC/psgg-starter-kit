@@ -60,7 +60,7 @@ s0014=S_RETURN3
 
 [s0001]
 n002=S_START
-n003=START
+n003=
 n00f=start
 n005=S_0005
 n00c=@@@
@@ -87,7 +87,7 @@ n00e=100002
 
 [s0005]
 n002=S_0003
-n003=
+n003=Loop 10 times
 n00f=loop
 n005=S_GOSUB1
 n007=ActivePresentation.Close
@@ -101,7 +101,7 @@ n00c=@@@
 
 @@@
 
-n00d=61,636
+n00d=79,282
 n00e=100005
 
 [s0006]
@@ -116,7 +116,7 @@ n00c=@@@
 
 @@@
 
-n00d=308,336
+n00d=398,323
 n00e=100006
 
 [s0007]
@@ -130,7 +130,7 @@ n00c=@@@
 
 @@@
 
-n00d=307,538
+n00d=443,449
 n00e=100007
 
 [s0008]
@@ -143,7 +143,7 @@ n00c=@@@
 
 @@@
 
-n00d=934,517
+n00d=937,414
 n00e=100008
 
 [s0009]
@@ -158,7 +158,7 @@ n00c=@@@
 
 @@@
 
-n00d=518,677
+n00d=541,448
 n00e=100009
 
 [s000a]
@@ -172,7 +172,7 @@ n00c=@@@
 
 @@@
 
-n00d=255,54
+n00d=137,45
 n00e=100010
 
 [s000b]
@@ -199,7 +199,7 @@ n00c=@@@
 
 @@@
 
-n00d=68,526
+n00d=74,198
 n00e=100013
 
 [s000e]
@@ -213,7 +213,7 @@ n00c=@@@
 
 @@@
 
-n00d=87,838
+n00d=82,585
 n00e=100014
 
 [s000f]
@@ -226,7 +226,7 @@ n00c=@@@
 
 @@@
 
-n00d=511,842
+n00d=392,573
 n00e=100015
 
 [s0010]
@@ -240,12 +240,12 @@ n00c=@@@
 
 @@@
 
-n00d=285,838
+n00d=197,580
 n00e=100016
 
 [s0011]
 n002=S_GOSUB3
-n003=Go B Souroutine
+n003=
 n00f=gosub
 n005=S_RETURN1
 n010=S_B_SUBSTART
@@ -255,7 +255,7 @@ n00c=@@@
 
 @@@
 
-n00d=710,681
+n00d=731,445
 n00e=100017
 
 [s0012]
@@ -269,7 +269,7 @@ n00c=@@@
 
 @@@
 
-n00d=959,909
+n00d=766,544
 n00e=100020
 
 [s0013]
@@ -283,7 +283,7 @@ n00c=@@@
 
 @@@
 
-n00d=1178,909
+n00d=881,543
 n00e=100019
 
 [s0014]
@@ -296,7 +296,7 @@ n00c=@@@
 
 @@@
 
-n00d=1402,906
+n00d=1098,550
 n00e=100021
 
 
@@ -306,8 +306,8 @@ n00e=100021
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/22 9:03:57
-; * pssgEditor version : 0.62.1210.d0f176d8440d617881dcf6a9d45b558b5742dafb
+; The setting was created automatically. 2019/11/24 11:27:21
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 TestContro.psgg
 @@@
@@ -324,7 +324,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Moved a state
+Moved multiple states
 @@@
 target_pathdir=@@@
 /
@@ -339,7 +339,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":0,"y":0}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":19,"y":48}},{"Key":"S_END","Value":{"x":969,"y":50}},{"Key":"S_0003","Value":{"x":61,"y":636}},{"Key":"S_GOSUB1","Value":{"x":308,"y":336}},{"Key":"S_SUBSTART1","Value":{"x":307,"y":538}},{"Key":"S_RETURN1","Value":{"x":934,"y":517}},{"Key":"S_0004","Value":{"x":518,"y":677}},{"Key":"S_0005","Value":{"x":255,"y":54}},{"Key":"S_0006","Value":{"x":772,"y":57}},{"Key":"E_0004","Value":{"x":68,"y":526}},{"Key":"S_SUBSTART2","Value":{"x":87,"y":838}},{"Key":"S_RETURN2","Value":{"x":511,"y":842}},{"Key":"S_0007","Value":{"x":285,"y":838}},{"Key":"S_GOSUB3","Value":{"x":710,"y":681}},{"Key":"S_0009","Value":{"x":1178,"y":909}},{"Key":"S_SUBSTART3","Value":{"x":959,"y":909}},{"Key":"S_RETURN3","Value":{"x":1402,"y":906}},{"Key":"S_A_SUBSTART","Value":{"x":307,"y":538}},{"Key":"S_B_SUBSTART","Value":{"x":959,"y":909}},{"Key":"S_LOOP_SUBSTART","Value":{"x":87,"y":838}},{"Key":"S_LOOP_SUBRETURN","Value":{"x":511,"y":842}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":19,"y":48}},{"Key":"S_END","Value":{"x":969,"y":50}},{"Key":"S_0003","Value":{"x":79,"y":282}},{"Key":"S_GOSUB1","Value":{"x":398,"y":323}},{"Key":"S_RETURN1","Value":{"x":937,"y":414}},{"Key":"S_0004","Value":{"x":541,"y":448}},{"Key":"S_0005","Value":{"x":137,"y":45}},{"Key":"S_0006","Value":{"x":772,"y":57}},{"Key":"E_0004","Value":{"x":74,"y":198}},{"Key":"S_0007","Value":{"x":197,"y":580}},{"Key":"S_GOSUB3","Value":{"x":731,"y":445}},{"Key":"S_0009","Value":{"x":881,"y":543}},{"Key":"S_RETURN3","Value":{"x":1098,"y":550}},{"Key":"S_A_SUBSTART","Value":{"x":443,"y":449}},{"Key":"S_B_SUBSTART","Value":{"x":766,"y":544}},{"Key":"S_LOOP_SUBSTART","Value":{"x":82,"y":585}},{"Key":"S_LOOP_SUBRETURN","Value":{"x":392,"y":573}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -351,7 +351,7 @@ external_command=@@@
 source_editor=@@@
 
 @@@
-source_editor_vs2015_support=1
+source_editor_vs2015_support=0
 label_show=0
 label_text=@@@
 test
@@ -375,6 +375,8 @@ comment_font_size=0
 contents_font_size=0
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=20
 content_max_height=200
 comment_block_fixed=0

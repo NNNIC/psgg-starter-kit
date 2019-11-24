@@ -102,7 +102,7 @@ n019=@@@
 
 @@@
 
-n01a=669,422
+n01a=625,327
 n01b=100005
 
 [s0004]
@@ -114,7 +114,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=1087,823
+n01a=331,493
 n01b=100003
 
 [s0005]
@@ -127,7 +127,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=899,320
+n01a=867,273
 n01b=100004
 
 [s0006]
@@ -141,11 +141,12 @@ n019=@@@
 This is the root
 @@@
 
-n01a=192,615
+n01a=62,191
 n01b=100006
 
 [s0007]
 n002=S_LOOP
+n003=Loop 10 times
 n01c=loop
 n006=S_END
 n008=int m_i;
@@ -159,7 +160,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=412,207
+n01a=286,187
 n01b=100007
 
 [s0008]
@@ -171,7 +172,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=1219,482
+n01a=1163,403
 n01b=100008
 
 [s0009]
@@ -184,7 +185,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=500,812
+n01a=42,495
 n01b=100009
 
 [s000a]
@@ -211,7 +212,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=456,421
+n01a=493,324
 n01b=100011
 
 [s000c]
@@ -224,7 +225,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=757,808
+n01a=131,494
 n01b=100012
 
 
@@ -234,8 +235,8 @@ n01b=100012
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/09 7:40:58
-; * pssgEditor version : 0.61.48749.fd2bf3482aab00fec0f42ef9845fced1ebfaea5f
+; The setting was created automatically. 2019/11/24 11:25:02
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 UnityCSharpControl.psgg
 @@@
@@ -252,7 +253,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Edited a state.
+Moved a state
 @@@
 target_pathdir=@@@
 /
@@ -267,7 +268,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":31,"y":34}},{"Key":"S_END","Value":{"x":806,"y":54}},{"Key":"S_START1","Value":{"x":110,"y":229}},{"Key":"S_SUBRETURN1","Value":{"x":1087,"y":823}},{"Key":"S_PRINT_EVEN","Value":{"x":899,"y":320}},{"Key":"S_EVEN_OR_ODD","Value":{"x":669,"y":422}},{"Key":"S_GOSUB","Value":{"x":192,"y":615}},{"Key":"S_LOOP","Value":{"x":412,"y":207}},{"Key":"S_SUBRETURN","Value":{"x":1219,"y":482}},{"Key":"S_SUBSTART1","Value":{"x":500,"y":812}},{"Key":"S_PRINT_ODD","Value":{"x":892,"y":490}},{"Key":"S_SUBSTART","Value":{"x":456,"y":421}},{"Key":"S_WORK","Value":{"x":757,"y":808}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":31,"y":34}},{"Key":"S_END","Value":{"x":806,"y":54}},{"Key":"S_SUBRETURN1","Value":{"x":331,"y":493}},{"Key":"S_PRINT_EVEN","Value":{"x":867,"y":273}},{"Key":"S_EVEN_OR_ODD","Value":{"x":625,"y":327}},{"Key":"S_GOSUB","Value":{"x":62,"y":191}},{"Key":"S_LOOP","Value":{"x":286,"y":187}},{"Key":"S_SUBRETURN","Value":{"x":1163,"y":403}},{"Key":"S_SUBSTART1","Value":{"x":42,"y":495}},{"Key":"S_PRINT_ODD","Value":{"x":892,"y":490}},{"Key":"S_SUBSTART","Value":{"x":493,"y":324}},{"Key":"S_WORK","Value":{"x":131,"y":494}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -279,7 +280,7 @@ external_command=@@@
 source_editor=@@@
 "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /Edit %1
 @@@
-source_editor_vs2015_support=1
+source_editor_vs2015_support=0
 label_show=0
 label_text=@@@
 test
@@ -303,6 +304,8 @@ comment_font_size=0
 contents_font_size=0
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=20
 content_max_height=200
 comment_block_fixed=0

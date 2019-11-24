@@ -55,7 +55,7 @@ s000c=S_0003
 
 [s0001]
 n002=S_START
-n003=START
+n003=
 n00f=start
 n006=S_GOSUB1
 n00d=50,100
@@ -63,7 +63,7 @@ n00e=100001
 
 [s0002]
 n002=S_END
-n003=END
+n003=
 n00f=end
 n007=@@@
 echo : end
@@ -77,7 +77,7 @@ n00e=100002
 [s0003]
 n001=(bitmap)
 n002=S_GOSUB1
-n003=Call A Souroutine
+n003=
 n00f=gosub
 n006=S_LOOP1
 n010=S_SUBSTART1
@@ -92,7 +92,7 @@ n00e=100003
 
 [s0004]
 n002=S_SUBSTART1
-n003=A Subroutine Start
+n003=
 n00f=substart
 n006=S_0001
 n00c=@@@
@@ -106,7 +106,7 @@ n00e=100004
 
 [s0005]
 n002=S_RETURN1
-n003=A Subroutine Return
+n003=
 n00f=subreturn
 n00c=@@@
 /
@@ -114,7 +114,7 @@ n00c=@@@
 
 @@@
 
-n00d=482,750
+n00d=434,755
 n00e=100005
 
 [s0006]
@@ -127,12 +127,12 @@ n00c=@@@
 
 @@@
 
-n00d=300,751
+n00d=219,751
 n00e=100006
 
 [s0007]
 n002=S_SUBSTART2
-n003=LOOP Subroutine
+n003=
 n00f=substart
 n006=S_ODD_OR_EVEN
 n00c=@@@
@@ -141,7 +141,7 @@ n00c=@@@
 
 @@@
 
-n00d=513,406
+n00d=340,438
 n00e=100008
 
 [s0008]
@@ -159,13 +159,13 @@ n00c=@@@
 
 @@@
 
-n00d=281,319
+n00d=149,328
 n00e=100007
 
 [s0009]
 n001=(bitmap)
 n002=S_RETURN2
-n003=LOOP Subroutine Return
+n003=
 n00f=subreturn
 n00c=@@@
 /
@@ -173,7 +173,7 @@ n00c=@@@
 
 @@@
 
-n00d=1321,392
+n00d=869,483
 n00e=100009
 
 [s000a]
@@ -186,7 +186,7 @@ n00c=@@@
 
 @@@
 
-n00d=989,343
+n00d=663,389
 n00e=100010
 
 [s000b]
@@ -213,7 +213,7 @@ n00c=@@@
 
 @@@
 
-n00d=760,374
+n00d=475,429
 n00e=100011
 
 [s000c]
@@ -226,7 +226,7 @@ n00c=@@@
 
 @@@
 
-n00d=988,464
+n00d=653,597
 n00e=100012
 
 
@@ -236,8 +236,8 @@ n00e=100012
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/17 10:55:58
-; * pssgEditor version : 0.61.61022.21962ef9b003e5fd3d068011d67d4df98c6b41e0
+; The setting was created automatically. 2019/11/24 11:34:52
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 MainControl.psgg
 @@@
@@ -254,7 +254,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Edited a state.
+Moved a state
 @@@
 target_pathdir=@@@
 /
@@ -266,10 +266,10 @@ nodegroup_comment_list=@@@
 [{"Key":"\/","Value":""}]
 @@@
 nodegroup_pos_list=@@@
-[{"Key":"\/","Value":{"x":0,"y":0}}]
+[{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":897,"y":107}},{"Key":"S_GOSUB1","Value":{"x":40,"y":341}},{"Key":"S_SUBSTART1","Value":{"x":107,"y":744}},{"Key":"S_RETURN1","Value":{"x":482,"y":750}},{"Key":"S_0001","Value":{"x":300,"y":751}},{"Key":"S_0002","Value":{"x":989,"y":343}},{"Key":"S_LOOP1","Value":{"x":281,"y":319}},{"Key":"S_SUBSTART2","Value":{"x":513,"y":406}},{"Key":"S_RETURN2","Value":{"x":1321,"y":392}},{"Key":"S_0003","Value":{"x":988,"y":464}},{"Key":"S_ODD_OR_EVEN","Value":{"x":760,"y":374}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":897,"y":107}},{"Key":"S_GOSUB1","Value":{"x":40,"y":341}},{"Key":"S_SUBSTART1","Value":{"x":107,"y":744}},{"Key":"S_RETURN1","Value":{"x":434,"y":755}},{"Key":"S_0001","Value":{"x":219,"y":751}},{"Key":"S_0002","Value":{"x":663,"y":389}},{"Key":"S_LOOP1","Value":{"x":149,"y":328}},{"Key":"S_SUBSTART2","Value":{"x":340,"y":438}},{"Key":"S_RETURN2","Value":{"x":869,"y":483}},{"Key":"S_0003","Value":{"x":653,"y":597}},{"Key":"S_ODD_OR_EVEN","Value":{"x":475,"y":429}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -305,6 +305,8 @@ comment_font_size=0
 contents_font_size=0
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=20
 content_max_height=200
 comment_block_fixed=0

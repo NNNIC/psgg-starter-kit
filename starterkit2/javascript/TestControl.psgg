@@ -73,12 +73,12 @@ n017=100001
 [s0002]
 n002=S_END
 n018=end
-n016=1227,92
+n016=702,75
 n017=100002
 
 [s000a]
 n002=S_GOSUB1
-n003=New Go Souroutine
+n003=
 n018=gosub
 n005=S_LOOP1
 n01f=S_SUBSTART1
@@ -88,7 +88,7 @@ n015=@@@
 
 @@@
 
-n016=329,52
+n016=205,254
 n017=100011
 
 [s000b]
@@ -102,7 +102,7 @@ n015=@@@
 
 @@@
 
-n016=571,67
+n016=159,488
 n017=100012
 
 [s000c]
@@ -115,7 +115,7 @@ n015=@@@
 
 @@@
 
-n016=979,71
+n016=488,500
 n017=100013
 
 [s000d]
@@ -128,12 +128,12 @@ n015=@@@
 
 @@@
 
-n016=771,73
+n016=279,495
 n017=100014
 
 [s000e]
 n002=S_SUBSTART2
-n003=A Subroutine Start
+n003=
 n018=substart
 n005=S_0009
 n015=@@@
@@ -142,11 +142,12 @@ n015=@@@
 
 @@@
 
-n016=389,485
+n016=618,331
 n017=100016
 
 [s000f]
 n002=S_LOOP1
+n003=Loop 10 times
 n018=loop
 n005=S_END
 n01c=this.count = 0;
@@ -159,12 +160,12 @@ n015=@@@
 
 @@@
 
-n016=206,263
+n016=410,236
 n017=100015
 
 [s0010]
 n002=S_RETURN2
-n003=A Subroutine Return
+n003=
 n018=subreturn
 n015=@@@
 /
@@ -172,7 +173,7 @@ n015=@@@
 
 @@@
 
-n016=806,493
+n016=927,338
 n017=100017
 
 [s0011]
@@ -185,7 +186,7 @@ n015=@@@
 
 @@@
 
-n016=599,491
+n016=720,336
 n017=100018
 
 
@@ -195,8 +196,8 @@ n017=100018
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/12 20:33:15
-; * pssgEditor version : 0.61.51784.5a3cca9b56a8f8de2503c27d945dd783d8203177
+; The setting was created automatically. 2019/11/24 11:29:35
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 TestControl.psgg
 @@@
@@ -228,7 +229,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":1227,"y":92}},{"Key":"S_GOSUB1","Value":{"x":329,"y":52}},{"Key":"S_SUBSTART1","Value":{"x":571,"y":67}},{"Key":"S_RETURN1","Value":{"x":979,"y":71}},{"Key":"S_0007","Value":{"x":771,"y":73}},{"Key":"S_0009","Value":{"x":599,"y":491}},{"Key":"S_LOOP1","Value":{"x":206,"y":263}},{"Key":"S_SUBSTART2","Value":{"x":389,"y":485}},{"Key":"S_RETURN2","Value":{"x":806,"y":493}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":702,"y":75}},{"Key":"S_GOSUB1","Value":{"x":205,"y":254}},{"Key":"S_SUBSTART1","Value":{"x":159,"y":488}},{"Key":"S_RETURN1","Value":{"x":488,"y":500}},{"Key":"S_0007","Value":{"x":279,"y":495}},{"Key":"S_0009","Value":{"x":720,"y":336}},{"Key":"S_LOOP1","Value":{"x":410,"y":236}},{"Key":"S_SUBSTART2","Value":{"x":618,"y":331}},{"Key":"S_RETURN2","Value":{"x":927,"y":338}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -264,6 +265,8 @@ comment_font_size=0
 contents_font_size=0
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=45
 content_max_height=200
 comment_block_fixed=0

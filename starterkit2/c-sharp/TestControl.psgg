@@ -76,7 +76,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=166,50
+n01a=66,32
 n01b=100001
 
 [s0002]
@@ -88,13 +88,13 @@ n019=@@@
 This is the root
 @@@
 
-n01a=952,37
+n01a=682,32
 n01b=100002
 
 [s0003]
 n002=S_LOOP
 n01c=loop
-n003=
+n003=Loop 10 times
 n006=S_END
 n008=int m_i;
 n013=S_SUBSTART
@@ -107,7 +107,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=582,213
+n01a=303,134
 n01b=100003
 
 [s0004]
@@ -121,7 +121,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=784,313
+n01a=536,235
 n01b=100004
 
 [s0005]
@@ -134,7 +134,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=1463,315
+n01a=1224,308
 n01b=100005
 
 [s0006]
@@ -153,7 +153,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=1222,191
+n01a=913,177
 n01b=100006
 
 [s0007]
@@ -167,7 +167,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=237,358
+n01a=81,138
 n01b=100007
 
 [s0008]
@@ -184,7 +184,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=687,620
+n01a=175,362
 n01b=100011
 
 [s0009]
@@ -196,7 +196,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=895,618
+n01a=397,364
 n01b=100009
 
 [s000a]
@@ -209,7 +209,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=488,630
+n01a=66,365
 n01b=100010
 
 [s000c]
@@ -235,7 +235,7 @@ n019=@@@
 
 @@@
 
-n01a=988,298
+n01a=681,239
 n01b=100012
 
 [s000d]
@@ -252,7 +252,7 @@ n019=@@@
 This is the root
 @@@
 
-n01a=1213,414
+n01a=903,387
 n01b=100013
 
 
@@ -262,8 +262,8 @@ n01b=100013
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/02 21:59:56
-; * pssgEditor version : 0.61.40194.406000c7f0969b5f3ebbf772ac13e8f77f150a2b
+; The setting was created automatically. 2019/11/24 11:23:31
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 TestControl.psgg
 @@@
@@ -295,7 +295,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":166,"y":50}},{"Key":"S_END","Value":{"x":952,"y":37}},{"Key":"S_SUBSTART","Value":{"x":784,"y":313}},{"Key":"S_SUBRETURN","Value":{"x":1463,"y":315}},{"Key":"S_GOSUB","Value":{"x":237,"y":358}},{"Key":"S_SUBRETURN1","Value":{"x":895,"y":618}},{"Key":"S_SUBSTART1","Value":{"x":488,"y":630}},{"Key":"S_LOOP","Value":{"x":582,"y":213}},{"Key":"S_WORK","Value":{"x":687,"y":620}},{"Key":"S_EVEN_OR_ODD","Value":{"x":988,"y":298}},{"Key":"S_PRINT_EVEN","Value":{"x":1222,"y":191}},{"Key":"S_PRINT_ODD","Value":{"x":1213,"y":414}}]},{"Key":"\/hoge\/","Value":[{"Key":"S_SUBSTART","Value":{"x":182,"y":691}},{"Key":"S_SUBRETURN","Value":{"x":611,"y":698}},{"Key":"S_GOSUB","Value":{"x":50,"y":100}},{"Key":"S_SUBRETURN1","Value":{"x":733,"y":256}},{"Key":"S_SUBSTART1","Value":{"x":319,"y":240}},{"Key":"S_WORK","Value":{"x":524,"y":255}}]},{"Key":"\/hoge1\/","Value":[{"Key":"S_LOOP","Value":{"x":58.5714264,"y":304.285736}},{"Key":"S_SUBSTART","Value":{"x":306,"y":338}},{"Key":"S_SUBRETURN","Value":{"x":742.8571,"y":337.7143}}]},{"Key":"\/hoge2\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":926,"y":87}},{"Key":"S_LOOP","Value":{"x":383,"y":76}},{"Key":"S_SUBSTART","Value":{"x":744,"y":432}},{"Key":"S_GOSUB","Value":{"x":367,"y":446}},{"Key":"S_SUBSTART1","Value":{"x":698,"y":679}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":66,"y":32}},{"Key":"S_END","Value":{"x":682,"y":32}},{"Key":"S_SUBSTART","Value":{"x":536,"y":235}},{"Key":"S_SUBRETURN","Value":{"x":1224,"y":308}},{"Key":"S_GOSUB","Value":{"x":81,"y":138}},{"Key":"S_SUBRETURN1","Value":{"x":397,"y":364}},{"Key":"S_SUBSTART1","Value":{"x":66,"y":365}},{"Key":"S_LOOP","Value":{"x":303,"y":134}},{"Key":"S_WORK","Value":{"x":175,"y":362}},{"Key":"S_EVEN_OR_ODD","Value":{"x":681,"y":239}},{"Key":"S_PRINT_EVEN","Value":{"x":913,"y":177}},{"Key":"S_PRINT_ODD","Value":{"x":903,"y":387}}]},{"Key":"\/hoge\/","Value":[{"Key":"S_SUBSTART","Value":{"x":182,"y":691}},{"Key":"S_SUBRETURN","Value":{"x":611,"y":698}},{"Key":"S_GOSUB","Value":{"x":50,"y":100}},{"Key":"S_SUBRETURN1","Value":{"x":733,"y":256}},{"Key":"S_SUBSTART1","Value":{"x":319,"y":240}},{"Key":"S_WORK","Value":{"x":524,"y":255}}]},{"Key":"\/hoge1\/","Value":[{"Key":"S_LOOP","Value":{"x":58.5714264,"y":304.285736}},{"Key":"S_SUBSTART","Value":{"x":306,"y":338}},{"Key":"S_SUBRETURN","Value":{"x":742.8571,"y":337.7143}}]},{"Key":"\/hoge2\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":926,"y":87}},{"Key":"S_LOOP","Value":{"x":383,"y":76}},{"Key":"S_SUBSTART","Value":{"x":744,"y":432}},{"Key":"S_GOSUB","Value":{"x":367,"y":446}},{"Key":"S_SUBSTART1","Value":{"x":698,"y":679}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -307,7 +307,7 @@ external_command=@@@
 source_editor=@@@
 "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" /Edit %1
 @@@
-source_editor_vs2015_support=1
+source_editor_vs2015_support=0
 label_show=0
 label_text=@@@
 test
@@ -331,6 +331,8 @@ comment_font_size=13
 contents_font_size=10
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=20
 content_max_height=200
 comment_block_fixed=0

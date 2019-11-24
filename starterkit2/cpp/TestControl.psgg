@@ -69,13 +69,15 @@ s000d=S_WORK
 
 [s0001]
 n002=S_START
+n019=start
 n005=S_0001
 n017=50,100
 n018=100001
 
 [s0002]
 n002=S_END
-n017=312,100
+n019=end
+n017=745,93
 n018=100002
 
 [s0003]
@@ -88,7 +90,7 @@ n016=@@@
 
 @@@
 
-n017=37,302
+n017=62,308
 n018=100003
 
 [s0004]
@@ -100,7 +102,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=720,857
+n017=475,627
 n018=100004
 
 [s0005]
@@ -113,7 +115,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=1047,430
+n017=939,254
 n018=100005
 
 [s0006]
@@ -139,7 +141,7 @@ n016=@@@
 
 @@@
 
-n017=813,537
+n017=725,367
 n018=100006
 
 [s0007]
@@ -153,11 +155,12 @@ n016=@@@
 This is the root
 @@@
 
-n017=62,597
+n017=259,311
 n018=100007
 
 [s0008]
 n002=S_LOOP
+n003=Loop 10 times
 n019=loop
 n005=S_END
 n007=int m_i;
@@ -171,7 +174,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=407,452
+n017=389,220
 n018=100008
 
 [s0009]
@@ -183,7 +186,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=1288,554
+n017=1191,419
 n018=100009
 
 [s000a]
@@ -196,7 +199,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=313,869
+n017=72,621
 n018=100010
 
 [s000b]
@@ -209,7 +212,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=1035,644
+n017=948,535
 n018=100011
 
 [s000c]
@@ -222,7 +225,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=609,552
+n017=604,372
 n018=100012
 
 [s000d]
@@ -235,7 +238,7 @@ n016=@@@
 This is the root
 @@@
 
-n017=512,859
+n017=211,626
 n018=100013
 
 
@@ -245,8 +248,8 @@ n018=100013
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/03 11:10:48
-; * pssgEditor version : 0.61.40937.b83e59111b3a935fbe1b89e29e11088a78e1ef52
+; The setting was created automatically. 2019/11/24 11:21:45
+; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
 psggfile=@@@
 TestControl.psgg
 @@@
@@ -278,7 +281,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":312,"y":100}},{"Key":"S_0001","Value":{"x":37,"y":302}},{"Key":"S_SUBRETURN1","Value":{"x":720,"y":857}},{"Key":"S_PRINT_EVEN","Value":{"x":1047,"y":430}},{"Key":"S_EVEN_OR_ODD","Value":{"x":813,"y":537}},{"Key":"S_GOSUB","Value":{"x":62,"y":597}},{"Key":"S_LOOP","Value":{"x":407,"y":452}},{"Key":"S_SUBRETURN","Value":{"x":1288,"y":554}},{"Key":"S_SUBSTART1","Value":{"x":313,"y":869}},{"Key":"S_PRINT_ODD","Value":{"x":1035,"y":644}},{"Key":"S_SUBSTART","Value":{"x":609,"y":552}},{"Key":"S_WORK","Value":{"x":512,"y":859}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":745,"y":93}},{"Key":"S_0001","Value":{"x":62,"y":308}},{"Key":"S_SUBRETURN1","Value":{"x":475,"y":627}},{"Key":"S_PRINT_EVEN","Value":{"x":939,"y":254}},{"Key":"S_EVEN_OR_ODD","Value":{"x":725,"y":367}},{"Key":"S_GOSUB","Value":{"x":259,"y":311}},{"Key":"S_LOOP","Value":{"x":389,"y":220}},{"Key":"S_SUBRETURN","Value":{"x":1191,"y":419}},{"Key":"S_SUBSTART1","Value":{"x":72,"y":621}},{"Key":"S_PRINT_ODD","Value":{"x":948,"y":535}},{"Key":"S_SUBSTART","Value":{"x":604,"y":372}},{"Key":"S_WORK","Value":{"x":211,"y":626}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -314,6 +317,8 @@ comment_font_size=0
 contents_font_size=0
 state_width=140
 state_height=20
+state_short_width=50
+state_short_height=20
 comment_block_height=20
 content_max_height=200
 comment_block_fixed=0
