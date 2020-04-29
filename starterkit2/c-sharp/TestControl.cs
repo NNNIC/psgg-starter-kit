@@ -80,142 +80,142 @@ public partial class TestControl  {
 		}
 	}
 
-	#region    // [PSGG OUTPUT START] indent(8) $/./$
+	#region    // [PSGG OUTPUT START] indent(4) $/./$
 //  psggConverterLib.dll converted from TestControl.xlsx.    psgg-file:TestControl.psgg
-        /*
-            S_END
-        */
-        void S_END(bool bFirst)
+    /*
+        S_END
+    */
+    void S_END(bool bFirst)
+    {
+    }
+    /*
+        S_EVEN_OR_ODD
+    */
+    void S_EVEN_OR_ODD(bool bFirst)
+    {
+        // branch
+        if (m_i % 2 == 0) { Goto( S_PRINT_EVEN ); }
+        else { Goto( S_PRINT_ODD ); }
+    }
+    /*
+        S_GOSUB
+    */
+    void S_GOSUB(bool bFirst)
+    {
+        GoSubState(S_SUBSTART1,S_LOOP);
+        NoWait();
+    }
+    /*
+        S_LOOP
+        Loop 10 times
+    */
+    int m_i;
+    void S_LOOP(bool bFirst)
+    {
+        m_i=0;
+        Goto(S_LOOP_LoopCheckAndGosub____);
+        NoWait();
+    }
+    void S_LOOP_LoopCheckAndGosub____(bool bFirst)
+    {
+        if (m_i < 10) GoSubState(S_SUBSTART,S_LOOP_LoopNext____);
+        else               Goto(S_END);
+        NoWait();
+    }
+    void S_LOOP_LoopNext____(bool bFirst)
+    {
+        m_i++;
+        Goto(S_LOOP_LoopCheckAndGosub____);
+        NoWait();
+    }
+    /*
+        S_PRINT_EVEN
+    */
+    void S_PRINT_EVEN(bool bFirst)
+    {
+        //
+        if (bFirst)
         {
+            Console.WriteLine(m_i.ToString() + ".. EVEN");
         }
-        /*
-            S_EVEN_OR_ODD
-        */
-        void S_EVEN_OR_ODD(bool bFirst)
+        //
+        if (!HasNextState())
         {
-            // branch
-            if (m_i % 2 == 0) { Goto( S_PRINT_EVEN ); }
-            else { Goto( S_PRINT_ODD ); }
+            Goto(S_SUBRETURN);
         }
-        /*
-            S_GOSUB
-        */
-        void S_GOSUB(bool bFirst)
+    }
+    /*
+        S_PRINT_ODD
+    */
+    void S_PRINT_ODD(bool bFirst)
+    {
+        //
+        if (bFirst)
         {
-            GoSubState(S_SUBSTART1,S_LOOP);
-            NoWait();
+            Console.WriteLine(m_i.ToString() + ".. ODD");
         }
-        /*
-            S_LOOP
-            Loop 10 times
-        */
-        int m_i;
-        void S_LOOP(bool bFirst)
+        //
+        if (!HasNextState())
         {
-            m_i=0;
-            Goto(S_LOOP_LoopCheckAndGosub____);
-            NoWait();
+            Goto(S_SUBRETURN);
         }
-        void S_LOOP_LoopCheckAndGosub____(bool bFirst)
+    }
+    /*
+        S_START
+    */
+    void S_START(bool bFirst)
+    {
+        Goto(S_GOSUB);
+        NoWait();
+    }
+    /*
+        S_SUBRETURN
+    */
+    void S_SUBRETURN(bool bFirst)
+    {
+        ReturnState();
+        NoWait();
+    }
+    /*
+        S_SUBRETURN1
+    */
+    void S_SUBRETURN1(bool bFirst)
+    {
+        ReturnState();
+        NoWait();
+    }
+    /*
+        S_SUBSTART
+    */
+    void S_SUBSTART(bool bFirst)
+    {
+        Goto(S_EVEN_OR_ODD);
+        NoWait();
+    }
+    /*
+        S_SUBSTART1
+    */
+    void S_SUBSTART1(bool bFirst)
+    {
+        Goto(S_WORK);
+        NoWait();
+    }
+    /*
+        S_WORK
+    */
+    void S_WORK(bool bFirst)
+    {
+        //
+        if (bFirst)
         {
-            if (m_i < 10) GoSubState(S_SUBSTART,S_LOOP_LoopNext____);
-            else               Goto(S_END);
-            NoWait();
+            Console.WriteLine("!!!");
         }
-        void S_LOOP_LoopNext____(bool bFirst)
+        //
+        if (!HasNextState())
         {
-            m_i++;
-            Goto(S_LOOP_LoopCheckAndGosub____);
-            NoWait();
+            Goto(S_SUBRETURN1);
         }
-        /*
-            S_PRINT_EVEN
-        */
-        void S_PRINT_EVEN(bool bFirst)
-        {
-            //
-            if (bFirst)
-            {
-                Console.WriteLine(m_i.ToString() + ".. EVEN");
-            }
-            //
-            if (!HasNextState())
-            {
-                Goto(S_SUBRETURN);
-            }
-        }
-        /*
-            S_PRINT_ODD
-        */
-        void S_PRINT_ODD(bool bFirst)
-        {
-            //
-            if (bFirst)
-            {
-                Console.WriteLine(m_i.ToString() + ".. ODD");
-            }
-            //
-            if (!HasNextState())
-            {
-                Goto(S_SUBRETURN);
-            }
-        }
-        /*
-            S_START
-        */
-        void S_START(bool bFirst)
-        {
-            Goto(S_GOSUB);
-            NoWait();
-        }
-        /*
-            S_SUBRETURN
-        */
-        void S_SUBRETURN(bool bFirst)
-        {
-            ReturnState();
-            NoWait();
-        }
-        /*
-            S_SUBRETURN1
-        */
-        void S_SUBRETURN1(bool bFirst)
-        {
-            ReturnState();
-            NoWait();
-        }
-        /*
-            S_SUBSTART
-        */
-        void S_SUBSTART(bool bFirst)
-        {
-            Goto(S_EVEN_OR_ODD);
-            NoWait();
-        }
-        /*
-            S_SUBSTART1
-        */
-        void S_SUBSTART1(bool bFirst)
-        {
-            Goto(S_WORK);
-            NoWait();
-        }
-        /*
-            S_WORK
-        */
-        void S_WORK(bool bFirst)
-        {
-            //
-            if (bFirst)
-            {
-                Console.WriteLine("!!!");
-            }
-            //
-            if (!HasNextState())
-            {
-                Goto(S_SUBRETURN1);
-            }
-        }
+    }
 
 
 	#endregion // [PSGG OUTPUT END]
