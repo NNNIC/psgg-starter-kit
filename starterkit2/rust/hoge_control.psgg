@@ -544,7 +544,7 @@ template_src=
 template_func=template-statefunc.txt
 
 help=help.ini
-helpweb=starterkit2\c\helpweb.html
+helpweb=starterkit2\rust\helpweb.html
 
 
 [setupinfo]

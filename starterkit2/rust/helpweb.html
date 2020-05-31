@@ -61,19 +61,14 @@ input {
 <h1>c sample help</h1>
   <div>Implementation example<br>
   <pre>
-#include <stdio.h>
-#include <stdbool.h>
-          
-extern void testControl_update();
-extern void testControl_start();
-extern bool testControl_is_end();  
-
-void main() {
-    testControl_start();
-    while(testControl_is_end()==false) {
-        testControl_update();
-  }  
-}
+    #[allow(dead_code)]
+    mod hoge_control;
+    use hoge_control::hoge_control::*;
+    
+    fn main() {
+        let mut hc = HogeControl::new();
+        hc.run();
+    }
   </pre>
   </div>
 
