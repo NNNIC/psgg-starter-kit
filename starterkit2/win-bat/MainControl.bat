@@ -52,7 +52,8 @@ echo : == START OF BATCH ==
 goto :S_START
 
 :: [PSGG OUTPUT START] $/./$
-::   psggConverterLib.dll converted from MainControl.xlsx.    psgg-file:MainControl.psgg
+    ::              psggConverterLib.dll converted from psgg-file:MainControl.psgg
+
     ::
     :S_0001
     ::
@@ -82,9 +83,7 @@ goto :S_START
     ::
     ::
     ::
-        echo : end
-        pause
-        exit
+        goto :_end
     ::
     :S_GOSUB1
     ::
@@ -170,3 +169,4 @@ goto :S_START
 :: [PSGG OUTPUT END]
 echo : == END OF BATCH ==
 :_end
+pause
