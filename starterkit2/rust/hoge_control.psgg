@@ -13,9 +13,9 @@ check_excel_writable=no
 
 sheet=state-chart
 nameid_list=,n001,n002,n003,n004,n019,n005,,n01e,n006,,n007,n01f,,n008,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n012,n013,n014,n015,,n01a,,n01b,n01c,n01d,n016,n017,n018,,,,,,
-stateid_list=,,,,s0001,s0002,s000d,s0003,s000f,s0010,s001a,s0012,s0013,s0014,s0015,s0016,s0017,s000e,s0019,s0018
+stateid_list=,,,,s0001,s0002,s000d,s0003,s000f,s0010,s001a,s0012,s0013,s0014,s0015,s0016,s0017,s000e,s0019,s0018,,s001b
 max_name_id=31
-max_state_id=26
+max_state_id=27
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -67,6 +67,7 @@ s0017=S_SBS001
 s0018=S_0007
 s0019=S_RET001
 s001a=E_0000
+s001b=C_0000
 
 
 [s0001]
@@ -79,7 +80,7 @@ n016=@@@
 The root
 @@@
 
-n017=52,114
+n017=50,221
 n018=100001
 
 [s0002]
@@ -104,7 +105,7 @@ n016=@@@
 The root
 @@@
 
-n017=176,106
+n017=174,213
 n018=100003
 
 [s000d]
@@ -330,6 +331,24 @@ n016=@@@
 n017=99,884
 n018=100018
 
+[s001b]
+n002=C_0000
+n003=@@@
+Rust's Sample.
+It shows how to use "Loop" and "Gosub".
+LoopとGosubの使い方の事例となります。
+
+@@@
+
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=20,14
+n018=100019
+
 
 
 ------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
@@ -337,8 +356,8 @@ n018=100018
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/06/01 21:52:03
-; * pssgEditor version : 0.64.66138.9cfd0ba8dabb5427d38d2b497d34132f6e040a10
+; The setting was created automatically. 2020/06/15 7:48:51
+; * pssgEditor version : 0.64.84945.fd0f469c305e75e3664469f7420c60802a30ea2f
 psggfile=@@@
 hoge_control.psgg
 @@@
@@ -370,7 +389,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":52,"y":114}},{"Key":"S_END","Value":{"x":1893,"y":154}},{"Key":"S_0001","Value":{"x":176,"y":106}},{"Key":"S_0002","Value":{"x":906,"y":73}},{"Key":"S_0003","Value":{"x":1126,"y":73}},{"Key":"S_0004","Value":{"x":1448,"y":40}},{"Key":"S_0005","Value":{"x":1462,"y":268}},{"Key":"S_SBS000","Value":{"x":691,"y":442}},{"Key":"S_0006","Value":{"x":844,"y":442}},{"Key":"S_RET000","Value":{"x":1093,"y":442}},{"Key":"S_GSB001","Value":{"x":448,"y":295}},{"Key":"S_LOP000","Value":{"x":287,"y":594}},{"Key":"S_SBS001","Value":{"x":746,"y":734}},{"Key":"S_0007","Value":{"x":899,"y":734}},{"Key":"S_RET001","Value":{"x":1148,"y":734}},{"Key":"E_0000","Value":{"x":99,"y":884}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":221}},{"Key":"S_END","Value":{"x":1893,"y":154}},{"Key":"S_0001","Value":{"x":174,"y":213}},{"Key":"S_0002","Value":{"x":906,"y":73}},{"Key":"S_0003","Value":{"x":1126,"y":73}},{"Key":"S_0004","Value":{"x":1448,"y":40}},{"Key":"S_0005","Value":{"x":1462,"y":268}},{"Key":"S_SBS000","Value":{"x":691,"y":442}},{"Key":"S_0006","Value":{"x":844,"y":442}},{"Key":"S_RET000","Value":{"x":1093,"y":442}},{"Key":"S_GSB001","Value":{"x":448,"y":295}},{"Key":"S_LOP000","Value":{"x":287,"y":594}},{"Key":"S_SBS001","Value":{"x":746,"y":734}},{"Key":"S_0007","Value":{"x":899,"y":734}},{"Key":"S_RET001","Value":{"x":1148,"y":734}},{"Key":"E_0000","Value":{"x":99,"y":884}},{"Key":"C_0000","Value":{"x":20,"y":14}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -393,6 +412,7 @@ option_delete_s_state_string=1
 option_copy_output_to_clipboard=0
 option_convert_with_confirm=0
 option_ignore_case_of_state=0
+option_set_default_comment=1
 option_editbranch_automode=1
 option_use_custom_prefix=0
 option_omit_basestate_string=0
