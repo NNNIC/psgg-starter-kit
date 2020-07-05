@@ -1,0 +1,999 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=TestControl.xlsx
+guid=946c276c-78ea-4917-acfe-e3edf22b2794
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n003,n004,n019,n005,,n01e,n006,,n007,,n008,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n012,n013,n014,n015,,n01a,,n01b,n01c,n01d,n016,n017,n018,,,,,
+stateid_list=,,,,,,,,,,,,,,,,,s000d,s000e,s0010,s000f,s0012,s0014,s0015,s0013,s0016,s0018,,s001a,s0019,s001b,s001c,s001d,,,s001f,,,s0023,s0025,s0026,s0027
+max_name_id=30
+max_state_id=39
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=nextstate
+n006=embed
+n007=members
+n008=vars
+n009=init
+n00a=init-cmt
+n00b=init-ref
+n00c=update
+n00d=update-cmt
+n00e=wait
+n00f=wait-cmt
+n010=post_wait
+n011=post_wait-cmt
+n012=branch
+n013=branch-cmt
+n014=brcond
+n015=nowait
+n016=!dir
+n017=!pos
+n018=!uuid
+n019=state-typ
+n01a=gosubstate
+n01b=loop_init
+n01c=loop_cond
+n01d=loop_next
+n01e=basestate
+
+
+[id_state_dic]
+s000d=S_START
+s000e=S_END
+s000f=S_PRINT_HELLOWORLD
+s0010=S_PRINT_YOURESUNSHINE
+s0012=S_Branches
+s0013=S_PRINT_0
+s0014=S_PRINT_1
+s0015=S_PRINT_2
+s0016=S_PRINT_ETC
+s0018=S_PASS
+s0019=S_GSB000
+s001a=S_SBS000
+s001b=S_RET000
+s001c=S_CountDown
+s001d=S_PRINT_SUBROUTINE
+s001f=S_LOP000
+s0023=S_GSB001
+s0025=S_SBS002
+s0026=S_RET002
+s0027=S_PRINT_LOOPSUB1
+
+
+[s000d]
+n002=S_START
+n019=start
+n005=S_PRINT_HELLOWORLD
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=64,84
+n018=1
+
+[s000e]
+n002=S_END
+n019=end
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=2311,484
+n018=2
+
+[s000f]
+n002=S_PRINT_HELLOWORLD
+n005=S_PRINT_YOURESUNSHINE
+n007=@@@
+msg_[[state]]:    db 'Hello, World.', 10, 0
+@@@
+
+n009=@@@
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=265,84
+n018=3
+
+[s0010]
+n002=S_PRINT_YOURESUNSHINE
+n005=S_GSB000
+n007=@@@
+msg_[[state]]:    db 'You are the sunshine.', 10, 0
+@@@
+
+n009=@@@
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=484,84
+n018=4
+
+[s0012]
+n002=S_Branches
+n003=@@@
+Get random and fillter 0x7.
+Branch by eax
+@@@
+
+n005=
+n007=m_num: dd 0
+n009=@@@
+;call _GetTickCount@0
+call _rand
+and  eax, 0x7
+mov [m_num], eax
+@@@
+
+n012=@@@
+brifc(S_PRINT_0);
+brelseifc(S_PRINT_1);
+brelseifc(S_PRINT_2);
+brelse(S_PRINT_ETC);
+@@@
+
+n013=@@@
+eax == 0
+eax == 1
+eax == 2
+?
+@@@
+
+n014=@@@
+0
+1
+2
+?
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1342,675
+n018=6
+
+[s0013]
+n002=S_PRINT_0
+n005=S_PASS
+n007=@@@
+msg_[[state]]:    db 'It is Zero!', 10, 0
+@@@
+
+n009=@@@
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1584,676
+n018=7
+
+[s0014]
+n002=S_PRINT_1
+n005=S_PASS
+n007=@@@
+msg_[[state]]:    db 'It is First!', 10, 0
+@@@
+
+n009=@@@
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1584,798
+n018=8
+
+[s0015]
+n002=S_PRINT_2
+n005=S_PASS
+n007=@@@
+msg_[[state]]:    db 'It is Second!', 10, 0
+@@@
+
+n009=@@@
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1584,945
+n018=9
+
+[s0016]
+n002=S_PRINT_ETC
+n005=S_PASS
+n007=@@@
+;                     01234567
+msg_[[state]]:    db 'It is   ', 10, 0
+@@@
+
+n009=@@@
+mov     al, [m_num]
+add     al, 48
+mov     byte [msg_[[state]] + 6], al
+
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1584,1100
+n018=10
+
+[s0018]
+n001=(bitmap)
+n002=S_PASS
+n019=pass
+n005=S_RET002
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1947,877
+n018=12
+
+[s0019]
+n002=S_GSB000
+n019=gosub
+n005=S_CountDown
+n01a=S_SBS000
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=948,84
+n018=13
+
+[s001a]
+n002=S_SBS000
+n019=substart
+n005=S_PRINT_SUBROUTINE
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1137,184
+n018=14
+
+[s001b]
+n002=S_RET000
+n019=subreturn
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1584,184
+n018=15
+
+[s001c]
+n002=S_CountDown
+n005=S_GSB001
+n007=@@@
+m_cnt : dd   5
+;                     0123456789012
+msg_[[state]]:    db 'Count down  .', 10, 0
+@@@
+
+n009=mov dword [m_cnt], 5
+n00c=@@@
+mov     al, [m_cnt]
+add     al, 48
+mov     byte [msg_[[state]] + 11], al
+
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n00e=@@@
+mov ecx, [m_cnt]
+mov eax, ecx
+dec ecx
+mov [m_cnt], ecx
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1813,91
+n018=27
+
+[s001d]
+n002=S_PRINT_SUBROUTINE
+n005=S_RET000
+n007=@@@
+msg_[[state]]:    db 'IN THE SUBROUTINE.', 10, 0
+@@@
+
+n009=@@@
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1285,184
+n018=17
+
+[s001f]
+n001=(bitmap)
+n002=S_LOP000
+n019=loop
+n005=S_END
+n007=m_loop: dd 0
+n01a=S_SBS002
+n01b=$macro:setN(m_loop,0)$
+n01c=$macro:lessN(m_loop,10)$
+n01d=$macro:inc(m_loop)$
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=702,484
+n018=18
+
+[s0023]
+n002=S_GSB001
+n019=pass
+n005=S_LOP000
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=2229,299
+n018=22
+
+[s0025]
+n002=S_SBS002
+n019=substart
+n005=S_PRINT_LOOPSUB1
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=926,675
+n018=24
+
+[s0026]
+n002=S_RET002
+n019=subreturn
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=2076,877
+n018=25
+
+[s0027]
+n002=S_PRINT_LOOPSUB1
+n005=S_Branches
+n007=@@@
+msg_[[state]]:    db 'IN THE LOOP SUBROUTINE.', 10, 0
+@@@
+
+n009=@@@
+push     msg_[[state]]
+call     _printf
+add      esp, 4
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1090,675
+n018=26
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2020/07/05 21:36:53
+; * pssgEditor version : 0.65.5617.0737256ae72d56e87335f7bfb8f8728597b6ec64
+psggfile=@@@
+TestControl.psgg
+@@@
+xlsfile=@@@
+TestControl.xlsx
+@@@
+guid=@@@
+946c276c-78ea-4917-acfe-e3edf22b2794
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+init,Saved
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":64,"y":84}},{"Key":"S_END","Value":{"x":2311,"y":484}},{"Key":"S_PRINT_HELLOWORLD","Value":{"x":265,"y":84}},{"Key":"S_PRINT_YOURESUNSHINE","Value":{"x":484,"y":84}},{"Key":"S_0000","Value":{"x":1342,"y":675}},{"Key":"S_PRINT_0","Value":{"x":1584,"y":676}},{"Key":"S_PRINT_1","Value":{"x":1584,"y":798}},{"Key":"S_PRINT_2","Value":{"x":1584,"y":945}},{"Key":"S_PRINT_ETC","Value":{"x":1584,"y":1100}},{"Key":"S_PASS","Value":{"x":1947,"y":877}},{"Key":"S_GSB000","Value":{"x":948,"y":84}},{"Key":"S_SBS000","Value":{"x":1137,"y":184}},{"Key":"S_RET000","Value":{"x":1584,"y":184}},{"Key":"S_0002","Value":{"x":1813,"y":91}},{"Key":"S_PRINT_SUBROUTINE","Value":{"x":1285,"y":184}},{"Key":"S_LOP000","Value":{"x":702,"y":484}},{"Key":"S_GSB001","Value":{"x":2229,"y":299}},{"Key":"S_SBS002","Value":{"x":926,"y":675}},{"Key":"S_RET002","Value":{"x":2076,"y":877}},{"Key":"S_PRINT_LOOPSUB1","Value":{"x":1090,"y":675}},{"Key":"S_CountDown","Value":{"x":1813,"y":91}},{"Key":"S_Branches","Value":{"x":1342,"y":675}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor_set=@@@
+
+@@@
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=1
+option_use_custom_prefix=0
+option_omit_basestate_string=0
+option_hide_basestate_contents=1
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+state_short_width=50
+state_short_height=20
+comment_block_height=20
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+
+@@@
+decoimage_typ_name=@@@
+sym
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+
+;
+;    [[state]]
+[[state-cmt->@mcmt]]
+;
+
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+<<<?state-typ/^start$/
+[[state]]:
+    $macro:goto([[nextstate]])$
+    jmp     loop_next
+eof>>>
+
+<<<?state-typ/^end$/
+[[state]]:
+    jmp     loop_next
+eof>>>
+
+<<<?state-typ/^gosub$/
+[[state]]:
+    $macro:gosub([[gosubstate]],[[nextstate]])$
+    jmp     loop_next
+eof>>>
+
+<<<?state-typ/^subreturn$/
+[[state]]:
+    $macro:return$
+    jmp     loop_next
+eof>>>
+
+<<<?state-typ/^loop$/
+[[state]]:
+    [[loop_init]]
+    $macro:goto([[state]]_LoopCheckAndGosub____)$
+    jmp     loop_next
+
+; Loop Chack And Gosub
+[[state]]_LoopCheckAndGosub____:
+     [[loop_cond]]
+     test   eax,eax
+     jne    [[state]]_LoopCheckAndGosub____ne
+     $macro:gosub([[gosubstate]],[[state]]_LoopNext____)$
+     jmp    loop_next
+[[state]]_LoopCheckAndGosub____ne:
+     $macro:goto([[nextstate]])$
+     jmp    loop_next
+
+; Loop Next
+[[state]]_LoopNext____:
+    [[loop_next]]
+    $macro:goto([[state]]_LoopCheckAndGosub____)$
+    jmp     loop_next
+eof>>>
+
+
+[[state]]:
+
+[[vars]]
+
+<<<?init
+    mov     eax, [m_bFirst]
+    test    eax, eax
+    jz      [[state]]_init_end
+    [[init]]
+[[state]]_init_end:
+>>>
+
+    [[update]]
+
+<<<?wait
+    [[wait]]
+    test    eax, eax
+    jnz     loop_next
+>>>
+
+
+    [[post_wait]]
+
+[[branch]]
+
+[[state]]_branch_end:
+
+<<<?nextstate
+    $macro:if_nonzero_jump(m_nextstate,loop_next)$
+    $macro:goto([[nextstate]])$
+>>>
+    jmp     loop_next
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=TestControl.psgg
+xls=TestControl.xlsx
+sub_src=
+gen_src=TestControl.asm
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=help.ini
+helpweb=starterkit2\nasm\helpweb.html
+
+macro_ini=TestControl.ini
+
+[setupinfo]
+
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git b8deda1cf808e4b9b62e5697e1958776f605d049
+@@@
+
+
+
+lang=nasm
+framework=
+
+statemachine=TestControl
+
+prefix=__PREFIX__
+xlsdir=@@@
+G:\statego\samples\psgg-nasm-sample\test\02
+@@@
+
+gendir=@@@
+G:\statego\samples\psgg-nasm-sample\test\02
+@@@
+
+genrdir=.
+incrdir=.
+
+code_output_start=[STATEGO OUTPUT START]
+code_output_end=[STATEGO OUTPUT END]
+
+; This section has macro defines for converting.
+
+; commentline format  {%0} will be replaced to a comment.
+[macro]
+
+commentline=; {%0}
+
+
+[jpn]
+
+title=NASM スタートキット 2020/7/5
+
+detail=@@@
+NASM 用のステートマシンを作成します。
+
+※サンプルプロジェクトを次のＵＲＬより入手可能。
+https://github.com/NNNIC/psgg-nasm-sample
+
+
+#  以下のファイルを作成します。
+
+      TestControl.pssg   --- StateGoデータファイル
+      TestControl.asm    --- 実行ソース。変換コードが挿入される。
+@@@
+
+
+[en]
+
+title=NASM STARTER KIT 2020/7/5
+
+detail=@@@
+This is for creating a state machine using aSM language.
+
+* You may get the sample project from the below url.
+https://github.com/NNNIC/psgg-nasm-sample
+
+# Files
+
+      TestControl.pssg  --- StateGo Data File
+      TestControl.asm   -- StateGo will convert data to this file.
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[nextstate]
+
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
+[branch]
+
+jpn=@@@
+分岐処理を指定する。
+１行に一つの分岐命令を書く。
+GUIにより上書きされるため引数は適当に指定する。
+例）
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+en=@@@
+Specify branch functions.
+Each line has a branch function.
+Specify a tentavie parameter for each branch function because GUI overwrites the parameter.
+i.e)
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+[update]
+
+jpn=更新処理を指定する。
+en=Specify a update process.
+[wait]
+
+jpn=@@@
+待ち条件を指定する。
+true時にループを解除する。
+@@@
+
+en=@@@
+Specify a waiting condition.
+Release the loop if the condition is true.
+@@@
+
+[gosubstate]
+
+en=Call Subroutine
+jpn=サブルーチン呼出し
+[loop_next]
+
+en=Loop increment.
+jpn=ループ用インクリメント
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[members]
+
+jpn=メンバ変数及び関数等を指定する。
+en=@@@
+Specify members, variables, classes,  etc.
+@@@
+
+[post_wait]
+
+jpn='wait'後の処理を指定する。
+en=Specify the post process after 'wait'.
+[vars]
+
+jpn=変数宣言を指定する。
+en=Specify variable definitions.
+[nowait]
+
+jpn=@@@
+次のステートへ同期待ちをせず実行する時に 'nowait'等を指定する。
+同期待ち時には何も指定しない。
+@@@
+
+en=@@@
+Specify 'nowait' and so on if the next state will be execute without a sync wait.
+Do not specify any word wheh the next state will be execute with a sync wait.
+@@@
+
+[embed]
+
+jpn=@@@
+コード埋め込み用。
+ステート名がI_時に利用可能。
+ステート機能は利用できない。
+@@@
+
+en=@@@
+For embedding code.
+Enable this section if state name starts with "I_".
+Disabled state features.
+@@@
+
+[basestate]
+
+en=Set base state
+jpn=ベースステートのセット
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[state-typ]
+
+en=ステートタイプを指定
+[init]
+
+jpn=初期化用処理を指定する。
+en=Specify a initial process.
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
+en=@@@
+System uses this for the directory path of the state.
+@@@
+
+[loop_init]
+
+en=Loop Initialization
+jpn=ループ初期化
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+[loop_cond]
+
+en=Loop if the condition is true
+jpn=@@@
+ループ条件
+true時にループする。
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+init=
+branch-cmt=
+state-ref=
+wait=
+wait-cmt=
+embed=
+gosubstate=
+loop_cond=
+branch=
+!dir=
+post_wait-cmt=
+nowait=@@@
+*select
+nowait
+@@@
+
+members=
+thumbnail=
+update-cmt=
+post_wait=
+state-cmt=
+state-typ=
+!pos=
+!uuid=
+nextstate=
+state=
+S_=
+brcond=
+update=
+init-cmt=
+basestate=
+loop_next=
+vars=
+C_=
+E_=
+init-ref=
+loop_init=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+state-typ=read_only,exclusion,(S0)
+gosubstate=read_only,exclusion,(S0)
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,S0
+brcond=read_only,exclusion,S0
+embed=read_only,exclusion,S1
+basestate=read_only,exclusion,(S0)
+thumbnail=read_only,share,S.+
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+
