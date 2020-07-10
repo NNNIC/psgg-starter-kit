@@ -533,7 +533,7 @@ https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
 
 
 lang=c#
-framework=
+framework=unity-not-mono
 
 statemachine=TestControl
 prefix=__PREFIX__
