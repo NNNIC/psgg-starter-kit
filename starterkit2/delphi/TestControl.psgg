@@ -1,0 +1,920 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=TestControl.xlsx
+guid=c0856262-0e48-4255-9b0b-b7b57e901608
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n019,n003,n004,n005,n01a,,n006,n007,,n008,n01e,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n012,n013,n014,,n01b,n01c,n01d,n015,n016,n017,,,,,,
+stateid_list=,,,,s0001,s0002,s0003,s0024,,,,,,,,,,,,s0011,,s0013,,s0014,s0015,s0016,,s0017,,s0019,s001c,s001b,s001d,s001e,s001f,s0020,s0021,s0022,s0023
+max_name_id=30
+max_state_id=36
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=nextstate
+n006=embdec
+n007=embed
+n008=vars
+n009=init
+n00a=init-cmt
+n00b=init-ref
+n00c=update
+n00d=update-cmt
+n00e=wait
+n00f=wait-cmt
+n010=post_wait
+n011=post_wait-cmt
+n012=branch
+n013=brcond
+n014=nowait
+n015=!dir
+n016=!pos
+n017=!uuid
+n019=state-typ
+n01a=gosubstate
+n01b=loop_init
+n01c=loop_cond
+n01d=loop_next
+n01e=vars_init
+
+
+[id_state_dic]
+s0001=S_START
+s0002=S_END
+s0003=E_0001
+s0011=S_0001
+s0013=S_LOP000
+s0014=S_0011
+s0015=S_SBS001
+s0016=S_RET001
+s0017=E_0003
+s0019=S_0012
+s001b=S_0013
+s001c=S_0014
+s001d=S_SBS002
+s001e=S_GSB001
+s001f=S_RET002
+s0020=S_0016
+s0021=S_0015
+s0022=S_0017
+s0023=S_PAS001
+s0024=C_0003
+
+
+[s0001]
+n002=S_START
+n019=start
+n005=S_0001
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=50,100
+n017=100001
+
+[s0002]
+n002=S_END
+n019=end
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=1230,1007
+n017=100002
+
+[s0003]
+n001=(bitmap)
+n002=E_0001
+n006=@@@
+protected procedure hoge(const st: string);
+@@@
+
+n007=@@@
+procedure TestControl.hoge(const st: string);
+begin
+    WriteLn('Hoge says that ' + st);
+end;
+@@@
+
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=27,250
+n017=100003
+
+[s0011]
+n002=S_0001
+n005=S_0013
+n009=WriteLn('Hello World!');
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=177,101
+n017=100018
+
+[s0013]
+n002=S_LOP000
+n019=loop
+n005=S_END
+n01a=S_SBS001
+n01b=fIndex := 0;
+n01c=fIndex < 10
+n01d=fIndex := fIndex + 1;
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=234,1014
+n017=100020
+
+[s0014]
+n002=S_0011
+n005=S_RET001
+n009=WriteLn('Looping:', fIndex);
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=557,1105
+n017=100021
+
+[s0015]
+n002=S_SBS001
+n019=substart
+n005=S_0011
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=412,1106
+n017=100022
+
+[s0016]
+n002=S_RET001
+n019=subreturn
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=809,1106
+n017=100023
+
+[s0017]
+n002=E_0003
+n006=private fIndex : integer;
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=15,1005
+n017=100024
+
+[s0019]
+n002=S_0012
+n005=S_0015
+n009=Randomize;
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=224,503
+n017=100026
+
+[s001b]
+n002=S_0013
+n005=S_GSB001
+n009=hoge('calling the embeded procedure.');
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=384,101
+n017=100028
+
+[s001c]
+n002=S_0014
+n005=S_RET002
+n009=WriteLn('It is in the subroutine.');
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=482,350
+n017=100029
+
+[s001d]
+n002=S_SBS002
+n019=substart
+n005=S_0014
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=387,350
+n017=100030
+
+[s001e]
+n002=S_GSB001
+n019=gosub
+n005=S_0012
+n01a=S_SBS002
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=234,350
+n017=100031
+
+[s001f]
+n002=S_RET002
+n019=subreturn
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=684,350
+n017=100032
+
+[s0020]
+n002=S_0016
+n005=S_PAS001
+n009=WriteLn('[[state]]');
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=481,579
+n017=100034
+
+[s0021]
+n002=S_0015
+n008=var a : integer;
+n01e=a := 0;
+n009=@@@
+a:=Random(2);
+WriteLn('a=',a);
+@@@
+
+n012=@@@
+brifc(S_0016);
+brelse(S_0017);
+@@@
+
+n013=@@@
+a=0
+?
+@@@
+
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=228,603
+n017=100033
+
+[s0022]
+n002=S_0017
+n005=S_PAS001
+n009=WriteLn('[[state]]');
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=483,698
+n017=100035
+
+[s0023]
+n002=S_PAS001
+n019=pass
+n005=S_LOP000
+n015=@@@
+/
+(100,100)
+The root
+@@@
+
+n016=708,671
+n017=100036
+
+[s0024]
+n002=C_0003
+n003=StateGo Delphi Sample
+n015=@@@
+/
+(100,100)
+
+@@@
+
+n016=11,2
+n017=100037
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2020/07/19 11:59:08
+; * pssgEditor version : 0.65.30181.c1f731a61c084a50af056af301b5a2c33505b45f
+psggfile=@@@
+TestControl.psgg
+@@@
+xlsfile=@@@
+TestControl.xlsx
+@@@
+guid=@@@
+c0856262-0e48-4255-9b0b-b7b57e901608
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+init,Saved
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":1230,"y":1007}},{"Key":"E_0001","Value":{"x":27,"y":250}},{"Key":"S_0001","Value":{"x":177,"y":101}},{"Key":"S_LOP000","Value":{"x":234,"y":1014}},{"Key":"S_0011","Value":{"x":557,"y":1105}},{"Key":"S_SBS001","Value":{"x":412,"y":1106}},{"Key":"S_RET001","Value":{"x":809,"y":1106}},{"Key":"E_0003","Value":{"x":15,"y":1005}},{"Key":"S_0012","Value":{"x":224,"y":503}},{"Key":"S_0013","Value":{"x":384,"y":101}},{"Key":"S_0014","Value":{"x":482,"y":350}},{"Key":"S_SBS002","Value":{"x":387,"y":350}},{"Key":"S_GSB001","Value":{"x":234,"y":350}},{"Key":"S_RET002","Value":{"x":684,"y":350}},{"Key":"S_0015","Value":{"x":228,"y":603}},{"Key":"S_0016","Value":{"x":481,"y":579}},{"Key":"S_0017","Value":{"x":483,"y":698}},{"Key":"S_PAS001","Value":{"x":708,"y":671}},{"Key":"C_0003","Value":{"x":11,"y":2}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BTN_BY.\\("}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor_set=@@@
+
+@@@
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=1
+option_use_custom_prefix=0
+option_omit_basestate_string=0
+option_hide_basestate_contents=0
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+state_short_width=50
+state_short_height=20
+comment_block_height=4
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+[{"Key":"nowait","Value":{"height":401,"width":330}}]
+@@@
+decoimage_typ_name=@@@
+sym
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+
+<<<?state/^E_/
+<<<?embed
+{
+  [[state]]
+  [[state-cmt]]
+  [[embdec]]
+}
+[[embed]]
+eof>>>
+eof>>>
+
+{
+  [[state]]
+  [[state-cmt]]
+}
+
+<<<?state-typ/^start$/
+procedure $statemachine$.[[state]](const bFirst : boolean);
+begin
+  GotoState('[[nextstate]]');
+  NoWait();
+end;
+eof>>>
+
+<<<?state-typ/^end$/
+procedure $statemachine$.[[state]](const bFirst : boolean);
+begin
+end;
+eof>>>
+
+<<<?state-typ/^gosub$/
+procedure $statemachine$.[[state]](const bFirst : boolean);
+begin
+   GoSubState('[[gosubstate]]', '[[nextstate]]');
+   NoWait();
+end;
+eof>>>
+
+<<<?state-typ/^subreturn$/
+procedure $statemachine$.[[state]](const bFirst : boolean);
+begin
+   ReturnState();
+   NoWait();
+end;
+eof>>>
+
+<<<?state-typ/^loop$/
+procedure $statemachine$.[[state]](const bFirst : boolean);
+begin
+    [[loop_init]]
+    GotoState('[[state]]_cond____');
+    NoWait()
+end;
+procedure $statemachine$.[[state]]_cond____(const bFirst : boolean);
+begin
+    if [[loop_cond]] then
+    begin
+        GoSubState('[[gosubstate]]','[[state]]_next____');
+    end
+    else begin
+        GotoState('[[nextstate]]');
+    end;
+    NoWait()
+end;
+procedure $statemachine$.[[state]]_next____(const bFirst : boolean);
+begin
+    [[loop_next]]
+    GotoState('[[state]]_cond____');
+    NoWait()
+end;
+eof>>>
+<<<?state-typ/^pass$/
+procedure $statemachine$.[[state]](const bFirst : boolean);
+begin
+  GotoState('[[nextstate]]');
+  NoWait();
+end;
+eof>>>
+
+procedure $statemachine$.[[state]](const bFirst : boolean);
+[[vars]]
+begin
+    [[vars_init]]
+    <<<?init
+    if bFirst=true then begin
+        [[init]]
+    end;
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if [[wait]] = false then exit;
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate
+    if HasNextState() = false then begin
+        GotoState('[[nextstate]]');
+    end;
+    >>>
+
+    if HasNextState() = true then begin
+        <<<?nowait
+        NoWait();
+        >>>
+    end;
+end;
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=TestControl.psgg
+xls=TestControl.xlsx
+sub_src=
+gen_src=TestControlUnit.pas
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=help.ini
+helpweb=helpweb.html
+
+[setupinfo]
+
+lang=delphi
+framework=
+
+statemachine=TestControl
+prefix=__PREFIX__
+xlsdir=C:\Users\gea01\Documents\psgg\samples\psgg-delphi-sample\playground\doc
+gendir=C:\Users\gea01\Documents\psgg\samples\psgg-delphi-sample\playground\src
+genrdir=.
+incrdir=.
+
+code_output_start=[STATEGO OUTPUT START]
+code_output_end=[STATEGO OUTPUT END]
+
+[macro]
+; This section has macro defines for converting.
+
+; commentline format  {%0} will be replaced to a comment.
+commentline=// {%0}
+
+#declare=@@@
+protected procedure [[state]](const bFirst : boolean);
+<<<?state-typ/^loop$/
+protected procedure [[state]]_cond____(const bFirst : boolean);
+protected procedure [[state]]_next____(const bFirst : boolean);
+>>>
+@@@
+
+#declare_f=@@@
+[[embedf]]
+@@@
+
+#exec=@@@
+if st = '[[state]]' then begin [[state]](bFirst); goto end_proc;  end;
+<<<?state-typ/^loop$/
+if st = '[[state]]_cond____' then begin [[state]]_cond____(bFirst); goto end_proc;  end;
+if st = '[[state]]_next____' then begin [[state]]_next____(bFirst); goto end_proc;  end;
+>>>
+
+@@@
+
+@branch=@@@
+<<<?"{%0}"/^brif$/
+if [[brcond:{%N}]] then begin
+    GotoState('{%1}');
+end;
+>>>
+<<<?"{%0}"/^brifc$/
+if [[brcond:{%N}]] then begin
+    GotoState('{%1}');
+end
+>>>
+<<<?"{%0}"/^brelseif$/
+else if [[brcond:{%N}]] then begin
+    GotoState('{%1}');
+end;
+>>>
+<<<?"{%0}"/^brelseifc$/
+else if [[brcond:{%N}]] then begin
+    GotoState('{%1}');
+end
+>>>
+<<<?"{%0}"/^brelse$/
+else begin
+    GotoState('{%1}');
+end;
+>>>
+<<<?"{%0}"/^br_/
+{%0}('{%1}');
+>>>
+@@@
+
+#embdec=@@@
+[[embdec]]
+@@@
+
+[jpn]
+title=Delphi スタートキット 2020/7/22
+
+detail=@@@
+
+Delphi 用のステートマシンを作成します。
+
+※サンプルプロジェクトを次のＵＲＬより入手可能。
+https://github.com/NNNIC/psgg-delphi-sample
+
+
+# ファイル
+
+  以下のファイルを作成します。
+
+      TestControl.pssg     --- StateGoデータファイル
+      TestControlUnit.pas  --- StateGoからの変換ソースコードを挿入。
+
+注意 : 既に同名のファイルがある場合は生成されません。
+  　　 削除してから生成してください。
+
+@@@
+
+
+[en]
+title=Delphi STARTER KIT 2020/7/22
+
+detail=@@@
+This dialog will create files for a state machine.
+
+* You may get the sample project from the below url.
+https://github.com/NNNIC/psgg-delphi-sample
+
+# File
+
+      TestControl.pssg      --- StateGo Data File.
+      TestControlUnit.pas   -- the editor will convert into this file.
+
+NOTE : If the same name files exists, the file will not be created.
+       Please delete the same name files ahead of the creation.
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[embdec]
+
+en=declare part of [embed].
+jpn=[embed]部の宣言部分。
+[nextstate]
+
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
+[branch]
+
+jpn=@@@
+分岐処理を指定する。
+１行に一つの分岐命令を書く。
+GUIにより上書きされるため引数は適当に指定する。
+例）
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+en=@@@
+Specify branch functions.
+Each line has a branch function.
+Specify a tentavie parameter for each branch function because GUI overwrites the parameter.
+i.e)
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+[update]
+
+jpn=更新処理を指定する。
+en=Specify a update process.
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[vars_init]
+
+en=Initialize local variables.
+jpn=ローカル変数の初期化
+[embedf]
+
+en=Declear field member
+jpn=フィールド部の宣言用
+[post_wait]
+
+jpn='wait'後の処理を指定する。
+en=Specify the post process after 'wait'.
+[vars]
+
+en=Declear local variables.
+jpn=ローカル変数の宣言
+[embed]
+
+jpn=組込みソース。
+en=embed source.
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[init]
+
+jpn=初期化用処理を指定する。
+en=Specify a initial process.
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
+en=@@@
+System uses this for the directory path of the state.
+@@@
+
+[wait]
+
+jpn=@@@
+待ち条件を指定する。
+true時にループを解除する。
+@@@
+
+en=@@@
+Specify a waiting condition.
+Release the loop if the condition is true.
+@@@
+
+[nowait]
+
+jpn=@@@
+次のステートへ同期待ちをせず実行する時に 'yes'を指定する。
+同期待ち時には何も指定しない。
+@@@
+
+en=@@@
+Specify 'yes' if the next state will be execute without a sync wait.
+Do not specify any word wheh the next state will be execute with a sync wait.
+@@@
+
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
+en=@@@
+Specify a image for explanation of this state.
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+init=
+state-ref=
+wait=
+wait-cmt=
+vars_init=
+embed=
+gosubstate=
+loop_cond=
+branch=
+!dir=
+post_wait-cmt=
+nowait=@@@
+*select
+nowait
+@@@
+
+thumbnail=
+embdec=
+update-cmt=
+post_wait=
+state-cmt=
+init-ref=
+state-typ=
+!pos=
+!uuid=
+embedf=
+nextstate=
+state=
+S_=
+brcond=
+update=
+init-cmt=
+loop_next=
+vars=
+C_=
+E_=
+loop_init=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+thumbnail=read_only,share,S.+
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,S0
+brcond=read_only,exclusion,S0
+embed=read_only,exclusion,S1
+basestate=read_only,share,S.+
+state-typ=read_only,exclusion,(S0)
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+
