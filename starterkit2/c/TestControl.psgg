@@ -1,7 +1,7 @@
 ﻿;PSGG Editor Backup File
 version=1.1
 file=TestControl.xlsx
-guid=cd4c1ae8-4eeb-4b54-887b-8e73b9e4fe91
+guid=6b5b310b-d47d-4dad-ba20-0ba2612d2e1b
 ;set read_from  excel or psgg
 read_from=psgg
 ;set savemode with_excel or psgg_only
@@ -13,9 +13,9 @@ check_excel_writable=no
 
 sheet=state-chart
 nameid_list=,n001,n002,n003,n004,n019,n005,,n01e,n006,,n007,,n008,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n012,n013,n014,n015,,n01a,,n01b,n01c,n01d,n016,n017,n018,,,,,
-stateid_list=,,,,s0001,s0002,s0004,s0003,s0006,s0007,s0005,s0009,s0008,s000a,s000c,s000b
+stateid_list=,,,,s0001,s0002,s0004,s0003,s0006,s0007,s0005,s0009,s0008,s000a,s000c,s000b,s000e,s000d,s000f,s0010
 max_name_id=30
-max_state_id=12
+max_state_id=16
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -62,6 +62,10 @@ s0009=S_SUBSTART2
 s000a=S_RETURN2
 s000b=S_0003
 s000c=E_0001
+s000d=S_First
+s000e=S_Second
+s000f=S_Third
+s0010=S_First3
 
 
 [s0001]
@@ -189,14 +193,36 @@ n016=@@@
 
 @@@
 
-n017=940,449
+n017=1410,611
 n018=100010
 
 [s000b]
 n002=S_0003
 n003=
-n005=S_RETURN2
+n005=
+n008=int a = m_I % 10;
 n009=printf("Loop Cointer : %d\n", m_I );
+n012=@@@
+brifc(S_First);
+brelseifc(S_Second);
+brelseifc(S_Third);
+brelse(S_First3);
+@@@
+
+n013=@@@
+?
+?
+?
+?
+@@@
+
+n014=@@@
+a == 1
+a == 2
+a == 3
+?
+@@@
+
 n016=@@@
 /
 (100,100)
@@ -219,6 +245,58 @@ n016=@@@
 n017=630,134
 n018=100012
 
+[s000d]
+n002=S_First
+n005=S_RETURN2
+n009=printf("Say 1st\n");
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=1016,489
+n018=100013
+
+[s000e]
+n002=S_Second
+n005=S_RETURN2
+n009=printf("Say 2nd\n");
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=1020,572
+n018=100014
+
+[s000f]
+n002=S_Third
+n005=S_RETURN2
+n009=printf("Say 3rd\n");
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=1026,649
+n018=100015
+
+[s0010]
+n002=S_First3
+n005=S_RETURN2
+n009=printf("Say %dth\n",m_I);
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=1022,729
+n018=100016
+
 
 
 ------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
@@ -226,8 +304,8 @@ n018=100012
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/24 11:19:38
-; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
+; The setting was created automatically. 2020/08/01 10:37:09
+; * pssgEditor version : 0.65.55569.e2b4caa65ba5bc3bdb32cc03ca252c30c631d951
 psggfile=@@@
 TestControl.psgg
 @@@
@@ -235,7 +313,7 @@ xlsfile=@@@
 TestControl.xlsx
 @@@
 guid=@@@
-cd4c1ae8-4eeb-4b54-887b-8e73b9e4fe91
+6b5b310b-d47d-4dad-ba20-0ba2612d2e1b
 @@@
 bitmap_width=5000
 bitmap_height=2000
@@ -244,7 +322,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Moved a state
+varied,Edited a state.
 @@@
 target_pathdir=@@@
 /
@@ -259,7 +337,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":990,"y":103}},{"Key":"S_0001","Value":{"x":30,"y":239}},{"Key":"S_GOSUB1","Value":{"x":247,"y":243}},{"Key":"S_SUBSTART1","Value":{"x":71,"y":591}},{"Key":"S_0002","Value":{"x":197,"y":590}},{"Key":"S_RETURN1","Value":{"x":418,"y":594}},{"Key":"S_LOOP1","Value":{"x":628,"y":240}},{"Key":"S_SUBSTART2","Value":{"x":617,"y":452}},{"Key":"S_RETURN2","Value":{"x":940,"y":449}},{"Key":"S_0003","Value":{"x":734,"y":451}},{"Key":"E_0001","Value":{"x":630,"y":134}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":990,"y":103}},{"Key":"S_0001","Value":{"x":30,"y":239}},{"Key":"S_GOSUB1","Value":{"x":247,"y":243}},{"Key":"S_SUBSTART1","Value":{"x":71,"y":591}},{"Key":"S_0002","Value":{"x":197,"y":590}},{"Key":"S_RETURN1","Value":{"x":418,"y":594}},{"Key":"S_LOOP1","Value":{"x":628,"y":240}},{"Key":"S_SUBSTART2","Value":{"x":617,"y":452}},{"Key":"S_RETURN2","Value":{"x":1410,"y":611}},{"Key":"S_0003","Value":{"x":734,"y":451}},{"Key":"E_0001","Value":{"x":630,"y":134}},{"Key":"S_First","Value":{"x":1016,"y":489}},{"Key":"S_First3","Value":{"x":1022,"y":729}},{"Key":"S_Second","Value":{"x":1020,"y":572}},{"Key":"S_Third","Value":{"x":1026,"y":649}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -268,10 +346,9 @@ use_external_command=0
 external_command=@@@
 
 @@@
-source_editor=@@@
-"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\Code.exe" -g %1:%2
+source_editor_set=@@@
+
 @@@
-source_editor_vs2015_support=0
 label_show=0
 label_text=@@@
 test
@@ -284,6 +361,7 @@ option_copy_output_to_clipboard=0
 option_convert_with_confirm=0
 option_ignore_case_of_state=0
 option_editbranch_automode=1
+option_use_custom_prefix=0
 option_omit_basestate_string=0
 option_hide_basestate_contents=1
 option_hide_branchcmt_onbranchbox=0
@@ -310,6 +388,9 @@ userbutton_command=@@@
 userbutton_callafterconvert=0
 itemeditform_size_list=@@@
 
+@@@
+decoimage_typ_name=@@@
+sym
 @@@
 
 ###VARIOUS-CONTENTS-END###
@@ -452,11 +533,15 @@ template_src=
 template_func=template-statefunc.txt
 
 help=help.ini
-helpweb=starterkit\c\helpweb.html
+helpweb=starterkit2\c\helpweb.html
+
 
 [setupinfo]
 
-starterkit=https://github.com/NNNIC/psgg-starter-kit.git b8deda1cf808e4b9b62e5697e1958776f605d049
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git b8deda1cf808e4b9b62e5697e1958776f605d049
+@@@
+
 
 
 lang=c
@@ -465,34 +550,36 @@ framework=
 statemachine=TestControl
 
 prefix=__PREFIX__
-xlsdir=C:\Users\gea01\Documents\psgg\samples\psgg-c-sample\reference
-gendir=C:\Users\gea01\Documents\psgg\samples\psgg-c-sample\reference
+xlsdir=C:\Temp\20200801
+gendir=C:\Temp\20200801
 genrdir=.
 incrdir=.
 
 code_output_start=[STATEGO OUTPUT START]
 code_output_end=[STATEGO OUTPUT END]
 
-[macro]
 ; This section has macro defines for converting.
 
 ; commentline format  {%0} will be replaced to a comment.
+[macro]
+
 commentline=// {%0}
 
 @branch=@@@
 <<<?"{%0}"/^brifc{0,1}$/
-if ([[brcond:{%N}]]) { SetNextState( {%1} ); }
+if ([[brcond:{%N}]]) { Goto( {%1} ); }
 >>>
 <<<?"{%0}"/^brelseifc{0,1}$/
-else if ([[brcond:{%N}]]) { SetNextState( {%1} ); }
+else if ([[brcond:{%N}]]) { Goto( {%1} ); }
 >>>
 <<<?"{%0}"/^brelse$/
-else { SetNextState( {%1} ); }
+else { Goto( {%1} ); }
 >>>
 <<<?"{%0}"/^br_/
 {%0}({%1});
 >>>
 @@@
+
 
 #static=@@@
 static void [[state]](bool bFirst);
@@ -504,11 +591,12 @@ static void [[state]]_LoopNext____(bool bFirst);
 @@@
 
 
+
 [jpn]
+
 title=C スタートキット 2019/11/2
 
 detail=@@@
-
 C 用のステートマシンを作成します。
 
 ※サンプルプロジェクトを次のＵＲＬより入手可能。
@@ -521,11 +609,12 @@ https://github.com/NNNIC/psgg-c-sample
       TestControl.c      --- 実行ソース。変換コードが挿入される。
 @@@
 
+
 [en]
+
 title=C STARTER KIT 2019/11/2
 
 detail=@@@
-
 This is for creating a state machine using C language.
 
 * You may get the sample project from the below url.

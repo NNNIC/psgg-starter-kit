@@ -61,17 +61,16 @@ input {
 <h1>c sample help</h1>
   <div>Implementation example<br>
   <pre>
-#include <stdio.h>
-#include <stdbool.h>
+#include "TestControl.c"
           
-extern void testControl_update();
-extern void testControl_start();
-extern bool testControl_is_end();  
+extern void TestControl_update();
+extern void TestControl_start();
+extern bool TestControl_is_end();  
 
 void main() {
-    testControl_start();
-    while(testControl_is_end()==false) {
-        testControl_update();
+    TestControl_start();
+    while(TestControl_is_end()==false) {
+        TestControl_update();
   }  
 }
   </pre>

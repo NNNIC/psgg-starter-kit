@@ -5,11 +5,14 @@
 //== Declear States  ==
 
 //                                      [STATEGO OUTPUT START] $/^S_/->#static$
-//  psggConverterLib.dll converted from TestControl.xlsx.    psgg-file:TestControl.psgg
+    //             psggConverterLib.dll converted from psgg-file:TestControl.psgg
+
     static void S_0001(bool bFirst);
     static void S_0002(bool bFirst);
     static void S_0003(bool bFirst);
     static void S_END(bool bFirst);
+    static void S_First(bool bFirst);
+    static void S_First3(bool bFirst);
     static void S_GOSUB1(bool bFirst);
     static void S_LOOP1(bool bFirst);
     static void S_LOOP1_LoopCheckAndGosub____(bool bFirst);
@@ -17,9 +20,11 @@
     static void S_LOOP1_LoopNext____(bool bFirst);
     static void S_RETURN1(bool bFirst);
     static void S_RETURN2(bool bFirst);
+    static void S_Second(bool bFirst);
     static void S_START(bool bFirst);
     static void S_SUBSTART1(bool bFirst);
     static void S_SUBSTART2(bool bFirst);
+    static void S_Third(bool bFirst);
 
 
 //                                      [STATEGO OUTPUT END]
@@ -96,7 +101,8 @@ static void ReturnState()
 	Goto(st);
 }
 //                                      [STATEGO OUTPUT START] $/^E_/$
-//  psggConverterLib.dll converted from TestControl.xlsx.    psgg-file:TestControl.psgg
+    //             psggConverterLib.dll converted from psgg-file:TestControl.psgg
+
     /*
         E_0001
         new embed code
@@ -107,7 +113,8 @@ static void ReturnState()
 //                                      [STATEGO OUTPUT END] 
 
 //                                      [STATEGO OUTPUT START] $/^S_/$
-//  psggConverterLib.dll converted from TestControl.xlsx.    psgg-file:TestControl.psgg
+    //             psggConverterLib.dll converted from psgg-file:TestControl.psgg
+
     /*
         S_0001
     */
@@ -141,9 +148,30 @@ static void ReturnState()
     */
     void S_0003(bool bFirst)
     {
+        int a = m_I % 10;
         if (bFirst)
         {
             printf("Loop Cointer : %d\n", m_I );
+        }
+        if (a == 1) { Goto( S_First ); }
+        else if (a == 2) { Goto( S_Second ); }
+        else if (a == 3) { Goto( S_Third ); }
+        else { Goto( S_First3 ); }
+    }
+    /*
+        S_END
+    */
+    void S_END(bool bFirst)
+    {
+    }
+    /*
+        S_First
+    */
+    void S_First(bool bFirst)
+    {
+        if (bFirst)
+        {
+            printf("Say 1st\n");
         }
         if (!HasNextState())
         {
@@ -151,10 +179,18 @@ static void ReturnState()
         }
     }
     /*
-        S_END
+        S_First3
     */
-    void S_END(bool bFirst)
+    void S_First3(bool bFirst)
     {
+        if (bFirst)
+        {
+            printf("Say %dth\n",m_I);
+        }
+        if (!HasNextState())
+        {
+            Goto(S_RETURN2);
+        }
     }
     /*
         S_GOSUB1
@@ -203,6 +239,20 @@ static void ReturnState()
         NoWait();
     }
     /*
+        S_Second
+    */
+    void S_Second(bool bFirst)
+    {
+        if (bFirst)
+        {
+            printf("Say 2nd\n");
+        }
+        if (!HasNextState())
+        {
+            Goto(S_RETURN2);
+        }
+    }
+    /*
         S_START
     */
     void S_START(bool bFirst)
@@ -228,6 +278,20 @@ static void ReturnState()
         if (!HasNextState())
         {
             Goto(S_0003);
+        }
+    }
+    /*
+        S_Third
+    */
+    void S_Third(bool bFirst)
+    {
+        if (bFirst)
+        {
+            printf("Say 3rd\n");
+        }
+        if (!HasNextState())
+        {
+            Goto(S_RETURN2);
         }
     }
 
