@@ -392,7 +392,6 @@ itemeditform_size_list=@@@
 decoimage_typ_name=@@@
 sym
 @@@
-
 ###VARIOUS-CONTENTS-END###
 
 
@@ -533,7 +532,7 @@ template_src=
 template_func=template-statefunc.txt
 
 help=help.ini
-helpweb=starterkit2\c\helpweb.html
+helpweb=.\helpweb.html
 
 
 [setupinfo]
