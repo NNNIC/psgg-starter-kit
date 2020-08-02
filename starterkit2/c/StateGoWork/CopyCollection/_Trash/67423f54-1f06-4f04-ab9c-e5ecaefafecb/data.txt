@@ -1,0 +1,143 @@
+﻿{3745FCA0-D34D-4270-8C39-BB563F73BE4B}
+
+[____copyinfo____]
+pid=15676
+curdir=/
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+
+[S_0003]
+state=@@@
+S_0003
+@@@
+vars=@@@
+int a = m_I % 10;
+@@@
+init=@@@
+printf("Loop Cointer : %d\n", m_I );
+@@@
+branch=@@@
+brifc(S_First);
+brelseifc(S_Second);
+brelseifc(S_Third);
+brelse(S_First3);
+@@@
+branch-cmt=@@@
+?
+?
+?
+?
+@@@
+brcond=@@@
+a == 1
+a == 2
+a == 3
+?
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+734,451
+@@@
+!uuid=@@@
+100011
+@@@
+
+[S_First]
+state=@@@
+S_First
+@@@
+nextstate=@@@
+S_RETURN2
+@@@
+init=@@@
+printf("Say 1st\n");
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+1016,489
+@@@
+!uuid=@@@
+100013
+@@@
+
+[S_Second]
+state=@@@
+S_Second
+@@@
+nextstate=@@@
+S_RETURN2
+@@@
+init=@@@
+printf("Say 2nd\n");
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+1020,572
+@@@
+!uuid=@@@
+100014
+@@@
+
+[S_Third]
+state=@@@
+S_Third
+@@@
+nextstate=@@@
+S_RETURN2
+@@@
+init=@@@
+printf("Say 3rd\n");
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+1026,649
+@@@
+!uuid=@@@
+100015
+@@@
+
+[S_First3]
+state=@@@
+S_First3
+@@@
+nextstate=@@@
+S_RETURN2
+@@@
+init=@@@
+printf("Say %dth\n",m_I);
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+1022,729
+@@@
+!uuid=@@@
+100016
+@@@
+
+[____bitmapinfo____]
+num_of_bitmap=0
+
