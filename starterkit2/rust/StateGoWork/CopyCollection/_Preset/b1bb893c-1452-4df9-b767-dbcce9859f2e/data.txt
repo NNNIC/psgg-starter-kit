@@ -1,0 +1,118 @@
+﻿{3745FCA0-D34D-4270-8C39-BB563F73BE4B}
+
+[____copyinfo____]
+pid=31288
+curdir=/
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+
+[S_0007]
+state=@@@
+S_0007
+@@@
+nextstate=@@@
+S_RET001
+@@@
+init=@@@
+println!("> You are in the loop subroutine, cnt = {}", self.m_loopindex);
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+614,762
+@@@
+!uuid=@@@
+100016
+@@@
+
+[S_LOP000]
+state=@@@
+S_LOP000
+@@@
+state-typ=@@@
+loop
+@@@
+nextstate=@@@
+S_GSB001
+@@@
+members=@@@
+m_loopindex : i32,
+@@@
+members_init=@@@
+m_loopindex: 0,
+@@@
+gosubstate=@@@
+S_SBS001
+@@@
+loop_init=@@@
+self.m_loopindex = 0;
+@@@
+loop_cond=@@@
+self.m_loopindex < 10
+@@@
+loop_next=@@@
+self.m_loopindex += 1;
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+366,665
+@@@
+!uuid=@@@
+100014
+@@@
+
+[S_RET001]
+state=@@@
+S_RET001
+@@@
+state-typ=@@@
+subreturn
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+863,762
+@@@
+!uuid=@@@
+100017
+@@@
+
+[S_SBS001]
+state=@@@
+S_SBS001
+@@@
+state-typ=@@@
+substart
+@@@
+nextstate=@@@
+S_0007
+@@@
+!dir=@@@
+/
+(100,100)
+The root
+@@@
+!pos=@@@
+461,762
+@@@
+!uuid=@@@
+100015
+@@@
+
+[____bitmapinfo____]
+num_of_bitmap=0
+

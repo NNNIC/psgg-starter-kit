@@ -1,0 +1,140 @@
+﻿{3745FCA0-D34D-4270-8C39-BB563F73BE4B}
+
+[____copyinfo____]
+pid=2012
+curdir=/
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"This is the root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":0,"y":0}}]
+@@@
+
+[S_0003]
+state=@@@
+S_0003
+@@@
+state-cmt=@@@
+Loop 10 times
+@@@
+state-typ=@@@
+loop
+@@@
+nextstate=@@@
+S_0008
+@@@
+work=@@@
+ActivePresentation.Close
+@@@
+loop_init=@@@
+i = 0
+@@@
+loop_cond=@@@
+i < 10
+@@@
+loop_next=@@@
+i = i + 1
+@@@
+gosubstate=@@@
+S_LOOP_SUBSTART
+@@@
+!dir=@@@
+/
+(0,0)
+The root
+@@@
+!pos=@@@
+254,742
+@@@
+!uuid=@@@
+100005
+@@@
+
+[E_0004]
+state=@@@
+E_0004
+@@@
+state-cmt=@@@
+Loop Variable
+@@@
+embed=@@@
+Dim i As Integer
+@@@
+!dir=@@@
+/
+(0,0)
+The root
+@@@
+!pos=@@@
+249,658
+@@@
+!uuid=@@@
+100013
+@@@
+
+[S_LOOP_SUBSTART]
+state=@@@
+S_LOOP_SUBSTART
+@@@
+state-typ=@@@
+substart
+@@@
+nextstate=@@@
+S_0007
+@@@
+!dir=@@@
+/
+(0,0)
+The root
+@@@
+!pos=@@@
+442,861
+@@@
+!uuid=@@@
+100014
+@@@
+
+[S_LOOP_SUBRETURN]
+state=@@@
+S_LOOP_SUBRETURN
+@@@
+state-typ=@@@
+subreturn
+@@@
+!dir=@@@
+/
+(0,0)
+The root
+@@@
+!pos=@@@
+752,861
+@@@
+!uuid=@@@
+100015
+@@@
+
+[S_0007]
+state=@@@
+S_0007
+@@@
+nextstate=@@@
+S_LOOP_SUBRETURN
+@@@
+work=@@@
+Debug.Print "i = "; i
+@@@
+!dir=@@@
+/
+(0,0)
+The root
+@@@
+!pos=@@@
+557,861
+@@@
+!uuid=@@@
+100016
+@@@
+
+[____bitmapinfo____]
+num_of_bitmap=0
+
