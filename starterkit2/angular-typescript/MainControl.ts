@@ -83,7 +83,8 @@ export class MainControl implements StateManager{
         return this.CheckState(this.S_END);
     }
     //                             [PSGG OUTPUT START]   $/^[SE]_/$
-//  psggConverterLib.dll converted from MainControl.xlsx.    psgg-file:MainControl.psgg
+    //             psggConverterLib.dll converted from psgg-file:MainControl.psgg
+
     /*
         S_ALERT
     */
@@ -117,7 +118,7 @@ export class MainControl implements StateManager{
     }
     /*
         S_LOOP1
-        ５回ループ
+        5 Times Loop
     */
     private m_count = 0;
     S_LOOP1(bFirst: boolean) : void {
@@ -174,7 +175,6 @@ export class MainControl implements StateManager{
     }
     /*
         S_TEST0011
-        サブルーチン
     */
     S_TEST0011(bFirst: boolean) : void {
         this.GoSubState(this.S_SUBSTART1,this.S_LOOP1);

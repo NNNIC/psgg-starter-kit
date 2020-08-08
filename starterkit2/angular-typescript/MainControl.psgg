@@ -65,28 +65,40 @@ s0012=S_ALERT1
 n002=S_START
 n019=start
 n005=S_TEST0011
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
 n017=21,72
 n018=100001
 
 [s0002]
 n002=S_END
 n019=end
-n017=710,95
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=721,23
 n018=100002
 
 [s000b]
 n002=S_TEST0011
-n003=サブルーチン
+n003=
 n019=gosub
 n005=S_LOOP1
 n01a=S_SUBSTART1
 n016=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n017=40,175
+n017=153,490
 n018=100011
 
 [s000c]
@@ -97,10 +109,10 @@ n005=S_ALERT
 n016=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n017=59,418
+n017=261,510
 n018=100012
 
 [s000d]
@@ -110,10 +122,10 @@ n009=alert(" Calling from subroutine.");
 n016=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n017=159,404
+n017=361,510
 n018=100013
 
 [s000e]
@@ -123,15 +135,15 @@ n019=subreturn
 n016=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n017=358,411
+n017=560,510
 n018=100014
 
 [s000f]
 n002=S_LOOP1
-n003=５回ループ
+n003=5 Times Loop
 n019=loop
 n005=S_END
 n007=private m_count = 0;
@@ -142,7 +154,7 @@ n01d=this.m_count++;
 n016=@@@
 /
 (100,100)
-
+The root
 @@@
 
 n017=379,179
@@ -157,10 +169,10 @@ n005=S_ALERT1
 n016=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n017=522,355
+n017=556,265
 n018=100016
 
 [s0011]
@@ -169,11 +181,11 @@ n003=
 n019=subreturn
 n016=@@@
 /
-(0,0)
-
+(100,100)
+The root
 @@@
 
-n017=955,358
+n017=824,265
 n018=100017
 
 [s0012]
@@ -185,11 +197,11 @@ alert(" Calling from subroutine.\n Couny="+ this.m_count);
 
 n016=@@@
 /
-(0,0)
-
+(100,100)
+The root
 @@@
 
-n017=681,355
+n017=645,265
 n018=100018
 
 
@@ -199,8 +211,8 @@ n018=100018
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/24 11:42:14
-; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
+; The setting was created automatically. 2020/08/08 10:39:58
+; * pssgEditor version : 0.65.67604.f03d07e4a5c314e30d639c92f72384b8c9b8b596
 psggfile=@@@
 MainControl.psgg
 @@@
@@ -217,7 +229,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Moved a state
+mov,S_TEST0011
 @@@
 target_pathdir=@@@
 /
@@ -232,7 +244,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":21,"y":72}},{"Key":"S_END","Value":{"x":710,"y":95}},{"Key":"S_TEST0011","Value":{"x":40,"y":175}},{"Key":"S_SUBSTART1","Value":{"x":59,"y":418}},{"Key":"S_RETURN1","Value":{"x":358,"y":411}},{"Key":"S_LOOP1","Value":{"x":379,"y":179}},{"Key":"S_SUBSTART2","Value":{"x":522,"y":355}},{"Key":"S_RETURN2","Value":{"x":955,"y":358}},{"Key":"S_ALERT","Value":{"x":159,"y":404}},{"Key":"S_ALERT1","Value":{"x":681,"y":355}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":21,"y":72}},{"Key":"S_END","Value":{"x":721,"y":23}},{"Key":"S_TEST0011","Value":{"x":153.222229,"y":490.1111}},{"Key":"S_SUBSTART1","Value":{"x":261,"y":510}},{"Key":"S_RETURN1","Value":{"x":560,"y":510}},{"Key":"S_LOOP1","Value":{"x":379,"y":179}},{"Key":"S_SUBSTART2","Value":{"x":556,"y":265}},{"Key":"S_RETURN2","Value":{"x":824,"y":265}},{"Key":"S_ALERT","Value":{"x":361,"y":510}},{"Key":"S_ALERT1","Value":{"x":645,"y":265}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -241,10 +253,9 @@ use_external_command=0
 external_command=@@@
 
 @@@
-source_editor=@@@
-"%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\Code.exe" --goto %1:%2
+source_editor_set=@@@
+
 @@@
-source_editor_vs2015_support=0
 label_show=0
 label_text=@@@
 test
@@ -257,6 +268,7 @@ option_copy_output_to_clipboard=0
 option_convert_with_confirm=0
 option_ignore_case_of_state=0
 option_editbranch_automode=1
+option_use_custom_prefix=0
 option_omit_basestate_string=0
 option_hide_basestate_contents=1
 option_hide_branchcmt_onbranchbox=0
@@ -283,6 +295,9 @@ userbutton_command=@@@
 userbutton_callafterconvert=0
 itemeditform_size_list=@@@
 [{"Key":"init","Value":{"height":829,"width":760}}]
+@@@
+decoimage_typ_name=@@@
+sym
 @@@
 
 ###VARIOUS-CONTENTS-END###
