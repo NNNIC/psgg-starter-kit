@@ -12,10 +12,10 @@ check_excel_writable=no
 ------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
 
 sheet=state-chart
-nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n007,n008,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,
-stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006,s0007,s0008,s0009,s000a,s000b,s000c
-max_name_id=19
-max_state_id=12
+nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n007,n008,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,
+stateid_list=,,,,s0001,s0002,s0004,s0003,s0005,s0006,s0007,s0008,s0009,s000a,s000b,s000c,,,
+max_name_id=20
+max_state_id=13
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -36,6 +36,7 @@ n010=gosubstate
 n011=loop_init
 n012=loop_cond
 n013=loop_next
+n014=embed
 
 
 [id_state_dic]
@@ -231,8 +232,8 @@ n00e=100012
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/06/12 22:29:17
-; * pssgEditor version : 0.64.82573.fd0f469c305e75e3664469f7420c60802a30ea2f
+; The setting was created automatically. 2020/08/08 12:28:06
+; * pssgEditor version : 0.65.67604.f03d07e4a5c314e30d639c92f72384b8c9b8b596
 psggfile=@@@
 MainControl.psgg
 @@@
@@ -249,7 +250,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-varied,Edited a state.
+deleted,E_0000
 @@@
 target_pathdir=@@@
 /
@@ -264,7 +265,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":897,"y":107}},{"Key":"S_GOSUB1","Value":{"x":40,"y":341}},{"Key":"S_SUBSTART1","Value":{"x":107,"y":744}},{"Key":"S_RETURN1","Value":{"x":434,"y":755}},{"Key":"S_0001","Value":{"x":219,"y":751}},{"Key":"S_0002","Value":{"x":663,"y":389}},{"Key":"S_LOOP1","Value":{"x":149,"y":328}},{"Key":"S_SUBSTART2","Value":{"x":340,"y":438}},{"Key":"S_RETURN2","Value":{"x":869,"y":483}},{"Key":"S_0003","Value":{"x":653,"y":597}},{"Key":"S_ODD_OR_EVEN","Value":{"x":475,"y":429}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":897,"y":107}},{"Key":"S_GOSUB1","Value":{"x":40,"y":341}},{"Key":"S_SUBSTART1","Value":{"x":107,"y":744}},{"Key":"S_RETURN1","Value":{"x":434,"y":755}},{"Key":"S_0001","Value":{"x":219,"y":751}},{"Key":"S_0002","Value":{"x":663,"y":389}},{"Key":"S_LOOP1","Value":{"x":149,"y":328}},{"Key":"S_SUBSTART2","Value":{"x":340,"y":438}},{"Key":"S_RETURN2","Value":{"x":869,"y":483}},{"Key":"S_0003","Value":{"x":653,"y":597}},{"Key":"S_ODD_OR_EVEN","Value":{"x":475,"y":429}},{"Key":"E_0000","Value":{"x":183,"y":74}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -287,7 +288,6 @@ option_delete_s_state_string=1
 option_copy_output_to_clipboard=0
 option_convert_with_confirm=0
 option_ignore_case_of_state=0
-option_set_default_comment=1
 option_editbranch_automode=1
 option_use_custom_prefix=0
 option_omit_basestate_string=0
@@ -497,10 +497,10 @@ Specify a image for explanation of this state.
 @@@
 
 jpn=説明用のイメージを指定
-[state-ref]
+[gosubstate]
 
-en=Reference link
-jpn=参照リンク
+en=Call subroutine
+jpn=サブルーチン呼出し
 [state-cmt]
 
 en=Comment
@@ -525,10 +525,14 @@ jpn=ステートタイプ
 
 en=Base state.
 jpn=ベースステート
-[gosubstate]
+[embed]
 
-en=Call subroutine
-jpn=サブルーチン呼出し
+en=Write embed command.
+jpn=組込みコマンドを指定して下さい。
+[state-ref]
+
+en=Reference link
+jpn=参照リンク
 [loop_cond]
 
 en=Loop Condition
@@ -564,6 +568,7 @@ nowait=@@@
 nowait
 @@@
 
+embed=
 basestate=
 !uuid=
 state-typ=
@@ -589,7 +594,7 @@ nextstate=read_only,exclusion,S0
 return=read_only,exclusion,S0
 basestate=read_only,share,S.+
 brcond=read_only,exclusion,S0
-embed=read_only,exclusion,S1
+embed=read_only,exclusion,(S0)
 thumbnail=read_only,share,S.+
 ###VARIOUS-CONTENTS-END###
 
