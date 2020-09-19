@@ -1,0 +1,706 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=TestControl.xlsx
+guid=c0a3b647-16d6-4f7d-8854-86eb656b832a
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n007,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,
+stateid_list=,,,,,,,,,,,,,,,,,,,,s000e,s000f,s0010,s0012,s0011,s0013,s0014,s0015,s0017,s0016,s0018,s0019,s001d,s001c,s001b,s001e,s001f
+max_name_id=20
+max_state_id=31
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=basestate
+n006=nextstate
+n007=command
+n009=branch
+n00a=branch-cmt
+n00b=brcond
+n00c=!dir
+n00d=!pos
+n00e=!uuid
+n00f=state-typ
+n010=gosubstate
+n011=loop_init
+n012=loop_cond
+n013=loop_next
+n014=embed
+
+
+[id_state_dic]
+s000e=S_START
+s000f=S_END
+s0010=S_0000
+s0011=S_0001
+s0012=S_0002
+s0013=S_0003
+s0014=S_0004
+s0015=S_PASS
+s0016=S_GSB000
+s0017=S_SBS000
+s0018=S_0005
+s0019=S_RET000
+s001b=S_LOP000
+s001c=S_SBS001
+s001d=S_0006
+s001e=S_RET001
+s001f=S_GSB001
+
+
+[s000e]
+n002=S_START
+n00f=start
+n006=S_0000
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=61,47
+n00e=1
+
+[s000f]
+n002=S_END
+n00f=end
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=464,765
+n00e=2
+
+[s0010]
+n002=S_0000
+n006=S_0001
+n007=「こんにちは、なでしこさん！」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=73,178
+n00e=3
+
+[s0011]
+n002=S_0001
+n007=@@@
+乱数の種にシステム時間を代入
+Ａに３の乱数＋１を代入
+@@@
+
+n009=@@@
+brifc(S_0002);
+brelseifc(S_0004);
+brelse(S_0003);
+@@@
+
+n00a=@@@
+?
+?
+?
+@@@
+
+n00b=@@@
+Ａ＝１
+Ａ＝２
+?
+@@@
+
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=86,371
+n00e=4
+
+[s0012]
+n002=S_0002
+n006=S_PASS
+n007=「ファースト」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=349,322
+n00e=5
+
+[s0013]
+n002=S_0003
+n006=S_PASS
+n007=「サード」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=349,484
+n00e=6
+
+[s0014]
+n002=S_0004
+n006=S_PASS
+n007=「セカンド」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=346,405
+n00e=7
+
+[s0015]
+n002=S_PASS
+n00f=pass
+n006=S_GSB000
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=577,393
+n00e=8
+
+[s0016]
+n002=S_GSB000
+n00f=gosub
+n006=S_GSB001
+n010=S_SBS000
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=750,388
+n00e=9
+
+[s0017]
+n002=S_SBS000
+n00f=substart
+n006=S_0005
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=860,406
+n00e=10
+
+[s0018]
+n001=(bitmap)
+n002=S_0005
+n006=S_RET000
+n007=「サブルーチンを実行中です」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=957,406
+n00e=11
+
+[s0019]
+n002=S_RET000
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=1142,406
+n00e=12
+
+[s001b]
+n002=S_LOP000
+n00f=loop
+n006=S_END
+n010=S_SBS001
+n011=インデックスに０を代入
+n012=インデックス＜１０
+n013=インデックスに１を足して、インデックスに代入
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=259,807
+n00e=13
+
+[s001c]
+n002=S_SBS001
+n00f=substart
+n006=S_0006
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=347,889
+n00e=15
+
+[s001d]
+n002=S_0006
+n006=S_RET001
+n007=「インデックスは{インデックス}です」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=429,889
+n00e=14
+
+[s001e]
+n002=S_RET001
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=610,889
+n00e=16
+
+[s001f]
+n002=S_GSB001
+n00f=pass
+n006=S_LOP000
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=176,720
+n00e=17
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2020/09/18 7:48:04
+; * pssgEditor version : 0.66.51249.eb0da3450145a82e8134dcbafdae88a330253a4d
+psggfile=@@@
+TestControl.psgg
+@@@
+xlsfile=@@@
+TestControl.xlsx
+@@@
+guid=@@@
+c0a3b647-16d6-4f7d-8854-86eb656b832a
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+init,Initilized
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":61,"y":47}},{"Key":"S_END","Value":{"x":464,"y":765}},{"Key":"S_0000","Value":{"x":73,"y":178}},{"Key":"S_0001","Value":{"x":86,"y":371}},{"Key":"S_0002","Value":{"x":349,"y":322}},{"Key":"S_0003","Value":{"x":349,"y":484}},{"Key":"S_0004","Value":{"x":346,"y":405}},{"Key":"S_PASS","Value":{"x":577,"y":393}},{"Key":"S_GSB000","Value":{"x":750,"y":388}},{"Key":"S_SBS000","Value":{"x":860,"y":406}},{"Key":"S_0005","Value":{"x":957,"y":406}},{"Key":"S_RET000","Value":{"x":1142,"y":406}},{"Key":"S_0006","Value":{"x":429,"y":889}},{"Key":"S_LOP000","Value":{"x":259,"y":807}},{"Key":"S_SBS001","Value":{"x":347,"y":889}},{"Key":"S_RET001","Value":{"x":610,"y":889}},{"Key":"S_GSB001","Value":{"x":176,"y":720}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor_set=@@@
+
+@@@
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=1
+option_use_custom_prefix=0
+option_omit_basestate_string=0
+option_hide_basestate_contents=1
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+state_short_width=50
+state_short_height=20
+comment_block_height=20
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+
+@@@
+decoimage_typ_name=@@@
+sym
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+
+<<<?state/^E_/
+＃【組込】
+＃[[state]]
+＃[[state-cmt]]
+[[embed]]
+eof>>>
+
+
+<<<?state-typ/^gosub$/
+＃
+●[[state]]
+    ＃ [[state-cmt]]
+    $macro:gosub([[gosubstate]],[[nextstate]])$
+    戻る
+eof>>>
+
+<<<?state-typ/^subreturn$/
+＃
+●[[state]]
+    ＃[[state-cmt]]
+    $macro:return$
+    戻る
+eof>>>
+
+<<<?state-typ/^loop$/
+＃
+●[[state]]
+    ＃[[state-cmt]]
+    [[loop_init]]
+    ＿次ステートに「[[state]]_cond____」を代入
+    戻る
+●[[state]]_cond____
+    もし、（[[loop_cond]]）ならば
+        $macro:gosub([[gosubstate]],[[state]]_next____)$
+    違えば
+        ＿次ステートに「[[nextstate]]」を代入
+    ここまで
+    戻る
+●[[state]]_next____
+    [[loop_next]]
+    ＿次ステートに「[[state]]_cond____」を代入
+    戻る
+eof>>>
+
+＃
+●[[state]]
+    ＃ [[state-cmt]]
+
+    [[command]]
+
+    [[branch]]
+
+    <<<?nextstate
+    もし、＿次ステートが空ならば
+        ＿次ステートに「[[nextstate]]」を代入
+    ここまで
+    >>>
+
+    戻る
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=TestControl.psgg
+xls=TestControl.xlsx
+
+sub_src=
+gen_src=TestControl.nako
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=
+helpweb=@@@
+psgg-starter-kit\starterkit2\nadesiko-v1\helpweb.html
+@@@
+
+
+src_enc=sjis
+
+
+kitpath=psgg-starter-kit\starterkit2\nadesiko-v1
+[setupinfo]
+
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git 8e411ee9d8a7b0d44485bf03546b59220da6cd14
+@@@
+
+
+
+lang=nadesiko
+framework=v1
+
+statemachine=TestControl
+
+prefix=__PREFIX__
+xlsdir=@@@
+G:\statego\samples\psgg-nadesiko-sample\m1
+@@@
+
+gendir=@@@
+G:\statego\samples\psgg-nadesiko-sample\m1
+@@@
+
+genrdir=.
+incrdir=.
+
+code_output_start=【StateGoの自動挿入開始】
+code_output_end=【StateGoの自動挿入終了】
+
+[jpn]
+
+title=なでしこＶ１用スタートキット 2020/9/15
+
+detail=@@@
+なでしこＶ１：日本語プログラミング言語用のステートマシンを作成します。
+
+※サンプルプロジェクトを次のＵＲＬより入手可能。
+https://github.com/NNNIC/psgg-nadesiko-sample
+
+# 以下のファイルを作成します。
+
+      TestControl.pssg     --- StateGo データ ファイル
+      TestControl.nako     --- 変換ソースコード
+
+@@@
+
+
+[en]
+
+title=NADESIKO V1 STARTER KIT 2020/9/15
+
+detail=@@@
+This dialog will create files for a state machine.
+
+* You may get the sample project from the below url.
+https://github.com/NNNIC/psgg-nadesiko-sample
+
+# File:
+
+      TestControl.pssg  --- StateGo Data File.
+      TestControl.nako   --- Converted Souece File.
+
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[command]
+
+en=command
+jpn=なでしこの命令を書いてください
+[update]
+
+en=Update code
+jpn=更新コードを指定
+[state]
+
+en=Specify a state name.
+jpn=ステート名を指定
+[gosubstate]
+
+en=Call subroutine
+jpn=サブルーチン呼出し
+[state-ref]
+
+en=Reference link
+jpn=参照リンク
+[loop_next]
+
+en=Loop incriment
+jpn=ループインクリメント
+[init]
+
+en=initial code
+jpn=初期化命令を指定
+[embed]
+
+en=Write embed command.
+jpn=組込みコマンドを指定して下さい。
+[basestate]
+
+en=Base state.
+jpn=ベースステート
+[state-typ]
+
+en=State type
+jpn=ステートタイプ
+[state-cmt]
+
+en=Comment
+jpn=コメント
+[loop_init]
+
+en=Loop initialization
+jpn=ループ初期化
+[thumbnail]
+
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+jpn=説明用のイメージを指定
+[loop_cond]
+
+en=Loop Condition
+jpn=ループ条件
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+nextstate=
+branch=
+command=
+!pos=
+gosubstate=
+state-ref=
+basestate=
+command-cmt=
+branch-cmt=
+loop_next=
+init=
+C_=
+brcond=
+nowait=@@@
+*select
+nowait
+@@@
+
+embed=
+update=
+!uuid=
+state-typ=
+state=
+!dir=
+E_=
+state-cmt=
+loop_init=
+thumbnail=
+loop_cond=
+S_=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+state-typ=read_only,exclusion,(S0)
+gosubstate=read_only,exclusion,(S0)
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,S0
+basestate=read_only,share,S.+
+brcond=read_only,exclusion,S0
+embed=read_only,exclusion,(S0)
+thumbnail=read_only,share,S.+
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+
