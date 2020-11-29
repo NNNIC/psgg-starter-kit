@@ -1,0 +1,883 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=testControl.xlsx
+guid=18d681eb-ed19-4345-a48f-3f1a3e739bad
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n003,n004,n019,n01e,n005,n01a,,n006,,n007,,n01b,n01c,n01d,n008,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n012,n013,n014,,n016,n017,n018,,,,,
+stateid_list=,,,,s0001,s0002,s0004,s0003,s0015,s0016,s0017,s0018,s0019,s001a,s001b,s001c,s001d,s001e,s001f,s0020,s0021,s0022,s0014,,s0023
+max_name_id=30
+max_state_id=35
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=nextstate
+n006=embed
+n007=members
+n008=vars
+n009=init
+n00a=init-cmt
+n00b=init-ref
+n00c=update
+n00d=update-cmt
+n00e=wait
+n00f=wait-cmt
+n010=post_wait
+n011=post_wait-cmt
+n012=branch
+n013=branch-cmt
+n014=brcond
+n016=!dir
+n017=!pos
+n018=!uuid
+n019=state-typ
+n01a=gosubstate
+n01b=loop_init
+n01c=loop_cond
+n01d=loop_next
+n01e=basestate
+
+
+[id_state_dic]
+s0001=S_START
+s0002=S_END
+s0003=S_HELLOWORLD
+s0004=S_NEWERA
+s0014=S_0001
+s0015=S_0003
+s0016=S_0002
+s0017=S_0004
+s0018=S_PAS000
+s0019=S_GSB000
+s001a=S_SBS000
+s001b=S_RET000
+s001c=S_0005
+s001d=S_PAS001
+s001e=S_LOP000
+s001f=S_0006
+s0020=S_SBS001
+s0021=S_RET001
+s0022=S_0007
+s0023=E_0001
+
+
+[s0001]
+n002=S_START
+n019=start
+n005=S_HELLOWORLD
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=32,29
+n018=100001
+
+[s0002]
+n002=S_END
+n019=end
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1349,795
+n018=100002
+
+[s0003]
+n001=(bitmap)
+n002=S_HELLOWORLD
+n005=S_NEWERA
+n009=fmt.Println("Hello World.")
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=65,152
+n018=100003
+
+[s0004]
+n002=S_NEWERA
+n005=S_0001
+n009=fmt.Println(msg)
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=61,269
+n018=100004
+
+[s0014]
+n002=S_0001
+n005=
+n008=var n = rand.Intn(5)
+n012=@@@
+brifc(S_0004);
+brelseifc(S_0002);
+brelseifc(S_0003);
+brelse(S_0007);
+@@@
+
+n013=@@@
+?
+?
+?
+?
+@@@
+
+n014=@@@
+n==0
+n==1
+n==2
+?
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=314,192
+n018=100005
+
+[s0015]
+n002=S_0003
+n005=S_PAS000
+n009=fmt.Println("2")
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=558,266
+n018=100008
+
+[s0016]
+n002=S_0002
+n005=S_PAS000
+n009=fmt.Println("1")
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=558,188
+n018=100007
+
+[s0017]
+n002=S_0004
+n005=S_PAS000
+n009=fmt.Println("0")
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=558,121
+n018=100009
+
+[s0018]
+n002=S_PAS000
+n019=pass
+n005=S_GSB000
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=813,384
+n018=100012
+
+[s0019]
+n002=S_GSB000
+n019=gosub
+n005=S_PAS001
+n01a=S_SBS000
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=151,552
+n018=100011
+
+[s001a]
+n002=S_SBS000
+n019=substart
+n005=S_0005
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=308,608
+n018=100013
+
+[s001b]
+n002=S_RET000
+n019=subreturn
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=765,608
+n018=100014
+
+[s001c]
+n002=S_0005
+n005=S_RET000
+n009=fmt.Println("In a subroutine!")
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=466,608
+n018=100015
+
+[s001d]
+n002=S_PAS001
+n019=pass
+n005=S_LOP000
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=1117,554
+n018=100016
+
+[s001e]
+n002=S_LOP000
+n019=loop
+n005=S_END
+n01a=S_SBS001
+n007=counter := 0
+n01b=counter = 0
+n01c=counter < 10
+n01d=counter++
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=151,951
+n018=100017
+
+[s001f]
+n002=S_0006
+n005=S_RET001
+n009=@@@
+fmt.Println("In a loop subroutine! no.",counter)
+@@@
+
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=461,1066
+n018=100018
+
+[s0020]
+n002=S_SBS001
+n019=substart
+n005=S_0006
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=338,1067
+n018=100019
+
+[s0021]
+n002=S_RET001
+n019=subreturn
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=795,1063
+n018=100020
+
+[s0022]
+n002=S_0007
+n005=S_PAS000
+n009=fmt.Println("Other")
+n016=@@@
+/
+(100,100)
+The root
+@@@
+
+n017=558,342
+n018=100021
+
+[s0023]
+n002=E_0001
+n006=@@@
+msg := "We are in the visual program era."
+@@@
+
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=267,13
+n018=100022
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2020/11/28 12:29:23
+; * pssgEditor version : 0.67.30231.03ea53bc5e4838b3cc470c0151bdb388841c75c2
+psggfile=@@@
+testControl.psgg
+@@@
+xlsfile=@@@
+testControl.xlsx
+@@@
+guid=@@@
+18d681eb-ed19-4345-a48f-3f1a3e739bad
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+init,Saved
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":32,"y":29}},{"Key":"S_END","Value":{"x":1349,"y":795}},{"Key":"S_HELLOWORLD","Value":{"x":65,"y":152}},{"Key":"S_NEWERA","Value":{"x":61,"y":269}},{"Key":"S_0001","Value":{"x":314,"y":192}},{"Key":"S_0004","Value":{"x":558,"y":121}},{"Key":"S_0002","Value":{"x":558,"y":188}},{"Key":"S_0003","Value":{"x":558,"y":266}},{"Key":"S_GSB000","Value":{"x":151,"y":552}},{"Key":"S_PAS000","Value":{"x":813,"y":384}},{"Key":"S_SBS000","Value":{"x":308,"y":608}},{"Key":"S_RET000","Value":{"x":765,"y":608}},{"Key":"S_0005","Value":{"x":466,"y":608}},{"Key":"S_PAS001","Value":{"x":1117,"y":554}},{"Key":"S_LOP000","Value":{"x":151,"y":951}},{"Key":"S_0006","Value":{"x":461,"y":1066}},{"Key":"S_SBS001","Value":{"x":338,"y":1067}},{"Key":"S_RET001","Value":{"x":795,"y":1063}},{"Key":"S_0007","Value":{"x":558,"y":342}},{"Key":"E_HELLOWORLD","Value":{"x":266.6667,"y":12.6666641}},{"Key":"E_0001","Value":{"x":267,"y":13}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor_set=@@@
+
+@@@
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=1
+option_use_custom_prefix=0
+option_omit_basestate_string=0
+option_hide_basestate_contents=1
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=0
+contents_font_size=0
+state_width=140
+state_height=20
+state_short_width=50
+state_short_height=20
+comment_block_height=20
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+
+@@@
+decoimage_typ_name=@@@
+sym
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+<<<?state-typ/^start$/
+[[state>>lc]] := func( bFirst  bool ) {
+    gotoState(funcId[[nextstate>>lc]])
+}
+eof>>>
+
+<<<?state-typ/^end$/
+[[state>>lc]] := func ( bFirst  bool ) {
+     // end of state machine
+}
+eof>>>
+
+<<<?state-typ/^gosub$/
+[[state>>lc]] := func ( bFirst bool ) {
+    gosubState(funcId[[gosubstate>>lc]], funcId[[nextstate>>lc]])
+}
+eof>>>
+
+<<<?state-typ/^subreturn$/
+[[state>>lc]] := func ( bFirst bool ) {
+    returnState()
+}
+eof>>>
+
+<<<?state-typ/^loop$/
+[[state>>lc]] := func ( bFirst bool ) {
+    [[loop_init]]
+    gotoState(funcId[[state>>lc]]LoopCheck)
+}
+[[state>>lc]]LoopCheck := func ( bFirst bool ) {
+    if [[loop_cond]] {
+        gosubState(funcId[[gosubstate>>lc]], funcId[[state>>lc]]LoopNext)
+    } else {
+        gotoState(funcId[[nextstate>>lc]])
+    }
+}
+[[state>>lc]]LoopNext := func(bFirst bool ) {
+    [[loop_next]]
+    gotoState(funcId[[state>>lc]]LoopCheck)
+}
+eof>>>
+
+[[state>>lc]] := func( bFirst  bool ) {
+
+    [[vars]]
+
+    <<<?init
+    if bFirst {
+        [[init]]
+    }
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if [[wait]] {
+         return
+    }
+    >>>
+
+    [[post_wait]]
+
+    [[branch]]
+
+    <<<?nextstate
+    if !hasNextState() {
+        gotoState(funcId[[nextstate>>lc]])
+    }
+    >>>
+}
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+psgg=testControl.psgg
+xls=testControl.xlsx
+sub_src=
+gen_src=testControl.go
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=help.ini
+helpweb=@@@
+psgg-starter-kit\starterkit2\go\helpweb.html
+@@@
+
+
+
+
+kitpath=psgg-starter-kit\starterkit2\go
+
+[setupinfo]
+
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git 06b417a6f220200aa8489d982802935e37bc35b6
+@@@
+
+
+
+
+lang=go
+framework=
+
+statemachine=testControl
+prefix=__PREFIX__
+xlsdir=G:\statego\samples\psgg-go-sample\test\3
+gendir=G:\statego\samples\psgg-go-sample\test\3
+genrdir=.
+incrdir=.
+
+code_output_start=[STATEGO OUTPUT START]
+code_output_end=[STATEGO OUTPUT END]
+
+; This section has macro defines for converting.
+
+; commentline format  {%0} will be replaced to a comment.
+
+[macro]
+
+
+[jpn]
+
+title=GO スタートキット 2020/11/29
+
+detail=@@@
+Go 用のステートマシンを作成します。
+
+※サンプルプロジェクトを次のＵＲＬより入手可能。
+https://github.com/NNNIC/psgg-go-sample
+
+
+# ファイル
+      testControl.pssg   --- StateGoデータファイル
+      testControl.go  　 --- 変換ソースを挿入。
+
+
+注意 : 既に同名のファイルがある場合は生成されません。
+　　　 削除してから生成してください。
+
+@@@
+
+
+[en]
+
+title=GO STARTER KIT 2020/11/29
+
+detail=@@@
+This dialog will create files for a state machine.
+
+* You may get the sample project from the below url.
+https://github.com/NNNIC/psgg-go-sample
+
+# Files
+      testControl.pssg  --- StateGo Data File.
+      testControl.go    --- Converted StateGo Data
+
+NOTE : If the same name files exists, the file will not be created.
+       Please delete the same name files ahead of the creation.
+
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[nextstate]
+
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
+[branch]
+
+jpn=@@@
+分岐処理を指定する。
+１行に一つの分岐命令を書く。
+GUIにより上書きされるため引数は適当に指定する。
+例）
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+en=@@@
+Specify branch functions.
+Each line has a branch function.
+Specify a tentavie parameter for each branch function because GUI overwrites the parameter.
+i.e)
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+[update]
+
+jpn=更新処理を指定する。
+en=Specify a update process.
+[wait]
+
+jpn=@@@
+待ち条件を指定する。
+true時にループを解除する。
+@@@
+
+en=@@@
+Specify a waiting condition.
+Release the loop if the condition is true.
+@@@
+
+[gosubstate]
+
+en=Call Subroutine
+jpn=サブルーチン呼出し
+[loop_next]
+
+en=Loop increment.
+jpn=ループ用インクリメント
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[init]
+
+jpn=初期化用処理を指定する。
+en=Specify a initial process.
+[post_wait]
+
+jpn='wait'後の処理を指定する。
+en=Specify the post process after 'wait'.
+[vars]
+
+en=Specify variable definitions.
+jpn=変数宣言を指定する。
+[nowait]
+
+jpn=@@@
+次のステートへ同期待ちをせず実行する時に 'nowait'等を指定する。
+同期待ち時には何も指定しない。
+@@@
+
+en=@@@
+Specify 'nowait' and so on if the next state will be execute without a sync wait.
+Do not specify any word wheh the next state will be execute with a sync wait.
+@@@
+
+[embed]
+
+en=@@@
+For embedding code.
+Enable this section if state name starts with "I_".
+Disabled state features.
+@@@
+
+jpn=@@@
+コード埋め込み用。
+ステート名がI_時に利用可能。
+ステート機能は利用できない。
+@@@
+
+[basestate]
+
+en=Set base state
+jpn=ベースステートのセット
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[state-typ]
+
+en=ステートタイプを指定
+[members]
+
+en=@@@
+Specify members, variables, classes,  etc.
+@@@
+
+jpn=メンバ変数及び関数等を指定する。
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
+en=@@@
+System uses this for the directory path of the state.
+@@@
+
+[loop_init]
+
+en=Loop Initialization
+jpn=ループ初期化
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+[loop_cond]
+
+en=Loop if the condition is true
+jpn=@@@
+ループ条件
+true時にループする。
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+init=
+branch-cmt=
+state-ref=
+wait=
+wait-cmt=
+embed=
+gosubstate=
+loop_cond=
+branch=
+!dir=
+post_wait-cmt=
+nowait=@@@
+*select
+nowait
+@@@
+
+members=
+thumbnail=
+update-cmt=
+post_wait=
+state-cmt=
+state-typ=
+!pos=
+!uuid=
+nextstate=
+state=
+S_=
+brcond=
+update=
+init-cmt=
+basestate=
+loop_next=
+vars=
+C_=
+E_=
+init-ref=
+loop_init=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+state-typ=read_only,exclusion,(S0)
+embed=read_only,exclusion,S1
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,S0
+basestate=read_only,exclusion,(S0)
+brcond=read_only,exclusion,S0
+thumbnail=read_only,share,S.+
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+

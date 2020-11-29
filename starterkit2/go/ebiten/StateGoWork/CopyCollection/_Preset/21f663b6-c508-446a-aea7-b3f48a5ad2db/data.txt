@@ -1,0 +1,41 @@
+﻿{3745FCA0-D34D-4270-8C39-BB563F73BE4B}
+
+[____copyinfo____]
+pid=31316
+curdir=/Game/
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"},{"Key":"\/Game\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}},{"Key":"\/Game\/","Value":{"x":435,"y":1486}}]
+@@@
+
+[S_SETBG1]
+state=@@@
+S_SETBG1
+@@@
+nextstate=@@@
+S_DISPLAY_BLK
+@@@
+init=@@@
+drawfunc := func() {
+    g.Screen.Fill(color.RGBA{0,56,133,0xff})
+}
+g.AddDrawBg(drawfunc)
+
+@@@
+!dir=@@@
+/Game/
+(435,1486)
+The root
+@@@
+!pos=@@@
+227,1506
+@@@
+!uuid=@@@
+100058
+@@@
+
+[____bitmapinfo____]
+num_of_bitmap=0
+

@@ -1,0 +1,62 @@
+﻿{3745FCA0-D34D-4270-8C39-BB563F73BE4B}
+
+[____copyinfo____]
+pid=31316
+curdir=/Game/
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"},{"Key":"\/Game\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}},{"Key":"\/Game\/","Value":{"x":435,"y":1486}}]
+@@@
+
+[S_FADEOUT1]
+state=@@@
+S_FADEOUT1
+@@@
+nextstate=@@@
+S_SETBG1
+@@@
+members=@@@
+var goal[[state>>lc]] float64
+@@@
+vars=@@@
+fadestepnum := 60.0
+col := color.RGBA{255,255,255,255}
+@@@
+init=@@@
+if g.FadeImage == nil {
+    img := ebiten.NewImage(g.ScreenWidth, g.ScreenHeight)
+    g.FadeImage = img
+}
+goal[[state>>lc]] = float64(g.Count) + fadestepnum
+drawfunc := func() {
+    alpha := (fadestepnum - (goal[[state>>lc]] - float64(g.Count))) / fadestepnum * 255.0
+    g.FadeImage.Fill(color.RGBA{col.R,col.G,col.B,clamp255(int(alpha))})
+    w, h := g.FadeImage.Size()
+    op := &ebiten.DrawImageOptions{}
+    op.GeoM.Translate(-float64(w)/2, -float64(h)/2)
+    op.GeoM.Translate(float64(g.ScreenWidth/2), float64(g.ScreenHeight/2))
+    g.Screen.DrawImage(g.FadeImage, op)
+}
+g.ClrDrawFe()
+g.AddDrawFe(drawfunc)
+@@@
+wait=@@@
+float64(g.Count) < goal[[state>>lc]]
+@@@
+!dir=@@@
+/Game/
+(435,1486)
+The root
+@@@
+!pos=@@@
+26,1504
+@@@
+!uuid=@@@
+100050
+@@@
+
+[____bitmapinfo____]
+num_of_bitmap=0
+
