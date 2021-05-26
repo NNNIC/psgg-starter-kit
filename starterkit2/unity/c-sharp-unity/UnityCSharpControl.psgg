@@ -235,8 +235,8 @@ n01b=100012
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2019/11/24 11:25:02
-; * pssgEditor version : 0.62.9309.da636b2e550fe66f5b1995714d0343adee36e99c
+; The setting was created automatically. 2021/05/26 9:29:46
+; * pssgEditor version : 0.69.14313.bcfe27486705b2d976a75b12e5f9845ebad6f318
 psggfile=@@@
 UnityCSharpControl.psgg
 @@@
@@ -253,7 +253,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-Moved a state
+init,Initilized
 @@@
 target_pathdir=@@@
 /
@@ -277,10 +277,9 @@ use_external_command=0
 external_command=@@@
 
 @@@
-source_editor=@@@
-"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /Edit %1
+source_editor_set=@@@
+
 @@@
-source_editor_vs2015_support=0
 label_show=0
 label_text=@@@
 test
@@ -293,6 +292,7 @@ option_copy_output_to_clipboard=0
 option_convert_with_confirm=0
 option_ignore_case_of_state=0
 option_editbranch_automode=1
+option_use_custom_prefix=0
 option_omit_basestate_string=0
 option_hide_basestate_contents=1
 option_hide_branchcmt_onbranchbox=0
@@ -319,6 +319,16 @@ userbutton_command=@@@
 userbutton_callafterconvert=0
 itemeditform_size_list=@@@
 [{"Key":"state-typ","Value":{"height":398,"width":330}}]
+@@@
+decoimage_typ_name=@@@
+sym
+@@@
+use_donotedit_mark=1
+donotedit_mark_columns=@@@
+76,116,136
+@@@
+donotedit_mark=@@@
+*DoNotEdit*
 @@@
 
 ###VARIOUS-CONTENTS-END###
@@ -361,6 +371,14 @@ eof>>>
 <<<?state-typ/^end$/
 void [[state]](bool bFirst)
 {
+}
+eof>>>
+
+<<<?state-typ/^pass$/
+void [[state]](bool bFirst)
+{
+    Goto([[nextstate]]);
+    NoWait();
 }
 eof>>>
 
