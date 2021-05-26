@@ -208,9 +208,6 @@ public partial class UnityCSharpControl : MonoBehaviour {
 
 	#endregion // [PSGG OUTPUT END]
 
-	// write your code below
-
-
     #region Monobehaviour framework
     void Start()
     {
@@ -224,6 +221,10 @@ public partial class UnityCSharpControl : MonoBehaviour {
         }
     }
     #endregion
+
+	// write your code below
+
+
 }
 
 /*  :::: PSGG MACRO ::::
