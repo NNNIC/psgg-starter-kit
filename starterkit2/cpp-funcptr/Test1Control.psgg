@@ -564,7 +564,7 @@ detail=@@@
 関数ポインタ仕様のステートマシンを作成します。
 
 ※サンプルプロジェクトを次のＵＲＬより入手可能。
-https://github.com/NNNIC/psgg-ino-sample
+https://github.com/NNNIC/psgg-cppwfuncptr-sample
 
 
 # ファイル
@@ -586,7 +586,7 @@ detail=@@@
 This is for creating a state machine using C++ language using Function Pointer.
 
 * You may get the sample project from the below url.
-https://github.com/NNNIC/psgg-ino-sample
+https://github.com/NNNIC/psgg-cppwfuncptr-sample
 
 # Files
 
