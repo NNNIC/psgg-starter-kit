@@ -84,7 +84,7 @@ n016=@@@
 The root
 @@@
 
-n017=825,115
+n017=1025,86
 n018=2
 
 [s001e]
@@ -116,7 +116,7 @@ n016=@@@
 
 @@@
 
-n017=343,336
+n017=543,307
 n018=4
 
 [s0020]
@@ -129,7 +129,7 @@ n016=@@@
 
 @@@
 
-n017=453,433
+n017=653,404
 n018=5
 
 [s0021]
@@ -141,7 +141,7 @@ n016=@@@
 
 @@@
 
-n017=802,442
+n017=1002,413
 n018=6
 
 [s0022]
@@ -154,7 +154,7 @@ n016=@@@
 
 @@@
 
-n017=574,439
+n017=774,410
 n018=7
 
 
@@ -164,8 +164,8 @@ n018=7
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2024/03/20 16:52:27
-; * pssgEditor version : 0.75.643.b6374744957205afe5ec793648f2597ffa833c76
+; The setting was created automatically. 2024/03/21 15:17:56
+; * pssgEditor version : 0.75.20053.2e04106e66c7480f597f2d0c42a3c40456eeb840
 psggfile=@@@
 TestActor.psgg
 @@@
@@ -182,7 +182,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-varied,Changed an arrow direction
+mov,S_END,S_LOP000,S_SBS000
 @@@
 target_pathdir=@@@
 /
@@ -197,7 +197,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":51,"y":100}},{"Key":"S_END","Value":{"x":825,"y":115}},{"Key":"S_0000","Value":{"x":80,"y":189}},{"Key":"S_LOP000","Value":{"x":343,"y":336}},{"Key":"S_SBS000","Value":{"x":453,"y":433}},{"Key":"S_RET000","Value":{"x":802,"y":442}},{"Key":"S_0001","Value":{"x":574,"y":439}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":51,"y":100}},{"Key":"S_END","Value":{"x":1025,"y":86}},{"Key":"S_0000","Value":{"x":80,"y":189}},{"Key":"S_LOP000","Value":{"x":543,"y":307}},{"Key":"S_SBS000","Value":{"x":653,"y":404}},{"Key":"S_RET000","Value":{"x":1002,"y":413}},{"Key":"S_0001","Value":{"x":774,"y":410}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -259,9 +259,9 @@ donotedit_mark_columns=@@@
 donotedit_mark=@@@
 *DoNotEdit*
 @@@
-
-special_condition=ue5-actor
-
+special_condition=@@@
+ue5-actor
+@@@
 
 ###VARIOUS-CONTENTS-END###
 
@@ -463,8 +463,8 @@ commentline=// {%0}
 #execute_state=@@@
 if (st == "[[state]]") { [[state]](bFirst); return; }
 <<<?state-typ/^loop$/
-if (st == &$statemachine$::[[state]]_LoopCheckAndGosub____) { [[state]]_LoopCheckAndGosub____(bFirst); return; }
-if (st == &$statemachine$::[[state]]_LoopNext____)          { [[state]]_LoopNext____(bFirst); return; }
+if (st == &A$statemachine$::[[state]]_LoopCheckAndGosub____) { [[state]]_LoopCheckAndGosub____(bFirst); return; }
+if (st == &A$statemachine$::[[state]]_LoopNext____)          { [[state]]_LoopNext____(bFirst); return; }
 >>>
 @@@
 
@@ -474,16 +474,16 @@ if (st == &$statemachine$::[[state]]_LoopNext____)          { [[state]]_LoopNext
 
 @branch=@@@
 <<<?"{%0}"/^brifc{0,1}$/
-if ([[brcond:{%N}]]) { Goto( &$statemachine$::{%1} ); }
+if ([[brcond:{%N}]]) { Goto( &A$statemachine$::{%1} ); }
 >>>
 <<<?"{%0}"/^brelseifc{0,1}$/
-else if ([[brcond:{%N}]]) { Goto( &$statemachine$::{%1} ); }
+else if ([[brcond:{%N}]]) { Goto( &A$statemachine$::{%1} ); }
 >>>
 <<<?"{%0}"/^brelse$/
-else { Goto( &$statemachine$::{%1} ); }
+else { Goto( &A$statemachine$::{%1} ); }
 >>>
 <<<?"{%0}"/^br_/
-{%0}(&$statemachine$::{%1});
+{%0}(&A$statemachine$::{%1});
 >>>
 @@@
 
