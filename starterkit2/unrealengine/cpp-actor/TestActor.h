@@ -71,10 +71,16 @@ public:
 	bool IsEnd();
 	void Update();
 
-//  Member codes                              [STATE-GO OUTPUT START] indent(4) $/^S_/->#memberlist$
+//  Member codes  #1                         [STATE-GO OUTPUT START] indent(4) $/^S_/->#memberlist$
     //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                     // *DoNotEdit*
                                                                             // *DoNotEdit*
     int m_i;                                                                // *DoNotEdit*
+                                                                            // *DoNotEdit*
+//                                           [STATE-GO OUTPUT END]
+//  Member codes  #2                         [STATE-GO OUTPUT START] indent(4) $/^E_/->#memberlist$
+    //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                     // *DoNotEdit*
+                                                                            // *DoNotEdit*
+                                                                            // *DoNotEdit*
                                                                             // *DoNotEdit*
 //                                           [STATE-GO OUTPUT END]
 

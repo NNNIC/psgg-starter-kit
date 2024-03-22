@@ -12,12 +12,20 @@
 
 // Sets default values
 ATestActor::ATestActor() :
-    //  construction codes                       [STATE-GO OUTPUT START] indent(8) $/^S_/->#constructlist$
+//  construction codes                       [STATE-GO OUTPUT START] indent(8) $/^S_/->#constructlist$
         //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                 // *DoNotEdit*
                                                                             // *DoNotEdit*
         m_i(0),                                                             // *DoNotEdit*
                                                                             // *DoNotEdit*
 //                                           [STATE-GO OUTPUT END]
+//  construction codes                       [STATE-GO OUTPUT START] indent(8) $/^E_/->#constructlist$
+        //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                 // *DoNotEdit*
+                                                                            // *DoNotEdit*
+                                                                            // *DoNotEdit*
+                                                                            // *DoNotEdit*
+//                                           [STATE-GO OUTPUT END]
+
+
 m_curstate(nullptr), m_nextstate(nullptr), m_bNoWait(false), m_callstack_level(0)
 {
     for(int i = 0; i < CALL_STACK_MAX; i++) m_callstack[i] = nullptr;
@@ -79,7 +87,7 @@ void ATestActor::Update()
 //             psggConverterLib.dll converted from psgg-file:TestActor.psgg // *DoNotEdit*
                                                                             // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-    S_0000                                                                  // *DoNotEdit*
+     S_0000                                                                 // *DoNotEdit*
 */                                                                          // *DoNotEdit*
 void ATestActor::S_0000(bool bFirst)                                        // *DoNotEdit*
 {                                                                           // *DoNotEdit*
@@ -93,7 +101,7 @@ void ATestActor::S_0000(bool bFirst)                                        // *
     }                                                                       // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-    S_0001                                                                  // *DoNotEdit*
+     S_0001                                                                 // *DoNotEdit*
 */                                                                          // *DoNotEdit*
 void ATestActor::S_0001(bool bFirst)                                        // *DoNotEdit*
 {                                                                           // *DoNotEdit*
@@ -107,13 +115,15 @@ void ATestActor::S_0001(bool bFirst)                                        // *
     }                                                                       // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-    S_END                                                                   // *DoNotEdit*
+     S_END                                                                  // *DoNotEdit*
 */                                                                          // *DoNotEdit*
 void ATestActor::S_END(bool bFirst)                                         // *DoNotEdit*
 {                                                                           // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-    S_LOP000                                                                // *DoNotEdit*
+     S_LOP000                                                               // *DoNotEdit*
+        m_i(0)                                                              // *DoNotEdit*
+        int m_i;                                                            // *DoNotEdit*
 */                                                                          // *DoNotEdit*
 void ATestActor::S_LOP000(bool bFirst)                                      // *DoNotEdit*
 {                                                                           // *DoNotEdit*
@@ -134,7 +144,7 @@ void ATestActor::S_LOP000_LoopNext____(bool bFirst)                         // *
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-    S_RET000                                                                // *DoNotEdit*
+     S_RET000                                                               // *DoNotEdit*
 */                                                                          // *DoNotEdit*
 void ATestActor::S_RET000(bool bFirst)                                      // *DoNotEdit*
 {                                                                           // *DoNotEdit*
@@ -142,7 +152,7 @@ void ATestActor::S_RET000(bool bFirst)                                      // *
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-    S_SBS000                                                                // *DoNotEdit*
+     S_SBS000                                                               // *DoNotEdit*
 */                                                                          // *DoNotEdit*
 void ATestActor::S_SBS000(bool bFirst)                                      // *DoNotEdit*
 {                                                                           // *DoNotEdit*
@@ -150,7 +160,7 @@ void ATestActor::S_SBS000(bool bFirst)                                      // *
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-    S_START                                                                 // *DoNotEdit*
+     S_START                                                                // *DoNotEdit*
 */                                                                          // *DoNotEdit*
 void ATestActor::S_START(bool bFirst)                                       // *DoNotEdit*
 {                                                                           // *DoNotEdit*

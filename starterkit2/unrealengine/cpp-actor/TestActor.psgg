@@ -164,7 +164,7 @@ n018=7
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2024/03/21 15:17:56
+; The setting was created automatically. 2024/03/22 9:03:02
 ; * pssgEditor version : 0.75.20053.2e04106e66c7480f597f2d0c42a3c40456eeb840
 psggfile=@@@
 TestActor.psgg
@@ -182,7 +182,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-mov,S_END,S_LOP000,S_SBS000
+init,Initilized
 @@@
 target_pathdir=@@@
 /
@@ -283,7 +283,9 @@ sheet=template-statefunc
 <<<?state/^C_/
 eof>>>
 /*
-    [[state]]
+     [[state]]
+        [[construct]]
+        [[members]]
     [[state-cmt]]
 */
 
