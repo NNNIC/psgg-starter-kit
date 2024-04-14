@@ -1,31 +1,44 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "TestActor.h"
+#include "Test_Actor.h"
 
-//  Embed codes                              [STATE-GO OUTPUT START] indent(0) $/^E_/$
-//             psggConverterLib.dll converted from psgg-file:TestActor.psgg // *DoNotEdit*
+// ========================================== [STATE-GO OUTPUT START] indent(0) $/^[SE]_/->#inccpplist$
+//             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                        // *DoNotEdit*
+                                                                            // *DoNotEdit*
+//CPP側インクルード                                                         // *DoNotEdit*
+                                                                            // *DoNotEdit*
+// ========================================== [STATE-GO OUTPUT END]
+
+// ========================================== [STATE-GO OUTPUT START] indent(0) $/^E_/$
+//             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                        // *DoNotEdit*
+                                                                            // *DoNotEdit*
+/*                                                                          // *DoNotEdit*
+    E_EMBED                                                                 // *DoNotEdit*
+        UPROPERTY(VisibleAnywhere)                                          // *DoNotEdit*
+        bool m_test;                                                        // *DoNotEdit*
+        UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Settings)    // *DoNotEdit*
+        int m_max;                                                          // *DoNotEdit*
+*/                                                                          // *DoNotEdit*
+/*                                                                          // *DoNotEdit*
+    E_HEADERS                                                               // *DoNotEdit*
+        //hpp側インクルール                                                 // *DoNotEdit*
+        //参照class羅列                                                     // *DoNotEdit*
+        //CPP側インクルード                                                 // *DoNotEdit*
+    ヘッダ                                                                  // *DoNotEdit*
+*/                                                                          // *DoNotEdit*
                                                                             // *DoNotEdit*
                                                                             // *DoNotEdit*
-                                                                            // *DoNotEdit*
-//                                           [STATE-GO OUTPUT END]
+// ========================================== [STATE-GO OUTPUT END]
 
 // Sets default values
-ATestActor::ATestActor() :
-//  construction codes                       [STATE-GO OUTPUT START] indent(8) $/^S_/->#constructlist$
-        //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                 // *DoNotEdit*
+ATest_Actor::ATest_Actor() :
+// ========================================== [STATE-GO OUTPUT START] indent(8) $/^[SE]_/->#constructlist$
+        //             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                // *DoNotEdit*
                                                                             // *DoNotEdit*
         m_i(0),                                                             // *DoNotEdit*
                                                                             // *DoNotEdit*
-//                                           [STATE-GO OUTPUT END]
-//  construction codes                       [STATE-GO OUTPUT START] indent(8) $/^E_/->#constructlist$
-        //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                 // *DoNotEdit*
-                                                                            // *DoNotEdit*
-                                                                            // *DoNotEdit*
-                                                                            // *DoNotEdit*
-//                                           [STATE-GO OUTPUT END]
-
-
+// ========================================== [STATE-GO OUTPUT END]
 m_curstate(nullptr), m_nextstate(nullptr), m_bNoWait(false), m_callstack_level(0)
 {
     for(int i = 0; i < CALL_STACK_MAX; i++) m_callstack[i] = nullptr;
@@ -36,7 +49,7 @@ m_curstate(nullptr), m_nextstate(nullptr), m_bNoWait(false), m_callstack_level(0
 
 
 // Called when the game starts or when spawned
-void ATestActor::BeginPlay()
+void ATest_Actor::BeginPlay()
 {
 	Super::BeginPlay();
     Start();
@@ -44,7 +57,7 @@ void ATestActor::BeginPlay()
 }
 
 // Called every frame
-void ATestActor::Tick(float DeltaTime)
+void ATest_Actor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
@@ -53,7 +66,7 @@ void ATestActor::Tick(float DeltaTime)
     }
 }
 
-void ATestActor::_update()
+void ATest_Actor::_update()
 {
     while (true) {
         bool bFirst = false;
@@ -70,26 +83,26 @@ void ATestActor::_update()
     }
 }
 
-void ATestActor::Start()
+void ATest_Actor::Start()
 {
-    Goto(&ATestActor::S_START);
+    Goto(&ATest_Actor::S_START);
 }
-bool ATestActor::IsEnd()
+bool ATest_Actor::IsEnd()
 {
-    return CheckState(&ATestActor::S_END);
+    return CheckState(&ATest_Actor::S_END);
 }
-void ATestActor::Update()
+void ATest_Actor::Update()
 {
     _update();
 }
 
-//  states                                   [STATE-GO OUTPUT START] indent(0) $/^S_/$
-//             psggConverterLib.dll converted from psgg-file:TestActor.psgg // *DoNotEdit*
+// ========================================== [STATE-GO OUTPUT START] indent(0) $/^S_/$
+//             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                        // *DoNotEdit*
                                                                             // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-     S_0000                                                                 // *DoNotEdit*
+    S_0000                                                                  // *DoNotEdit*
 */                                                                          // *DoNotEdit*
-void ATestActor::S_0000(bool bFirst)                                        // *DoNotEdit*
+void ATest_Actor::S_0000(bool bFirst)                                       // *DoNotEdit*
 {                                                                           // *DoNotEdit*
     if (bFirst)                                                             // *DoNotEdit*
     {                                                                       // *DoNotEdit*
@@ -97,13 +110,13 @@ void ATestActor::S_0000(bool bFirst)                                        // *
     }                                                                       // *DoNotEdit*
     if (!HasNextState())                                                    // *DoNotEdit*
     {                                                                       // *DoNotEdit*
-        Goto(&ATestActor::S_LOP000);                                        // *DoNotEdit*
+        Goto(&ATest_Actor::S_LOP000);                                       // *DoNotEdit*
     }                                                                       // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-     S_0001                                                                 // *DoNotEdit*
+    S_0001                                                                  // *DoNotEdit*
 */                                                                          // *DoNotEdit*
-void ATestActor::S_0001(bool bFirst)                                        // *DoNotEdit*
+void ATest_Actor::S_0001(bool bFirst)                                       // *DoNotEdit*
 {                                                                           // *DoNotEdit*
     if (bFirst)                                                             // *DoNotEdit*
     {                                                                       // *DoNotEdit*
@@ -111,63 +124,64 @@ void ATestActor::S_0001(bool bFirst)                                        // *
     }                                                                       // *DoNotEdit*
     if (!HasNextState())                                                    // *DoNotEdit*
     {                                                                       // *DoNotEdit*
-        Goto(&ATestActor::S_RET000);                                        // *DoNotEdit*
+        Goto(&ATest_Actor::S_RET000);                                       // *DoNotEdit*
     }                                                                       // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-     S_END                                                                  // *DoNotEdit*
+    S_END                                                                   // *DoNotEdit*
 */                                                                          // *DoNotEdit*
-void ATestActor::S_END(bool bFirst)                                         // *DoNotEdit*
+void ATest_Actor::S_END(bool bFirst)                                        // *DoNotEdit*
 {                                                                           // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-     S_LOP000                                                               // *DoNotEdit*
+    S_LOP000                                                                // *DoNotEdit*
         m_i(0)                                                              // *DoNotEdit*
         int m_i;                                                            // *DoNotEdit*
 */                                                                          // *DoNotEdit*
-void ATestActor::S_LOP000(bool bFirst)                                      // *DoNotEdit*
+void ATest_Actor::S_LOP000(bool bFirst)                                     // *DoNotEdit*
 {                                                                           // *DoNotEdit*
     m_i = 0;                                                                // *DoNotEdit*
-    Goto(&ATestActor::S_LOP000_LoopCheckAndGosub____);                      // *DoNotEdit*
+    Goto(&ATest_Actor::S_LOP000_LoopCheckAndGosub____);                     // *DoNotEdit*
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
-void ATestActor::S_LOP000_LoopCheckAndGosub____(bool bFirst)                // *DoNotEdit*
+void ATest_Actor::S_LOP000_LoopCheckAndGosub____(bool bFirst)               // *DoNotEdit*
 {                                                                           // *DoNotEdit*
-    if (m_i < 10) GoSubState(&ATestActor::S_SBS000,&ATestActor::S_LOP000_LoopNext____);                             // *DoNotEdit*
-    else               Goto(&ATestActor::S_END);                            // *DoNotEdit*
+    if (m_i < 10) GoSubState(&ATest_Actor::S_SBS000,&ATest_Actor::S_LOP000_LoopNext____);                           // *DoNotEdit*
+    else               Goto(&ATest_Actor::S_END);                           // *DoNotEdit*
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
-void ATestActor::S_LOP000_LoopNext____(bool bFirst)                         // *DoNotEdit*
+void ATest_Actor::S_LOP000_LoopNext____(bool bFirst)                        // *DoNotEdit*
 {                                                                           // *DoNotEdit*
     m_i++;                                                                  // *DoNotEdit*
-    Goto(&ATestActor::S_LOP000_LoopCheckAndGosub____);                      // *DoNotEdit*
+    Goto(&ATest_Actor::S_LOP000_LoopCheckAndGosub____);                     // *DoNotEdit*
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-     S_RET000                                                               // *DoNotEdit*
+    S_RET000                                                                // *DoNotEdit*
 */                                                                          // *DoNotEdit*
-void ATestActor::S_RET000(bool bFirst)                                      // *DoNotEdit*
+void ATest_Actor::S_RET000(bool bFirst)                                     // *DoNotEdit*
 {                                                                           // *DoNotEdit*
     ReturnState();                                                          // *DoNotEdit*
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-     S_SBS000                                                               // *DoNotEdit*
+    S_SBS000                                                                // *DoNotEdit*
 */                                                                          // *DoNotEdit*
-void ATestActor::S_SBS000(bool bFirst)                                      // *DoNotEdit*
+void ATest_Actor::S_SBS000(bool bFirst)                                     // *DoNotEdit*
 {                                                                           // *DoNotEdit*
-    Goto(&ATestActor::S_0001);                                              // *DoNotEdit*
+    Goto(&ATest_Actor::S_0001);                                             // *DoNotEdit*
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
 /*                                                                          // *DoNotEdit*
-     S_START                                                                // *DoNotEdit*
+    S_START                                                                 // *DoNotEdit*
 */                                                                          // *DoNotEdit*
-void ATestActor::S_START(bool bFirst)                                       // *DoNotEdit*
+void ATest_Actor::S_START(bool bFirst)                                      // *DoNotEdit*
 {                                                                           // *DoNotEdit*
-    Goto(&ATestActor::S_0000);                                              // *DoNotEdit*
+    Goto(&ATest_Actor::S_0000);                                             // *DoNotEdit*
     NoWait();                                                               // *DoNotEdit*
 }                                                                           // *DoNotEdit*
                                                                             // *DoNotEdit*
                                                                             // *DoNotEdit*
-//                                           [STATE-GO OUTPUT END]
+// ========================================== [STATE-GO OUTPUT END]
 // write your code here!
+

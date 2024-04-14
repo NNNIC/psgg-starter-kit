@@ -1,22 +1,36 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "TestActor.generated.h"
+// ========================================== [STATE-GO OUTPUT START] indent(0) $/^[SE]_/->#inchpplist$
+//             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                        // *DoNotEdit*
+                                                                            // *DoNotEdit*
+//hpp側インクルール                                                         // *DoNotEdit*
+                                                                            // *DoNotEdit*
+// ========================================== [STATE-GO OUTPUT END]
+#include "Test_Actor.generated.h"
+
+// ========================================== [STATE-GO OUTPUT START] indent(0) $/^[SE]_/->#incclasslist$
+//             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                        // *DoNotEdit*
+                                                                            // *DoNotEdit*
+//参照class羅列                                                             // *DoNotEdit*
+                                                                            // *DoNotEdit*
+// ========================================== [STATE-GO OUTPUT END]
+
 
 #define LOG(STR) UE_LOG(LogTemp, Log, TEXT(STR))
 #define ERROR(STR) UE_LOG(LogTemp, Error, TEXT(STR))
 
 UCLASS()
-class UPROJECT_API ATestActor : public AActor
+class UPROJECT_API ATest_Actor : public AActor
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this actor's properties
-	ATestActor();
+	ATest_Actor();
 
 protected:
 	// Called when the game starts or when spawned
@@ -29,7 +43,7 @@ public:
 
 private:
 	// STATEGO FRAMEWORK
-	typedef void (ATestActor::* FUNCPTR)(bool);
+	typedef void (ATest_Actor::* FUNCPTR)(bool);
 
 	FUNCPTR m_curstate;
 	FUNCPTR m_nextstate;
@@ -71,22 +85,21 @@ public:
 	bool IsEnd();
 	void Update();
 
-//  Member codes  #1                         [STATE-GO OUTPUT START] indent(4) $/^S_/->#memberlist$
-    //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                     // *DoNotEdit*
+// ========================================== [STATE-GO OUTPUT START] indent(4) $/^[SE]_/->#memberlist$
+    //             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                    // *DoNotEdit*
                                                                             // *DoNotEdit*
+    UPROPERTY(VisibleAnywhere)                                              // *DoNotEdit*
+    bool m_test;                                                            // *DoNotEdit*
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Settings)        // *DoNotEdit*
+    int m_max;                                                              // *DoNotEdit*
     int m_i;                                                                // *DoNotEdit*
                                                                             // *DoNotEdit*
-//                                           [STATE-GO OUTPUT END]
-//  Member codes  #2                         [STATE-GO OUTPUT START] indent(4) $/^E_/->#memberlist$
-    //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                     // *DoNotEdit*
                                                                             // *DoNotEdit*
-                                                                            // *DoNotEdit*
-                                                                            // *DoNotEdit*
-//                                           [STATE-GO OUTPUT END]
+// ========================================== [STATE-GO OUTPUT END]
 
 
-//  API declaration                          [STATE-GO OUTPUT START] indent(4) $/^S_/->#declare$
-    //             psggConverterLib.dll converted from psgg-file:TestActor.psgg                                     // *DoNotEdit*
+// ========================================== [STATE-GO OUTPUT START] indent(4) $/^S_/->#declare$
+    //             psggConverterLib.dll converted from psgg-file:Test_Actor.psgg                                    // *DoNotEdit*
                                                                             // *DoNotEdit*
     void S_0000(bool bFirst);                                               // *DoNotEdit*
     void S_0001(bool bFirst);                                               // *DoNotEdit*
@@ -99,7 +112,7 @@ public:
     void S_START(bool bFirst);                                              // *DoNotEdit*
                                                                             // *DoNotEdit*
                                                                             // *DoNotEdit*
-//                                           [STATE-GO OUTPUT END]
+// ========================================== [STATE-GO OUTPUT END]
 
 
 };
